@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   GitHubLogoIcon,
@@ -52,10 +51,10 @@ async function Index() {
           </Avatar>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
-          <h1 className="block mt-1 text-lg leading-tight font-medium text-black">
+          <h1 className="block mt-1 text-2xl leading-tight font-medium text-black">
             Amemiya Riya
           </h1>
-          <p className="mt-2 text-gray-500 text-center">
+          <p className="mt-2 text-gray-500 text-center text-base">
             最近はReactずっと書いてます。
             <br />
             TSとPythonが得意です。
@@ -65,7 +64,12 @@ async function Index() {
           <ul className="mt-4 space-y-4">
             {links.map(({ url, name, Icon }) => (
               <li className="flex items-center space-x-2 w-36" key={url}>
-                <Button className="w-full">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                >
                   <div className="relative w-full">
                     <div className="w-full flex items-center justify-center">
                       <div className="w-4/12">
@@ -73,17 +77,12 @@ async function Index() {
                           <Icon className="w-5 h-5" />
                         </div>
                       </div>
-                      <a
-                        className="text-sm text-white w-8/12 text-center"
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <span className="text-sm text-white w-8/12 text-center">
                         {name}
-                      </a>
+                      </span>
                     </div>
                   </div>
-                </Button>
+                </a>
               </li>
             ))}
           </ul>
