@@ -1,0 +1,498 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Zip API",
+        "description": "色々なAPIを提供するサーバーです。",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://zip-api.oshaburikitchin.com/api"
+        }
+    ],
+    "paths": {
+        "/zipcode_search": {
+            "get": {
+                "operationId": "searchByZipcode",
+                "summary": "郵便番号による住所検索",
+                "parameters": [
+                    {
+                        "name": "zipcode",
+                        "in": "query",
+                        "description": "郵便番号7桁の数字。ハイフン付きでも可。完全一致検索。",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "pattern": "^[0-9]{3}[0-9]{4}$"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "正常なレスポンス",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "description": "ステータスコード"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "エラーメッセージ"
+                                        },
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "data": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "$ref": "#/components/schemas/AddressInfo"
+                                                        }
+                                                    },
+                                                    "error": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/address_search": {
+            "get": {
+                "operationId": "searchByAddress",
+                "summary": "住所検索",
+                "description": "都道府県、市町村、地区の名前を指定して、該当する住所情報を検索します。",
+                "parameters": [
+                    {
+                        "name": "prefectureName",
+                        "in": "query",
+                        "required": true,
+                        "description": "検索する都道府県の名前。",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cityName",
+                        "in": "query",
+                        "required": true,
+                        "description": "検索する市町村の名前。",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "areaName",
+                        "in": "query",
+                        "required": false,
+                        "description": "検索する地区の名前。",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功時のレスポンス",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AddressInfo"
+                                            }
+                                        },
+                                        "error": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/now": {
+            "get": {
+                "operationId": "getNow",
+                "summary": "東京の現在時刻を返す",
+                "description": "東京の現在時刻を返します。",
+                "parameters": [
+                    {
+                        "name": "timeDifference",
+                        "in": "query",
+                        "description": "UTCからの時差を指定します。単位は時間です。小数点以下は切り捨てられます。デフォルトは9です。",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string",
+                                            "example": "2023-11-11T23:40:12.468Z"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "example": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/toBase64": {
+            "get": {
+                "operationId": "toBase64",
+                "summary": "テキストをBase64にエンコード",
+                "description": "クエリパラメータとして'text'を受け取り、Base64エンコードされた文字列を返します。",
+                "parameters": [
+                    {
+                        "name": "text",
+                        "in": "query",
+                        "description": "エンコードするテキスト",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "正常なレスポンス",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string",
+                                            "description": "Base64エンコードされたデータ"
+                                        },
+                                        "error": {
+                                            "type": "string",
+                                            "description": "エラーメッセージ"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/connpass": {
+            "get": {
+                "operationId": "connpass",
+                "summary": "Search for events",
+                "description": "Search for events on connpass.com. The search results are returned in JSON format.",
+                "parameters": [
+                    {
+                        "name": "event_id",
+                        "in": "query",
+                        "description": "Search by event ID. Multiple IDs can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    {
+                        "name": "keyword",
+                        "in": "query",
+                        "description": "Search in event title, catch, description, and address using AND conditions. Multiple keywords can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "keyword_or",
+                        "in": "query",
+                        "description": "Search in event title, catch, description, and address using OR conditions. Multiple keywords can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ym",
+                        "in": "query",
+                        "description": "Search by event year and month. Multiple values can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer",
+                                "example": 201204
+                            }
+                        }
+                    },
+                    {
+                        "name": "ymd",
+                        "in": "query",
+                        "description": "Search by event year, month, and day. Multiple dates can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer",
+                                "example": 20120406
+                            }
+                        }
+                    },
+                    {
+                        "name": "nickname",
+                        "in": "query",
+                        "description": "Search for events with a participant having specified nickname. Multiple nicknames can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "owner_nickname",
+                        "in": "query",
+                        "description": "Search for events managed by a user with specified nickname. Multiple nicknames can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "series_id",
+                        "in": "query",
+                        "description": "Search by group ID assigned to events. Multiple IDs can be specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Specify the starting position of the search results to output.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "in": "query",
+                        "description": "Specify the order of the search results: by update time, event date, or newly posted.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 1,
+                            "enum": [
+                                1,
+                                2,
+                                3
+                            ]
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Specify the maximum number of search results to output.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 10,
+                            "minimum": 1,
+                            "maximum": 100
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "results_returned": {
+                                            "type": "integer",
+                                            "description": "The number of results included in the search"
+                                        },
+                                        "results_available": {
+                                            "type": "integer",
+                                            "description": "The total number of search results"
+                                        },
+                                        "results_start": {
+                                            "type": "integer",
+                                            "description": "The starting position of the search"
+                                        },
+                                        "events": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "event_id": {
+                                                        "type": "integer",
+                                                        "description": "Event ID"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "description": "Title of the event"
+                                                    },
+                                                    "catch": {
+                                                        "type": "string",
+                                                        "description": "Event catch"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "Description of the event in HTML format"
+                                                    },
+                                                    "event_url": {
+                                                        "type": "string",
+                                                        "description": "URL of the event on connpass.com"
+                                                    },
+                                                    "started_at": {
+                                                        "type": "string",
+                                                        "description": "Event start date and time (ISO 8601 format)"
+                                                    },
+                                                    "ended_at": {
+                                                        "type": "string",
+                                                        "description": "Event end date and time (ISO 8601 format)"
+                                                    },
+                                                    "limit": {
+                                                        "type": "integer",
+                                                        "description": "Maximum number of participants"
+                                                    },
+                                                    "event_type": {
+                                                        "type": "string",
+                                                        "description": "Event type"
+                                                    },
+                                                    "address": {
+                                                        "type": "string",
+                                                        "description": "Event venue"
+                                                    },
+                                                    "place": {
+                                                        "type": "string",
+                                                        "description": "Event venue"
+                                                    },
+                                                    "accepted": {
+                                                        "type": "integer",
+                                                        "description": "Number of participants"
+                                                    },
+                                                    "waiting": {
+                                                        "type": "integer",
+                                                        "description": "Number of participants on the waiting list"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AddressInfo": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "JIS_Code": {
+                        "type": "string"
+                    },
+                    "Old_Postal_Code": {
+                        "type": "string"
+                    },
+                    "Postal_Code": {
+                        "type": "string"
+                    },
+                    "Prefecture_Name_Kana": {
+                        "type": "string"
+                    },
+                    "City_Ward_Town_Village_Name_Kana": {
+                        "type": "string"
+                    },
+                    "Area_Name_Kana": {
+                        "type": "string"
+                    },
+                    "Prefecture_Name": {
+                        "type": "string"
+                    },
+                    "City_Ward_Town_Village_Name": {
+                        "type": "string"
+                    },
+                    "Area_Name": {
+                        "type": "string"
+                    },
+                    "Indicates_More_Than_One_Postal_Code_for_the_Same_Area": {
+                        "type": "string"
+                    },
+                    "Indicates_a_Subarea_with_Numbered_Addresses": {
+                        "type": "string"
+                    },
+                    "Indicates_Presence_of_Chome_in_the_Area": {
+                        "type": "string"
+                    },
+                    "Indicates_One_Postal_Code_for_Multiple_Areas": {
+                        "type": "string"
+                    },
+                    "Update_Display": {
+                        "type": "string"
+                    },
+                    "Change_Reason": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

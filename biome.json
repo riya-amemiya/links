@@ -1,0 +1,118 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"ignore": [
+			"node_modules",
+			".next",
+			"*.json",
+			"./scripts/*.js",
+			"src/gql/generated.ts"
+		],
+		"indentStyle": "space",
+		"lineWidth": 80
+	},
+	"javascript": {
+		"globals": [
+			"describe",
+			"beforeEach",
+			"it",
+			"expect",
+			"test",
+			"beforeAll",
+			"afterEach",
+			"afterAll",
+			"JSX",
+			"React"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"ignore": [
+			"node_modules",
+			".next",
+			"*.json",
+			"./scripts/*.js",
+			"next.config.js",
+			"./src/gql/*",
+			"./src/components/ui/**/*.tsx",
+			"./src/components/ui/**/*.ts",
+			"./types/supabase.ts"
+		],
+		"rules": {
+			"a11y": {
+				"noSvgWithoutTitle": "warn",
+				"useKeyWithClickEvents": "off"
+			},
+			"complexity": {
+				"noBannedTypes": "error",
+				"noExcessiveCognitiveComplexity": "off",
+				"noForEach": "error",
+				"noStaticOnlyClass": "error",
+				"noUselessEmptyExport": "error",
+				"noUselessFragments": "warn",
+				"noUselessThisAlias": "error",
+				"noVoid": "error",
+				"useSimpleNumberKeys": "warn",
+				"useSimplifiedLogicExpression": "warn"
+			},
+			"correctness": {
+				"noConstantCondition": "error",
+				"noNonoctalDecimalEscape": "error",
+				"noSelfAssign": "error",
+				"noUndeclaredVariables": "off",
+				"noUnusedVariables": "off",
+				"useExhaustiveDependencies": "off",
+				"useHookAtTopLevel": "error"
+			},
+			"nursery": {
+				"noApproximativeNumericConstant": "error",
+				"noDuplicateJsonKeys": "error",
+				"noEmptyBlockStatements": "error",
+				"noEmptyCharacterClassInRegex": "error",
+				"noInvalidNewBuiltin": "error",
+				"noMisleadingInstantiator": "error",
+				"noMisrefactoredShorthandAssign": "error",
+				"noUnusedImports": "error",
+				"noUselessElse": "error",
+				"useArrowFunction": "warn",
+				"useAsConstAssertion": "error",
+				"useGroupedTypeImport": "error",
+				"useShorthandAssign": "error"
+			},
+			"recommended": true,
+			"style": {
+				"noImplicitBoolean": "warn",
+				"noNegationElse": "error",
+				"noParameterProperties": "off",
+				"noShoutyConstants": "warn",
+				"useBlockStatements": "error",
+				"useExponentiationOperator": "error",
+				"useFragmentSyntax": "error",
+				"useLiteralEnumMembers": "error",
+				"useNamingConvention": {
+					"level": "off",
+					"options": {
+						"enumMemberCase": "CONSTANT_CASE",
+						"strictCase": true
+					}
+				},
+				"useShorthandArrayType": "error",
+				"useSingleCaseStatement": "error"
+			},
+			"suspicious": {
+				"noConfusingVoidType": "off",
+				"noConsoleLog": "warn",
+				"noControlCharactersInRegex": "error",
+				"noFallthroughSwitchClause": "error",
+				"noGlobalIsFinite": "error",
+				"noGlobalIsNan": "error",
+				"noRedundantUseStrict": "warn",
+				"noUnsafeDeclarationMerging": "error",
+				"useGetterReturn": "error",
+				"useIsArray": "error"
+			}
+		}
+	}
+}
