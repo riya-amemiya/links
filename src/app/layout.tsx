@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import "the-new-css-reset/css/reset.css";
 
 const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+  ? "https://riya-amemiya-links.oshaburikitchin.com"
   : "http://localhost:3000";
 
 export const metadata: Metadata = {
