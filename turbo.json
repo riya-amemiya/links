@@ -1,0 +1,28 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "pipeline": {
+        "build": {
+            "outputs": [
+                ".next/**",
+                "!.next/cache/**"
+            ],
+            "inputs": [
+                "src/**"
+            ],
+            "env": [
+                "NEXT_PUBLIC_*"
+            ]
+        },
+        "dev": {
+            "persistent": true
+        }
+    },
+    "globalDependencies": [
+        "tsconfig.json",
+        "jest.config.js",
+        ".eslintrc",
+        ".env.*",
+        "biome.json",
+        "yarn.lock"
+    ]
+}

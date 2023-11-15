@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:turbo": "turbo build",
     "start": "next start",
     "lint": "yarn biome format . --write && yarn biome check ."
   },
