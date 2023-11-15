@@ -67,7 +67,12 @@ async function Index() {
                   <div className="relative w-full">
                     <div className="w-full flex items-center justify-center">
                       {link.icon}
-                      <a className="text-sm text-white" href={link.url}>
+                      <a
+                        className="text-sm text-white"
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {link.name}
                       </a>
                     </div>
