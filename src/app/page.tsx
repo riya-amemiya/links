@@ -41,10 +41,10 @@ async function Index() {
   ];
   return (
     // 真ん中に表示する
-    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md overflow-hidden md:max-w-2xl w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
       <div className="flex-1 w-full flex flex-col items-center">
-        <div className="md:flex-shrink-0">
-          <Avatar className="h-48 w-full object-cover md:h-full md:w-48">
+        <div className="md:flex-shrink-0 gap-4">
+          <Avatar className="h-full w-full md:w-48">
             <AvatarImage alt="User avatar" src="/icon.png" />
             <AvatarFallback>ICON</AvatarFallback>
           </Avatar>
