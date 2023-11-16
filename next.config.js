@@ -32,7 +32,8 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self' 'unsafe-inline'; img-src * data:;",
+            value:
+              "default-src 'self' static.cloudflareinsights.com; img-src * data:;",
           },
         ],
       },
