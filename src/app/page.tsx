@@ -5,12 +5,12 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
+import Image from "next/image";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 
 import { Card } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/linkButton";
 
-import Image from "next/image";
 
 async function Index() {
   const links: {
@@ -50,7 +50,7 @@ async function Index() {
       <div className="flex-1 w-full flex flex-col items-center">
         <div className="md:flex-shrink-0">
           <div className="h-full w-full md:w-48">
-            <Image alt="User avatar" src="/icon.png" width={500} height={500} />
+            <Image alt="User avatar" height={500} src="/icon.png" width={500} />
           </div>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
