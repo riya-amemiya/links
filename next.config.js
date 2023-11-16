@@ -33,7 +33,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-hashes' static.cloudflareinsights.com; img-src * data:;",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com; img-src * data:; style-src 'self' 'unsafe-inline';",
           },
           {
             key: "Permissions-Policy",
