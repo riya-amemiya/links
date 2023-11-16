@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@AmemiyaRiya",
+    site: "Riya31377928",
     title: "Amemiya Riya Links",
     description: "Amemiya Riya Links",
   },
