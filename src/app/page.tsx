@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/linkButton";
 import { config } from "@/config";
 
-async function Index() {
+const Index = async () => {
   return (
     // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
@@ -61,5 +61,5 @@ async function Index() {
       </div>
     </Card>
   );
-}
+};
 export default Index;

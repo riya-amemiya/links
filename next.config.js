@@ -25,27 +25,29 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
   async headers() {
-    return [
-      {
-        // 全てのパスに Security Headers を適用する
-        source: "/(.*)",
-        headers: [
+    return process.env.NODE_ENV === "production"
+      ? [
           {
-            key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com; img-src * data:; style-src 'self' 'unsafe-inline';",
+            // 全てのパスに Security Headers を適用する
+            source: "/(.*)",
+            headers: [
+              {
+                key: "Content-Security-Policy",
+                value:
+                  "default-src 'self'; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com; img-src * data:; style-src 'self' 'unsafe-inline';",
+              },
+              {
+                key: "Permissions-Policy",
+                value: "camera=(), microphone=(), geolocation=()",
+              },
+              {
+                key: "Access-Control-Allow-Origin",
+                value: "same-origin",
+              },
+            ],
           },
-          {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
-          },
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "same-origin",
-          },
-        ],
-      },
-    ];
+        ]
+      : [];
   },
 };
 module.exports = nextConfig;
