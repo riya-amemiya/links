@@ -24,5 +24,19 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+  async headers() {
+    return [
+      {
+        // 全てのパスに Security Headers を適用する
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: "default-src 'self' 'unsafe-inline'; img-src * data:;",
+          },
+        ],
+      },
+    ];
+  },
 };
 module.exports = nextConfig;
