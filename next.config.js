@@ -35,6 +35,10 @@ const nextConfig = {
             value:
               "default-src 'self' static.cloudflareinsights.com; img-src * data:;",
           },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
         ],
       },
     ];
