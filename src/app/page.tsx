@@ -7,9 +7,10 @@ import {
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/linkButton";
+
+import Image from "next/image";
 
 async function Index() {
   const links: {
@@ -48,10 +49,9 @@ async function Index() {
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
       <div className="flex-1 w-full flex flex-col items-center">
         <div className="md:flex-shrink-0">
-          <Avatar className="h-full w-full md:w-48">
-            <AvatarImage alt="User avatar" src="/icon.png" />
-            <AvatarFallback>ICON</AvatarFallback>
-          </Avatar>
+          <div className="h-full w-full md:w-48">
+            <Image alt="User avatar" src="/icon.png" width={500} height={500} />
+          </div>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
           <h1 className="block mt-1 text-2xl leading-tight font-medium text-black">
@@ -66,7 +66,10 @@ async function Index() {
           </p>
           <ul className="mt-4 space-y-4">
             {links.map(({ url, name, Icon }) => (
-              <li className="flex items-center space-x-2 w-36" key={url}>
+              <li
+                className="flex items-center space-x-2 w-36 animate__animated animate__fadeInUp"
+                key={url}
+              >
                 <LinkButton
                   className="w-full"
                   href={url}
