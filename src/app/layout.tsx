@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
-import { Metadata } from "next";
+import "animate.css";
 import "the-new-css-reset/css/reset.css";
+import type { Metadata } from "next";
 
 const defaultUrl = process.env.VERCEL_URL
   ? "https://riya-amemiya-links.oshaburikitchin.com"

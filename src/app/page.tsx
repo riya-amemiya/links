@@ -1,5 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card } from "@/components/ui/card";
 import {
   GitHubLogoIcon,
   Link2Icon,
@@ -8,6 +6,11 @@ import {
 } from "@radix-ui/react-icons";
 import type { IconProps } from "@radix-ui/react-icons/dist/types";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card } from "@/components/ui/card";
+import { LinkButton } from "@/components/ui/linkButton";
+
 async function Index() {
   const links: {
     name: string;
@@ -64,11 +67,11 @@ async function Index() {
           <ul className="mt-4 space-y-4">
             {links.map(({ url, name, Icon }) => (
               <li className="flex items-center space-x-2 w-36" key={url}>
-                <a
+                <LinkButton
+                  className="w-full"
                   href={url}
-                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                  target="_blank"
                 >
                   <div className="relative w-full">
                     <div className="w-full flex items-center justify-center">
@@ -82,7 +85,7 @@ async function Index() {
                       </span>
                     </div>
                   </div>
-                </a>
+                </LinkButton>
               </li>
             ))}
           </ul>

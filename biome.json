@@ -1,5 +1,8 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
