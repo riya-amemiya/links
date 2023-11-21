@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import "animate.css";
 import "the-new-css-reset/css/reset.css";
 import type { Metadata } from "next";
-import Head from "next/head";
 
 const defaultUrl = process.env.VERCEL_URL
   ? "https://riya-amemiya-links.oshaburikitchin.com"
@@ -47,12 +46,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="bg-primary text-foreground">
-        <Head>
-          <meta
-            content="X86vZ_3EOMFBVNA57RTL7471-Zre6XtbNXMHWQf14L8"
-            name="google-site-verification"
-          />
-        </Head>
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>
