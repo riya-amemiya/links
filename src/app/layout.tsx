@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     title: "Amemiya Riya Links",
     description: "Amemiya Riya Links",
   },
+  other: {
+    googleSiteVerification: "X86vZ_3EOMFBVNA57RTL7471-Zre6XtbNXMHWQf14L8",
+  },
 };
 
 export default function RootLayout({
