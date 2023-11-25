@@ -38,7 +38,7 @@ const nextConfig = {
               {
                 key: "Content-Security-Policy",
                 value:
-                  "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' static.cloudflareinsights.com *.pagespeed-mod.com *.google-analytics.com *.googletagmanager.com; img-src * data:; style-src 'self' 'unsafe-inline'; connect-src *.google-analytics.com;",
+                  "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' static.cloudflareinsights.com *.pagespeed-mod.com *.google-analytics.com *.googletagmanager.com; img-src * data:; style-src 'self' 'unsafe-inline'; connect-src 'self' *.google-analytics.com;",
               },
               {
                 key: "Permissions-Policy",
