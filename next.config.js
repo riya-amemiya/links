@@ -19,6 +19,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
     ],
   },
   compiler: {
@@ -34,7 +38,7 @@ const nextConfig = {
               {
                 key: "Content-Security-Policy",
                 value:
-                  "default-src 'self'; script-src 'self' 'unsafe-inline' static.cloudflareinsights.com; img-src * data:; style-src 'self' 'unsafe-inline';",
+                  "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' static.cloudflareinsights.com *.pagespeed-mod.com *.google-analytics.com *.googletagmanager.com; img-src * data:; style-src 'self' 'unsafe-inline'; connect-src 'self' *.google-analytics.com;",
               },
               {
                 key: "Permissions-Policy",
