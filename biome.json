@@ -1,8 +1,5 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-	"organizeImports": {
-		"enabled": false
-	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
@@ -57,11 +54,14 @@
 				"noUselessFragments": "warn",
 				"noUselessThisAlias": "error",
 				"noVoid": "error",
+				"useArrowFunction": "warn",
 				"useSimpleNumberKeys": "warn",
 				"useSimplifiedLogicExpression": "warn"
 			},
 			"correctness": {
 				"noConstantCondition": "error",
+				"noEmptyCharacterClassInRegex": "error",
+				"noInvalidNewBuiltin": "error",
 				"noNonoctalDecimalEscape": "error",
 				"noSelfAssign": "error",
 				"noUndeclaredVariables": "off",
@@ -70,19 +70,10 @@
 				"useHookAtTopLevel": "error"
 			},
 			"nursery": {
-				"noApproximativeNumericConstant": "error",
 				"noDuplicateJsonKeys": "error",
 				"noEmptyBlockStatements": "error",
-				"noEmptyCharacterClassInRegex": "error",
-				"noInvalidNewBuiltin": "error",
-				"noMisleadingInstantiator": "error",
-				"noMisrefactoredShorthandAssign": "error",
 				"noUnusedImports": "error",
-				"noUselessElse": "error",
-				"useArrowFunction": "warn",
-				"useAsConstAssertion": "error",
-				"useGroupedTypeImport": "error",
-				"useShorthandAssign": "error"
+				"useGroupedTypeImport": "error"
 			},
 			"recommended": true,
 			"style": {
@@ -90,6 +81,8 @@
 				"noNegationElse": "error",
 				"noParameterProperties": "off",
 				"noShoutyConstants": "warn",
+				"noUselessElse": "error",
+				"useAsConstAssertion": "error",
 				"useBlockStatements": "error",
 				"useExponentiationOperator": "error",
 				"useFragmentSyntax": "error",
@@ -102,20 +95,27 @@
 					}
 				},
 				"useShorthandArrayType": "error",
+				"useShorthandAssign": "error",
 				"useSingleCaseStatement": "error"
 			},
 			"suspicious": {
+				"noApproximativeNumericConstant": "error",
 				"noConfusingVoidType": "off",
 				"noConsoleLog": "warn",
 				"noControlCharactersInRegex": "error",
 				"noFallthroughSwitchClause": "error",
 				"noGlobalIsFinite": "error",
 				"noGlobalIsNan": "error",
+				"noMisleadingInstantiator": "error",
+				"noMisrefactoredShorthandAssign": "error",
 				"noRedundantUseStrict": "warn",
 				"noUnsafeDeclarationMerging": "error",
 				"useGetterReturn": "error",
 				"useIsArray": "error"
 			}
 		}
+	},
+	"organizeImports": {
+		"enabled": false
 	}
 }
