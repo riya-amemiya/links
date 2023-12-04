@@ -1,5 +1,3 @@
-"use server";
-
 import { microcmsClient } from "@/lib/microcmsClient";
 
 export async function getMicrocms<T>(
