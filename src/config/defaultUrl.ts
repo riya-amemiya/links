@@ -1,1 +1,2 @@
-export const defaultUrl = process.env.VERCEL_URL || "http://localhost:3000";
+export const defaultUrl =
+  `https://${process.env.VERCEL_URL}` || "http://localhost:3000";
