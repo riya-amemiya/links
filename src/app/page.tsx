@@ -8,12 +8,9 @@ import { iconData } from "@/config/iconData";
 import { Config } from "@/types/configType";
 
 const Index = async () => {
-  const data: Config = await fetch(`${defaultUrl}/api/getMicrocms`, {
-    method: "POST",
-    body: JSON.stringify({
-      endpoint: "config",
-    }),
-  }).then((response) => response.json());
+  const data: Config = await fetch(
+    `${defaultUrl}/api/getMicrocms?endpoint=config`,
+  ).then((response) => response.json());
   return (
     // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
