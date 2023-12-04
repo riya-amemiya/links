@@ -3,9 +3,7 @@ import "animate.css";
 import "the-new-css-reset/css/reset.css";
 import type { Metadata } from "next";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? "https://riya-amemiya-links.oshaburikitchin.com"
-  : "http://localhost:3000";
+import { defaultUrl } from "@/config/defaultUrl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
