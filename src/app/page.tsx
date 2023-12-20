@@ -11,7 +11,7 @@ const Index = async () => {
   const data = await getMicrocms<Config>("config");
   return (
     // 真ん中に表示する
-    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
+    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-scroll w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
       <div className="flex-1 w-full flex flex-col items-center">
         <div className="md:flex-shrink-0">
           <div className="h-full w-full md:w-48">
@@ -31,12 +31,12 @@ const Index = async () => {
           <div className="mt-2 text-gray-500 text-center text-base">
             {htmr(data.description)}
           </div>
-          <ul className="mt-4 space-y-4">
+          <ul className="mt-4 flex flex-wrap justify-center items-center gap-4">
             {data.links.reverse().map(({ url, name, icon }) => {
               const Icon = iconData[icon[0]];
               return (
                 <li
-                  className="flex items-center space-x-2 w-36 animate__animated animate__fadeInUp"
+                  className="flex items-center w-36 animate__animated animate__fadeInUp"
                   key={url}
                 >
                   <Button asChild={true} className="w-full">
