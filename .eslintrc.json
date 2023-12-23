@@ -1,7 +1,6 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:security/recommended",
     "plugin:unicorn/recommended"
   ],
   "plugins": [
