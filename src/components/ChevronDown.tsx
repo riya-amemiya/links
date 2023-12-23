@@ -7,23 +7,14 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 
 export const ChevronDown = () => {
-  const [isTop, setIsTop] = useState(true);
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 0) {
-        setIsTop(false);
-      } else {
-        setIsTop(true);
-      }
-    });
-  }
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <div className="w-32">
       <Button
         asChild={true}
         className={`w-full animate__animated animate__fadeInDown ${
-          isTop ? "" : "animate__fadeOutUp hidden"
+          isClicked ? "animate__fadeOutUp hidden" : ""
         }`}
       >
         <div
@@ -36,6 +27,7 @@ export const ChevronDown = () => {
               top: window.innerHeight,
               behavior: "smooth",
             });
+            setIsClicked(true);
           }}
         >
           <ChevronDownIcon className="w-6 h-6" />
