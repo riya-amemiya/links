@@ -42,10 +42,10 @@ const Index = async () => {
             <DrawerContent>
               <div className="mx-auto w-full max-w-sm">
                 <DrawerHeader>
-                  <h1 className="text-3xl font-bold text-center">QR Code</h1>
+                  <h1 className="text-3xl font-bold text-center">URL</h1>
                 </DrawerHeader>
                 <div className="flex justify-center items-center w-full">
-                  <QRCodeSVG value={defaultUrl} />
+                  <QRCodeSVG level="H" value={defaultUrl} />
                 </div>
                 <DrawerFooter>
                   <DrawerClose asChild={true}>
