@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "animate.css";
 import "the-new-css-reset/css/reset.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
 import { defaultUrl } from "@/config/defaultUrl";
@@ -47,6 +48,7 @@ export default function RootLayout({
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>
+        <SpeedInsights />
       </body>
     </html>
   );
