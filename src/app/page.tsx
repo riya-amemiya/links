@@ -1,6 +1,7 @@
 import htmr from "htmr";
 import Image from "next/image";
 
+import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { iconData } from "@/config/iconData";
@@ -15,7 +16,7 @@ const Index = async () => {
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl overflow-hidden w-full p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:mt-0 mt-10">
       <div className="flex-1 w-full flex flex-col items-center">
         <div className="md:flex-shrink-0">
-          <div className="h-full w-full md:w-48">
+          <Avatar asChild={true} className="h-full w-full md:w-48">
             <Image
               alt="User avatar"
               height={500}
@@ -23,7 +24,7 @@ const Index = async () => {
               src={data.icon.url}
               width={500}
             />
-          </div>
+          </Avatar>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
           <h1 className="block mt-1 text-2xl leading-tight font-medium text-black">
