@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "animate.css";
 import "the-new-css-reset/css/reset.css";
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
@@ -49,6 +50,7 @@ export default function RootLayout({
           {children}
         </main>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
