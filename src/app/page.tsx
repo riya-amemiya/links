@@ -1,8 +1,10 @@
+import { CaretRightIcon } from "@radix-ui/react-icons";
 import htmr from "htmr";
 import Image from "next/image";
+import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 
-import { Links } from "@/components/home/links";
+import { HomeLinks } from "@/components/home/links";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -61,7 +63,15 @@ const Index = async () => {
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">
               {htmr(data.description)}
             </div>
-            <Links data={data} />
+            <HomeLinks data={data} />
+            <div className="w-1/2">
+              <Button asChild={true} className="mt-4 w-full">
+                <Link href="/works">
+                  <CaretRightIcon className="w-5 h-5" />
+                  Works
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </CardContent>
