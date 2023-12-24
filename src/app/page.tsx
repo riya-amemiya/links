@@ -2,7 +2,6 @@ import htmr from "htmr";
 import Image from "next/image";
 import { QRCodeSVG } from "qrcode.react";
 
-import { ChevronDown } from "@/components/ChevronDown";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,7 +21,7 @@ const Index = async () => {
   const data = await getMicrocms<Config>("config");
   return (
     // 真ん中に表示する
-    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 pb-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-md:mt-10 max-sm:mt-20">
+    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 pb-10">
       <CardContent>
         <div className="flex-1 w-full flex flex-col items-center">
           <Drawer>
@@ -61,9 +60,6 @@ const Index = async () => {
             </h1>
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">
               {htmr(data.description)}
-            </div>
-            <div className="mt-2 hidden max-sm:block">
-              <ChevronDown />
             </div>
             <ul className="mt-4 flex flex-wrap justify-center items-center gap-4">
               {data.links.reverse().map(({ url, name, icon }) => {

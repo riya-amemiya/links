@@ -1,7 +1,9 @@
 import { microcmsClient } from "@/lib/microcmsClient";
+import { Config } from "@/types/configType";
+import { Work } from "@/types/worksType";
 
 export async function getMicrocms<T>(
-  endpoint: string,
+  endpoint: T extends Config ? "config" : T extends Work ? "works" : string,
   queries?: {
     orders?:
       | "-createdAt"

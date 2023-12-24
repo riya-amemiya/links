@@ -1,13 +1,17 @@
-import { Img as Icon } from "./imgType";
+import { Img } from "./imgType";
 import { Link } from "./linksType";
 
-export interface Config {
+export interface Work {
+  contents: Content[];
+}
+
+interface Content {
+  id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
-  name: string;
+  link: Link;
   description: string;
-  icon: Icon;
-  links: Link[];
+  img: Img;
 }

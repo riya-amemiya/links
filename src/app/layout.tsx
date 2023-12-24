@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className="bg-primary text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
+        <main className="min-h-screen flex flex-col items-center justify-center">
           {children}
         </main>
         <SpeedInsights />
