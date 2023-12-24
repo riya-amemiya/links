@@ -33,12 +33,7 @@
 			"node_modules",
 			".next",
 			"*.json",
-			"./scripts/*.js",
-			"next.config.js",
-			"./src/gql/*",
-			"./src/components/ui/**/*.tsx",
-			"./src/components/ui/**/*.ts",
-			"./types/supabase.ts"
+			"next.config.js"
 		],
 		"rules": {
 			"a11y": {
