@@ -1,6 +1,7 @@
-import { Avatar } from "@/components/ui/avatar";
 import type { Meta, StoryObj } from "@storybook/react";
 import Image from "next/image";
+
+import { Avatar } from "@/components/ui/avatar";
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
   tags: ["autodocs"],
