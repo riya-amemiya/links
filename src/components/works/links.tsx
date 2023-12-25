@@ -23,7 +23,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
         const Icon = iconData[link.icon[0]];
         return (
           <li
-            className="flex items-center animate__animated animate__fadeInUp max-sm:w-full"
+            className="flex items-center animate__animated animate__fadeIn max-sm:w-full"
             key={toBase64(link.url)}
           >
             <div className="flex flex-col items-center w-full">
