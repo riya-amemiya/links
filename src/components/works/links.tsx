@@ -67,7 +67,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
               <div className="text-gray-500 text-center text-lg ">
                 {htmr(description)}
               </div>
-              <div className="w-1/2 mx-auto mt-2">
+              <div className="w-1/3 md:w-1/2 mx-auto mt-2">
                 <Button asChild={true} className="w-full">
                   <a href={link.url} rel="noopener noreferrer" target="_blank">
                     <div className="relative w-full">
