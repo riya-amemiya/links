@@ -32,10 +32,10 @@ const Index = async () => {
                 <Avatar asChild={true} className="h-full w-full md:w-64">
                   <Image
                     alt="User avatar"
-                    height={500}
+                    height={250}
                     loading="eager"
                     src={data.icon.url}
-                    width={500}
+                    width={250}
                   />
                 </Avatar>
               </div>

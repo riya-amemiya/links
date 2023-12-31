@@ -37,10 +37,10 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                       >
                         <Image
                           alt="User avatar"
-                          height={500}
+                          height={250}
                           loading="eager"
                           src={img.url}
-                          width={500}
+                          width={250}
                         />
                       </Avatar>
                     </div>
