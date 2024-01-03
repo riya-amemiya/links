@@ -5,7 +5,7 @@
     "build": "next build",
     "build:turbo": "turbo build",
     "start": "next start",
-    "lint": "yarn biome format . --write && yarn biome check .",
+    "lint": "bun run biome format . --write && bun run biome check .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

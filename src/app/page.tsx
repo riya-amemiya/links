@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 
-import { HomeLinks } from "@/components/home/links";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,6 +17,7 @@ import {
 } from "@/components/ui/drawer";
 import { defaultUrl } from "@/config/defaultUrl";
 import { getMicrocms } from "@/lib/getMicrocms";
+import { HomeLinks } from "@/stories/molecules/HomeLinks";
 import { Config } from "@/types/configType";
 const Index = async () => {
   const data = await getMicrocms<Config>("config");
@@ -63,7 +63,7 @@ const Index = async () => {
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">
               {htmr(data.description)}
             </div>
-            <HomeLinks data={data} />
+            <HomeLinks links={data.links} />
             <div className="w-1/2">
               <Button asChild={true} className="mt-4 w-full">
                 <Link href="/works">

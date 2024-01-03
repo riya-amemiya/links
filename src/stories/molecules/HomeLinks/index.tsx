@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import { iconData } from "@/config/iconData";
 import { Config } from "@/types/configType";
 
-export const HomeLinks = ({ data }: { data: Config }) => {
+export const HomeLinks = ({ links }: { links: Config["links"] }) => {
   return (
     <>
       <ul className="mt-4 flex flex-wrap justify-center items-center gap-4">
-        {data.links.reverse().map(({ url, name, icon }) => {
+        {[...links].reverse().map(({ url, name, icon }) => {
           const Icon = iconData[icon[0]];
           return (
             <li
