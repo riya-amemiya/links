@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { WorksLinks } from "@/components/works/links";
 import { getMicrocms } from "@/lib/getMicrocms";
-import { Work } from "@/types/worksType";
 
 const UMT = async () => {
-  const data = await getMicrocms<Work>("works");
+  const data = await getMicrocms("works");
   return (
     // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 p-1 max-md:mt-10 max-sm:mt-20">

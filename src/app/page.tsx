@@ -17,10 +17,9 @@ import { defaultUrl } from "@/config/defaultUrl";
 import { getMicrocms } from "@/lib/getMicrocms";
 import { Icon } from "@/stories/atom/Icon";
 import { HomeLinks } from "@/stories/molecules/HomeLinks";
-import { Config } from "@/types/configType";
 
 const Index = async () => {
-  const data = await getMicrocms<Config>("config");
+  const data = await getMicrocms("config");
   return (
     // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 pb-10">

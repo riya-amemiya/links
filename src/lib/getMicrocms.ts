@@ -4,8 +4,16 @@ import { microcmsClient } from "@/lib/microcmsClient";
 import { Config } from "@/types/configType";
 import { Work } from "@/types/worksType";
 
-export async function getMicrocms<T>(
-  endpoint: T extends Config ? "config" : T extends Work ? "works" : string,
+function getMicrocms(
+  endpoint: "config",
+  queries?: MicroCMSQueries,
+): Promise<Config>;
+function getMicrocms(
+  endpoint: "works",
+  queries?: MicroCMSQueries,
+): Promise<Work>;
+async function getMicrocms<T>(
+  endpoint: string,
   queries?: MicroCMSQueries,
 ): Promise<T> {
   const data = await microcmsClient.get<T>({
@@ -14,3 +22,4 @@ export async function getMicrocms<T>(
   });
   return data;
 }
+export { getMicrocms };
