@@ -33,7 +33,8 @@
 			"node_modules",
 			".next",
 			"*.json",
-			"next.config.js"
+			"next.config.js",
+			".storybook"
 		],
 		"rules": {
 			"a11y": {
