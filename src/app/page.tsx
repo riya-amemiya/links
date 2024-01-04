@@ -1,10 +1,8 @@
 import { CaretRightIcon } from "@radix-ui/react-icons";
 import htmr from "htmr";
-import Image from "next/image";
 import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 
-import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -17,8 +15,10 @@ import {
 } from "@/components/ui/drawer";
 import { defaultUrl } from "@/config/defaultUrl";
 import { getMicrocms } from "@/lib/getMicrocms";
+import { Icon } from "@/stories/atom/Icon";
 import { HomeLinks } from "@/stories/molecules/HomeLinks";
 import { Config } from "@/types/configType";
+
 const Index = async () => {
   const data = await getMicrocms<Config>("config");
   return (
@@ -29,15 +29,11 @@ const Index = async () => {
           <Drawer>
             <DrawerTrigger asChild={true}>
               <div className="md:flex-shrink-0">
-                <Avatar asChild={true} className="h-full w-full md:w-64">
-                  <Image
-                    alt="User avatar"
-                    height={250}
-                    loading="eager"
-                    src={data.icon.url}
-                    width={250}
-                  />
-                </Avatar>
+                <Icon
+                  alt="User avatar"
+                  className="h-full w-full md:w-64"
+                  url={data.icon.url}
+                />
               </div>
             </DrawerTrigger>
             <DrawerContent>

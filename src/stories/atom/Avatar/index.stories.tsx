@@ -11,6 +11,7 @@ type Story = StoryObj<typeof Avatar>;
 export const Primary: Story = {
   args: {
     asChild: true,
+    className: "h-full w-full md:w-64",
     children: (
       <Image
         alt="User avatar"
