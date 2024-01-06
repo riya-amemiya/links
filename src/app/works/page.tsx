@@ -18,7 +18,7 @@ const UMT = async () => {
           </div>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
-          <div className="w-1/4">
+          <div className="w-1/4 max-md:w-1/2">
             <Button asChild={true} className="mt-4 w-full">
               <Link href="/">
                 <CaretLeftIcon className="w-5 h-5" />
