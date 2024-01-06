@@ -10,7 +10,7 @@ const UMT = async () => {
   const data = await getMicrocms("works");
   return (
     // 真ん中に表示する
-    <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 p-1 max-md:mt-10 max-sm:mt-20">
+    <Card className=" mx-auto bg-slate-50 rounded-xl shadow-md max-lg:max-w-3xl w-full md:p-10 p-1 max-md:mt-10 max-sm:mt-20">
       <CardContent>
         <div className="flex-1 w-full flex flex-col items-center">
           <div className="flex-1 w-full flex flex-col items-center">
@@ -18,7 +18,7 @@ const UMT = async () => {
           </div>
         </div>
         <div className="flex-1 w-full flex flex-col items-center">
-          <div className="w-1/2">
+          <div className="w-1/4">
             <Button asChild={true} className="mt-4 w-full">
               <Link href="/">
                 <CaretLeftIcon className="w-5 h-5" />

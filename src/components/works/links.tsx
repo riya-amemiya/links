@@ -16,76 +16,99 @@ import { iconData } from "@/config/iconData";
 import { Work } from "@/types/worksType";
 
 import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+
 export const WorksLinks = ({ data }: { data: Work }) => {
   return (
-    <ul className="mt-4 flex flex-wrap justify-center items-center gap-7">
+    <ul className="max-lg:flex-col mt-4 flex justify-center items-center gap-7 max-md:flex-wrap w-full">
       {data.contents.reverse().map(({ link, img, description }) => {
         const Icon = iconData[link.icon[0]];
         return (
           <li
-            className="flex items-center animate__animated animate__fadeIn max-sm:w-full"
+            className=" flex items-center animate__animated animate__fadeIn max-sm:w-full justify-center "
             key={toBase64(link.url)}
           >
-            <div className="flex flex-col items-center w-full">
-              <div className="md:flex items-center">
-                <Drawer>
-                  <DrawerTrigger asChild={true}>
-                    <div className="md:flex-shrink-0">
-                      <Avatar
-                        asChild={true}
-                        className="h-full w-2/3 md:w-48 mx-auto"
-                      >
-                        <Image
-                          alt="User avatar"
-                          height={250}
-                          loading="eager"
-                          src={img.url}
-                          width={250}
-                        />
-                      </Avatar>
-                    </div>
-                  </DrawerTrigger>
-                  <DrawerContent>
-                    <div className="mx-auto w-full max-w-sm">
-                      <DrawerHeader>
-                        <h1 className="text-3xl font-bold text-center">
-                          {link.name} URL
-                        </h1>
-                      </DrawerHeader>
-                      <div className="flex justify-center items-center w-full">
-                        <QRCodeSVG level="H" value={link.url} />
+            <Card>
+              <div
+                className="max-md:hidden"
+                style={{
+                  width: "25rem",
+                }}
+              />
+              <div className="flex items-center justify-center">
+                <div className="md:flex items-center">
+                  <Drawer>
+                    <DrawerTrigger asChild={true}>
+                      <div className="md:flex-shrink-0">
+                        <Avatar
+                          asChild={true}
+                          className="h-full w-2/3 md:w-48 mx-auto"
+                        >
+                          <Image
+                            alt="User avatar"
+                            height={250}
+                            loading="eager"
+                            src={img.url}
+                            width={250}
+                          />
+                        </Avatar>
                       </div>
-                      <DrawerFooter>
-                        <DrawerClose asChild={true}>
-                          <Button className="w-1/2 mx-auto">Cancel</Button>
-                        </DrawerClose>
-                      </DrawerFooter>
-                    </div>
-                  </DrawerContent>
-                </Drawer>
-              </div>
-              <div className="text-gray-500 text-center text-lg ">
-                {htmr(description)}
-              </div>
-              <div className="w-1/3 md:w-1/2 mx-auto mt-2">
-                <Button asChild={true} className="w-full">
-                  <a href={link.url} rel="noopener noreferrer" target="_blank">
-                    <div className="relative w-full">
-                      <div className="w-full flex items-center justify-center">
-                        <div className="w-4/12">
-                          <div className="w-full flex justify-center items-center">
-                            <Icon className="w-5 h-5" />
-                          </div>
+                    </DrawerTrigger>
+                    <DrawerContent>
+                      <div className="mx-auto w-full max-w-sm">
+                        <DrawerHeader>
+                          <h1 className="text-3xl font-bold text-center">
+                            {link.name} URL
+                          </h1>
+                        </DrawerHeader>
+                        <div className="flex justify-center items-center w-full">
+                          <QRCodeSVG level="H" value={link.url} />
                         </div>
-                        <span className="text-sm text-white w-8/12 text-center">
-                          {link.name}
-                        </span>
+                        <DrawerFooter>
+                          <DrawerClose asChild={true}>
+                            <Button className="w-1/2 mx-auto">Cancel</Button>
+                          </DrawerClose>
+                        </DrawerFooter>
                       </div>
-                    </div>
-                  </a>
-                </Button>
+                    </DrawerContent>
+                  </Drawer>
+                </div>
               </div>
-            </div>
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-center">
+                  <div className="flex items-center justify-center">
+                    {/* 先頭だけ大文字 */}
+                    <div>
+                      {link.name.charAt(0).toUpperCase() + link.name.slice(1)}
+                    </div>
+                    <div>
+                      <Button
+                        asChild={true}
+                        className="w-full rounded-full"
+                        variant="link"
+                      >
+                        <a
+                          href={link.url}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div className="flex justify-center items-center">
+                            <Icon className="w-6 h-6" />
+                          </div>
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col items-center w-full">
+                  <div className="text-gray-500 text-center text-lg">
+                    {htmr(description)}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </li>
         );
       })}
