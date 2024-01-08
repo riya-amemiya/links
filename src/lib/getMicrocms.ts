@@ -1,19 +1,19 @@
 import { MicroCMSQueries } from "microcms-js-sdk";
 
 import { microcmsClient } from "@/lib/microcmsClient";
-import { Config } from "@/types/configType";
+import { Profile } from "@/types/profileType";
 import { Work } from "@/types/worksType";
 
 function getMicrocms(
-  endpoint: "config",
+  endpoint: "profile",
   queries?: MicroCMSQueries,
-): Promise<Config>;
+): Promise<Profile>;
 function getMicrocms(
   endpoint: "works",
   queries?: MicroCMSQueries,
 ): Promise<Work>;
 async function getMicrocms<T>(
-  endpoint: string,
+  endpoint: "profile" | "works",
   queries?: MicroCMSQueries,
 ): Promise<T> {
   const data = await microcmsClient.get<T>({

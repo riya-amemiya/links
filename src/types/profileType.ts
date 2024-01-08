@@ -1,13 +1,13 @@
 import { Img as Icon } from "./imgType";
 import { Link } from "./linksType";
 
-export interface Config {
+export interface Profile {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
   name: string;
-  description: string;
+  biography: string;
   icon: Icon;
   links: Link[];
 }

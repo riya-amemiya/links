@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { iconData } from "@/config/iconData";
-import { Config } from "@/types/configType";
+import { Profile } from "@/types/profileType";
 
-export const HomeLinks = ({ links }: { links: Config["links"] }) => {
+export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
   return (
     <>
       <ul className="mt-4 flex flex-wrap justify-center items-center gap-4">

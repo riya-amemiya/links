@@ -19,7 +19,7 @@ import { Icon } from "@/stories/atom/Icon";
 import { HomeLinks } from "@/stories/molecules/HomeLinks";
 
 const Index = async () => {
-  const data = await getMicrocms("config");
+  const data = await getMicrocms("profile");
   return (
     // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 pb-10">
@@ -56,7 +56,7 @@ const Index = async () => {
               {data.name}
             </h1>
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">
-              {htmr(data.description)}
+              {htmr(data.biography)}
             </div>
             <HomeLinks links={data.links} />
             <div className="w-1/2">
