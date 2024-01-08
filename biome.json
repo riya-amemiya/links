@@ -34,7 +34,8 @@
 			".next",
 			"*.json",
 			"next.config.js",
-			".storybook"
+			".storybook",
+			".dependency-cruiser.js"
 		],
 		"rules": {
 			"a11y": {
