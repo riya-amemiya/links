@@ -73,6 +73,9 @@ jobs:
               matrix:
                   bun-version: [latest]
                   os: [ubuntu-latest]
+          env:
+              MICROCMS_SERVICEDOMAIN: ${{ secrets.MICROCMS_SERVICEDOMAIN }}
+              MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
           steps:
             - uses: actions/checkout@v3
             - name: Use Bun ${{ matrix.bun-version }}
