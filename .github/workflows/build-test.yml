@@ -97,7 +97,6 @@ jobs:
             - name: Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
               run: bun run build
-            - run: ls module
             - name: Cache Save Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
               uses: actions/cache/save@v3
