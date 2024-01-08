@@ -5,6 +5,7 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 
+// アイコンのデータを増やしたい場合はここに追加していく
 export const iconData = {
   PersonIcon: PersonIcon,
   TwitterLogoIcon: TwitterLogoIcon,
