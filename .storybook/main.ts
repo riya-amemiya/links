@@ -19,6 +19,7 @@ const config: StorybookConfig = {
   ],
   webpackFinal: (config) => {
     if (config.resolve) {
+      // typescriptのエイリアスをstorybookでも使えるようにする
       config.resolve.alias = {
         ...config.resolve.alias,
         "@": path.resolve(__dirname, "../src"),

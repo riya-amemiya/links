@@ -3,6 +3,7 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   swcMinify: true,
+  // 画像最適化の設定
   images: {
     remotePatterns: [
       {
@@ -16,6 +17,7 @@ const nextConfig = {
     ],
   },
   compiler: {
+    // 本番環境ではconsole.logを削除する
     removeConsole: process.env.NODE_ENV === "production",
   },
   async headers() {
