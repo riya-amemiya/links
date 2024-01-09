@@ -1,9 +1,9 @@
 import htmr from "htmr";
-import Image from "next/image";
 import { QRCodeSVG } from "qrcode.react";
 import { toBase64 } from "umt/module/String/toBase64";
 
-import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Drawer,
   DrawerClose,
@@ -12,11 +12,9 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Icon as IconUI } from "@/components/ui/icon";
 import { iconData } from "@/config/iconData";
 import { Work } from "@/types/worksType";
-
-import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export const WorksLinks = ({ data }: { data: Work }) => {
   return (
@@ -41,18 +39,13 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                     <Drawer>
                       <DrawerTrigger asChild={true}>
                         <div className="md:flex-shrink-0">
-                          <Avatar
-                            asChild={true}
+                          <IconUI
+                            alt="User avatar"
                             className="h-full w-2/3 md:w-48 mx-auto"
-                          >
-                            <Image
-                              alt="User avatar"
-                              height={250}
-                              loading="eager"
-                              src={img.url}
-                              width={250}
-                            />
-                          </Avatar>
+                            height={250}
+                            url={img.url}
+                            width={250}
+                          />
                         </div>
                       </DrawerTrigger>
                       <DrawerContent>

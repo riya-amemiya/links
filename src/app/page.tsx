@@ -3,6 +3,7 @@ import htmr from "htmr";
 import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 
+import { HomeLinks } from "@/components/home/links";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -13,10 +14,9 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Icon } from "@/components/ui/icon";
 import { defaultUrl } from "@/config/defaultUrl";
 import { getMicrocms } from "@/lib/getMicrocms";
-import { Icon } from "@/stories/atom/Icon";
-import { HomeLinks } from "@/stories/molecules/HomeLinks";
 
 const Index = async () => {
   const data = await getMicrocms("profile");
