@@ -1,4 +1,4 @@
-import { iconData } from "../config/iconData";
+import type { iconData } from "../config/iconData";
 
 export type Links = Link[];
 

@@ -1,5 +1,5 @@
-import { Img } from "./imgType";
-import { Link } from "./linksType";
+import type { Img } from "./imgType";
+import type { Link } from "./linksType";
 
 export interface Work {
   contents: Content[];

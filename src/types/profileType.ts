@@ -1,5 +1,5 @@
-import { Img as Icon } from "./imgType";
-import { Link } from "./linksType";
+import type { Img as Icon } from "./imgType";
+import type { Link } from "./linksType";
 
 export interface Profile {
   createdAt: string;

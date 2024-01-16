@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { iconData } from "@/config/iconData";
-import { Profile } from "@/types/profileType";
+import type { Profile } from "@/types/profileType";
 
 export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
   return (

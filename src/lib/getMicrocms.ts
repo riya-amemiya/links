@@ -1,8 +1,8 @@
-import { MicroCMSQueries } from "microcms-js-sdk";
+import type { MicroCMSQueries } from "microcms-js-sdk";
 
 import { microcmsClient } from "@/lib/microcmsClient";
-import { Profile } from "@/types/profileType";
-import { Work } from "@/types/worksType";
+import type { Profile } from "@/types/profileType";
+import type { Work } from "@/types/worksType";
 
 function getMicrocms(
   endpoint: "profile",

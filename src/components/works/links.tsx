@@ -13,7 +13,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { iconData } from "@/config/iconData";
-import { Work } from "@/types/worksType";
+import type { Work } from "@/types/worksType";
 
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
