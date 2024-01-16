@@ -3,15 +3,17 @@ import "animate.css";
 import "the-new-css-reset/css/reset.css";
 import type { Metadata } from "next";
 
+import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
 import { defaultUrl } from "@/config/defaultUrl";
 
 export const metadata: Metadata = {
-  title: "Works | Amemiya Riya Links",
+  title: `Works | ${defaultTitle}`,
+  description: `Works | ${defaultDescription}`,
   alternates: {
     canonical: `${defaultUrl}/works`,
   },
   openGraph: {
-    title: "Works | Amemiya Riya Links",
+    title: defaultTitle,
     url: `${defaultUrl}/works`,
   },
 };

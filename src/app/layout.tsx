@@ -5,18 +5,19 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 
+import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
 import { defaultUrl } from "@/config/defaultUrl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Amemiya Riya Links",
-  description: "Amemiya Riya Links",
+  title: defaultTitle,
+  description: defaultDescription,
   alternates: {
     canonical: defaultUrl,
   },
   authors: {
     name: "Amemiya Riya",
-    url: "https://twitter.com/AmemiyaRiya",
+    url: "https://twitter.com/Riya31377928",
   },
   robots: {
     googleBot: {
@@ -25,16 +26,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Amemiya Riya Links",
-    description: "Amemiya Riya Links",
+    title: defaultTitle,
+    description: defaultDescription,
     url: defaultUrl,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     site: "Riya31377928",
-    title: "Amemiya Riya Links",
-    description: "Amemiya Riya Links",
+    title: defaultTitle,
+    description: defaultDescription,
   },
 };
 
