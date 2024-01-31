@@ -21,7 +21,7 @@ jobs:
                 bun-version: [latest]
                 os: [ubuntu-latest]
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Use Bun ${{ matrix.bun-version }}
               uses: oven-sh/setup-bun@v1
               with:
@@ -51,7 +51,7 @@ jobs:
                 bun-version: [latest]
                 os: [ubuntu-latest]
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Use Bun ${{ matrix.bun-version }}
               uses: oven-sh/setup-bun@v1
               with:
@@ -78,7 +78,7 @@ jobs:
               MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
               NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
           steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - name: Use Bun ${{ matrix.bun-version }}
               uses: oven-sh/setup-bun@v1
               with:
