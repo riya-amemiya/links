@@ -1,3 +1,5 @@
+import MillionCompiler from "@million/lint";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -20,7 +22,7 @@ const nextConfig = {
     // 本番環境ではconsole.logを削除する
     removeConsole: process.env.NODE_ENV === "production",
   },
-  async headers() {
+  headers() {
     return process.env.NODE_ENV === "production"
       ? [
           {
@@ -46,4 +48,4 @@ const nextConfig = {
       : [];
   },
 };
-module.exports = nextConfig;
+export default MillionCompiler.next()(nextConfig);
