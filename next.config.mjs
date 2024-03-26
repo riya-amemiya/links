@@ -1,5 +1,3 @@
-import MillionCompiler from "@million/lint";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
@@ -48,4 +46,4 @@ const nextConfig = {
       : [];
   },
 };
-export default MillionCompiler.next()(nextConfig);
+export default nextConfig;
