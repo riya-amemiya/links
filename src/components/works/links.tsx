@@ -18,12 +18,12 @@ import type { Work } from "@/types/worksType";
 
 export const WorksLinks = ({ data }: { data: Work }) => {
   return (
-    <ul className="max-lg:flex-col mt-4 flex justify-center items-center gap-7 max-md:flex-wrap w-full">
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-7 mt-4 justify-items-center w-full">
       {data.contents.reverse().map(({ link, img, description }) => {
         const Icon = iconData[link.icon[0]];
         return (
           <li
-            className=" flex items-center animate__animated animate__fadeIn max-sm:w-full justify-center "
+            className="animate__animated animate__fadeIn w-full"
             key={toBase64(link.url)}
           >
             <Card>
