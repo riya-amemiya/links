@@ -31,7 +31,8 @@ const Index = async () => {
                 <Icon
                   alt="User avatar"
                   className="h-full w-full md:w-64"
-                  url={data.icon.url}
+                  priority={true}
+                  src={data.icon.url}
                 />
               </div>
             </DrawerTrigger>
