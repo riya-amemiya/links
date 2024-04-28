@@ -1,30 +1,25 @@
 import Image from "next/image";
 
 import { Avatar } from "@/components/ui/avatar";
+import { ComponentProps } from "react";
 
 export const Icon = ({
   alt = "",
   className = "",
-  url,
+  src,
   loading = "eager",
   height = 250,
   width = 250,
-}: {
-  alt?: string;
-  className?: string;
-  height?: number;
-  loading?: "eager" | "lazy";
-  url: string;
-  width?: number;
-}) => {
+}: ComponentProps<typeof Image>) => {
   return (
     <Avatar asChild={true} className={className}>
       <Image
         alt={alt}
         height={height}
         loading={loading}
-        src={url}
+        src={src}
         width={width}
+        priority={true}
       />
     </Avatar>
   );
