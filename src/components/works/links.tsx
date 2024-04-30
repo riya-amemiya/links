@@ -71,27 +71,29 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                 <CardHeader>
                   <CardTitle className="text-3xl font-bold text-center">
                     <div className="flex items-center justify-center">
-                      {/* 先頭だけ大文字 */}
-                      <div>
-                        {link.name.charAt(0).toUpperCase() + link.name.slice(1)}
-                      </div>
-                      <div>
-                        <Button
-                          asChild={true}
-                          className="w-full rounded-full"
-                          variant="link"
-                        >
-                          <a
-                            href={link.url}
-                            rel="noopener noreferrer"
-                            target="_blank"
+                      <a
+                        className="flex"
+                        href={link.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {/* 先頭だけ大文字 */}
+                        <div>
+                          {link.name.charAt(0).toUpperCase() +
+                            link.name.slice(1)}
+                        </div>
+                        <div>
+                          <Button
+                            asChild={true}
+                            className="w-full rounded-full"
+                            variant="link"
                           >
                             <div className="flex justify-center items-center">
                               <Icon className="w-6 h-6" />
                             </div>
-                          </a>
-                        </Button>
-                      </div>
+                          </Button>
+                        </div>
+                      </a>
                     </div>
                   </CardTitle>
                 </CardHeader>
