@@ -43,7 +43,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                             alt="User avatar"
                             className="h-full w-2/3 md:w-48 mx-auto"
                             height={250}
-                            url={img.url}
+                            src={img.url}
                             width={250}
                           />
                         </div>
