@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { WorksLinks } from "@/components/works/links";
 import { getMicrocms } from "@/lib/getMicrocms";
 
-const UMT = async () => {
+const Works = async () => {
   const data = await getMicrocms("works");
   return (
     // 真ん中に表示する
@@ -31,4 +31,4 @@ const UMT = async () => {
     </Card>
   );
 };
-export default UMT;
+export default Works;
