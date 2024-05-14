@@ -7,18 +7,18 @@ import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
 import { defaultUrl } from "@/config/defaultUrl";
 
 export const metadata: Metadata = {
-  title: `Works | ${defaultTitle}`,
-  description: `Works | ${defaultDescription}`,
+  title: `Resume | ${defaultTitle}`,
+  description: `Resume | ${defaultDescription}`,
   alternates: {
-    canonical: `${defaultUrl}/works`,
+    canonical: `${defaultUrl}/resume`,
   },
   openGraph: {
     title: defaultTitle,
-    url: `${defaultUrl}/works`,
+    url: `${defaultUrl}/resume`,
   },
 };
 
-export default function WorksRootLayout({
+export default function ResumeRootLayout({
   children,
 }: {
   children: React.ReactNode;
