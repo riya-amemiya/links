@@ -16,8 +16,8 @@ const Resume = async () => {
           <div className="w-1/4 max-md:w-1/2">
             <Button asChild={true} className="mt-4 w-full">
               <Link href="/">
-                <CaretRightIcon className="w-5 h-5" />
                 Back
+                <CaretRightIcon className="w-5 h-5" />
               </Link>
             </Button>
           </div>

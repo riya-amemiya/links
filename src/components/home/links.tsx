@@ -49,8 +49,8 @@ export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
           <div className="w-40 md:w-52">
             <Button asChild={true} className="w-full">
               <Link href="/works">
-                <CaretRightIcon className="w-5 h-5" />
                 Works
+                <CaretRightIcon className="w-5 h-5" />
               </Link>
             </Button>
           </div>
