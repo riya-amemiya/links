@@ -1,4 +1,4 @@
-import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
+import { CaretRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -35,18 +35,8 @@ export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
             </li>
           );
         })}
-        <div className="w-full flex gap-3 justify-center items-center">
-          {process.env.RESUME_FEATURE === "true" && (
-            <div className="w-40 md:w-52">
-              <Button asChild={true} className="w-full">
-                <Link href="/resume">
-                  <CaretLeftIcon className="w-5 h-5" />
-                  Resume
-                </Link>
-              </Button>
-            </div>
-          )}
-          <div className="w-40 md:w-52">
+        <div className="w-full flex gap-3 justify-center items-center p-1 md:px-4">
+          <div className="w-full">
             <Button asChild={true} className="w-full">
               <Link href="/works">
                 Works
