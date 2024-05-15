@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function WorksRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center">
+    <>
       <div
         className="max-lg:hidden"
         style={{
@@ -32,6 +32,6 @@ export default function RootLayout({
         }}
       />
       {children}
-    </main>
+    </>
   );
 }

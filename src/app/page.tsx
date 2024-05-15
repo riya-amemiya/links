@@ -1,6 +1,4 @@
-import { CaretRightIcon } from "@radix-ui/react-icons";
 import htmr from "htmr";
-import Link from "next/link";
 import { QRCodeSVG } from "qrcode.react";
 
 import { HomeLinks } from "@/components/home/links";
@@ -60,14 +58,6 @@ const Index = async () => {
               {htmr(data.biography)}
             </div>
             <HomeLinks links={data.links} />
-            <div className="w-1/2">
-              <Button asChild={true} className="mt-4 w-full">
-                <Link href="/works">
-                  <CaretRightIcon className="w-5 h-5" />
-                  Works
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </CardContent>
