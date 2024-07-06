@@ -66,7 +66,8 @@
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unicorn": "^54.0.0",
-    "storybook": "^8.1.11"
+    "storybook": "^8.1.11",
+    "turbo": "^2.0.6"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
