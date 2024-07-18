@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 	"organizeImports": {
 		"enabled": false
 	},
@@ -9,7 +9,8 @@
 			"module",
 			"*.json",
 			"doc",
-			".next"
+			".next",
+			".vercel"
 		]
 	},
 	"formatter": {
@@ -28,7 +29,8 @@
 			"beforeAll",
 			"afterEach",
 			"afterAll",
-			"React"
+			"React",
+			"Bun"
 		]
 	},
 	"json": {
