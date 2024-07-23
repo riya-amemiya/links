@@ -1,6 +1,6 @@
 {
     "$schema": "https://turbo.build/schema.json",
-    "pipeline": {
+    "tasks": {
         "build": {
             "outputs": [
                 ".next/**",
@@ -10,7 +10,9 @@
                 "src/**"
             ],
             "env": [
-                "NEXT_PUBLIC_*"
+                "NEXT_PUBLIC_*",
+                "MICROCMS_*",
+                "BASELIME_*"
             ]
         },
         "dev": {
