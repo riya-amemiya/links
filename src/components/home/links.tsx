@@ -8,7 +8,7 @@ import type { Profile } from "@/types/profileType";
 export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
   return (
     <>
-      <ul className="mt-4 flex flex-wrap justify-center items-center gap-3">
+      <ul className="mt-4 flex flex-wrap justify-between items-center gap-3 max-sm:justify-center">
         {[...links].reverse().map(({ url, name, icon }) => {
           const Icon = iconData[icon[0]];
           return (
@@ -35,7 +35,7 @@ export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
             </li>
           );
         })}
-        <div className="w-full flex gap-3 justify-center items-center p-1 md:px-4">
+        <li className="w-full flex gap-3 justify-center items-center py-1 max-sm:px-5">
           <div className="w-full">
             <Button asChild={true} className="w-full">
               <Link href="/works">
@@ -44,7 +44,7 @@ export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
               </Link>
             </Button>
           </div>
-        </div>
+        </li>
       </ul>
     </>
   );

@@ -10,7 +10,9 @@
                 "src/**"
             ],
             "env": [
-                "NEXT_PUBLIC_*"
+                "NEXT_PUBLIC_*",
+                "MICROCMS_*",
+                "BASELIME_*"
             ]
         },
         "dev": {
