@@ -6,7 +6,8 @@
     "build": "next build",
     "build:turbo": "turbo build",
     "start": "next start",
-    "lint": "next lint && bun run biome format . --write && bun run biome check .",
+    "lint": "next lint && bun run biome check .",
+    "lint:fix": "next lint --fix && bun run biome check . --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
