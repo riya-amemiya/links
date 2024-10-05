@@ -1,8 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": false
-	},
+	"$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
 	"files": {
 		"ignore": [
 			"node_modules",
@@ -52,32 +49,53 @@
 			},
 			"complexity": {
 				"noExcessiveCognitiveComplexity": "off",
+				"noUselessStringConcat": "error",
+				"noUselessUndefinedInitialization": "error",
 				"noVoid": "error",
+				"useDateNow": "error",
 				"useSimplifiedLogicExpression": "error"
 			},
 			"correctness": {
 				"noConstantMathMinMaxClamp": "error",
+				"noInvalidNewBuiltin": "error",
+				"noNewSymbol": "error",
 				"noUndeclaredVariables": "warn",
+				"noUnusedFunctionParameters": "error",
+				"noUnusedImports": "error",
+				"noUnusedPrivateClassMembers": "error",
 				"noUnusedVariables": "warn",
 				"useExhaustiveDependencies": "warn",
 				"useHookAtTopLevel": "error"
 			},
 			"nursery": {
-				"noDoneCallback": "error",
 				"noDuplicateElseIf": "error",
-				"noDuplicateJsonKeys": "error",
-				"noEvolvingTypes": "error",
-				"noMisplacedAssertion": "error"
+				"noDynamicNamespaceImportAccess": "error",
+				"noEnum": "error",
+				"noExportedImports": "error",
+				"noIrregularWhitespace": "error",
+				"noSubstr": "error",
+				"noUselessEscapeInRegex": "error",
+				"useAdjacentOverloadSignatures": "error",
+				"useTrimStartEnd": "error"
 			},
 			"recommended": true,
 			"style": {
+				"noDoneCallback": "error",
 				"noImplicitBoolean": "warn",
+				"noNamespace": "error",
 				"noNamespaceImport": "error",
 				"noNegationElse": "error",
-				"noParameterAssign": "off",
+				"noParameterAssign": "warn",
 				"noParameterProperties": "off",
 				"noShoutyConstants": "warn",
+				"noYodaExpression": "error",
 				"useBlockStatements": "error",
+				"useCollapsedElseIf": "error",
+				"useConsistentArrayType": "error",
+				"useConsistentBuiltinInstantiation": "error",
+				"useDefaultSwitchClause": "error",
+				"useExplicitLengthCheck": "error",
+				"useForOf": "error",
 				"useFragmentSyntax": "error",
 				"useNamingConvention": {
 					"level": "off",
@@ -86,14 +104,24 @@
 						"strictCase": true
 					}
 				},
+				"useNodeAssertStrict": "error",
 				"useShorthandArrayType": "error",
 				"useShorthandAssign": "error",
-				"useSingleCaseStatement": "error"
+				"useSingleCaseStatement": "error",
+				"useThrowNewError": "error",
+				"useThrowOnlyError": "error"
 			},
 			"suspicious": {
 				"noEmptyBlockStatements": "error",
-				"noSkippedTests": "error"
+				"noEvolvingTypes": "error",
+				"noMisplacedAssertion": "error",
+				"noSkippedTests": "error",
+				"useErrorMessage": "error",
+				"useNumberToFixedDigitsArgument": "error"
 			}
 		}
+	},
+	"organizeImports": {
+		"enabled": false
 	}
 }
