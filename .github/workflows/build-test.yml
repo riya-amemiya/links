@@ -9,7 +9,6 @@ on:
     push:
         branches:
             - main
-            - develop
     workflow_dispatch:
 
 jobs:
@@ -84,6 +83,8 @@ jobs:
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
+            - name: Install Playwright Browsers
+              run: npx playwright install --with-deps
             - name: Test
               run: bun run test
     build:
