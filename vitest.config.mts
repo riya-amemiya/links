@@ -2,10 +2,12 @@ import path from "node:path";
 
 import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
 import { defineConfig } from "vitest/config";
+import react from "@vitejs/plugin-react";
 
 // More info at: https://storybook.js.org/docs/writing-tests/vitest-plugin
 export default defineConfig({
   plugins: [
+    react(),
     // See options at: https://storybook.js.org/docs/writing-tests/vitest-plugin#storybooktest
     storybookTest(),
   ],
