@@ -17,7 +17,7 @@ const config: StorybookConfig = {
         nextConfigPath: path.resolve(__dirname, "../next.config.js"),
       },
     },
-    getAbsolutePath("@storybook/experimental-addon-test")
+    getAbsolutePath("@storybook/experimental-addon-test"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/experimental-nextjs-vite"),

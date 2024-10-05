@@ -1,8 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": false
-	},
+	"$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
 	"files": {
 		"ignore": [
 			"node_modules",
@@ -63,14 +60,11 @@
 				"useHookAtTopLevel": "error"
 			},
 			"nursery": {
-				"noDoneCallback": "error",
-				"noDuplicateElseIf": "error",
-				"noDuplicateJsonKeys": "error",
-				"noEvolvingTypes": "error",
-				"noMisplacedAssertion": "error"
+				"noDuplicateElseIf": "error"
 			},
 			"recommended": true,
 			"style": {
+				"noDoneCallback": "error",
 				"noImplicitBoolean": "warn",
 				"noNamespaceImport": "error",
 				"noNegationElse": "error",
@@ -92,8 +86,13 @@
 			},
 			"suspicious": {
 				"noEmptyBlockStatements": "error",
+				"noEvolvingTypes": "error",
+				"noMisplacedAssertion": "error",
 				"noSkippedTests": "error"
 			}
 		}
+	},
+	"organizeImports": {
+		"enabled": false
 	}
 }
