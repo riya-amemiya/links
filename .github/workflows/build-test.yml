@@ -64,7 +64,28 @@ jobs:
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
             - name: Lint
               run: bun run lint
-
+    test:
+        name: JavaScript Test on Ubuntu
+        needs: setup
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                bun-version: [latest]
+                os: [ubuntu-latest]
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Bun ${{ matrix.bun-version }}
+              uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: ${{ matrix.bun-version }}
+            - name: Cache Restore devDependencies
+              id: cache-restore-dev-depends
+              uses: actions/cache/restore@v3
+              with:
+                  path: '**/node_modules'
+                  key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
+            - name: Test
+              run: bun run test
     build:
           name: JavaScript Build on Ubuntu
           needs: setup

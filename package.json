@@ -1,5 +1,6 @@
 {
   "name": "links",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -62,6 +63,7 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@vitest/browser": "^2.1.2",
+    "@vitest/coverage-v8": "^2.1.2",
     "dependency-cruiser": "^16.4.1",
     "encoding": "^0.1.13",
     "eslint": "^8.57.0",
@@ -70,6 +72,7 @@
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-storybook": "^0.9.0",
     "eslint-plugin-unicorn": "^54.0.0",
+    "happy-dom": "^15.7.4",
     "playwright": "^1.47.2",
     "storybook": "^8.3.5",
     "turbo": "^2.1.1",

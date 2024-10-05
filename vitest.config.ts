@@ -18,7 +18,12 @@ export default defineConfig({
     include: ["@storybook/experimental-addon-test/internal/test-utils"],
   },
   test: {
+    globals: true,
+    // environment: "happy-dom",
     name: "storybook",
+    // coverage: {
+    //   provider: "v8",
+    // },
     browser: {
       enabled: true,
       headless: true,
@@ -28,5 +33,8 @@ export default defineConfig({
     // Make sure to adjust this pattern to match your stories files.
     include: ["**/*.stories.?(m)[jt]s?(x)"],
     setupFiles: ["./.storybook/vitest.setup.ts"],
+    typecheck: {
+      tsconfig: "./tsconfig.test.json",
+    },
   },
 });
