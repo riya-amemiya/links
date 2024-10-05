@@ -1,39 +1,33 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import { dirname, join } from "node:path";
+import type { StorybookConfig } from "@storybook/experimental-nextjs-vite";
 
 import path from "node:path";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
-    "@storybook/addon-viewport",
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-onboarding"),
+    getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-viewport"),
     {
       name: "storybook-addon-next",
       options: {
         nextConfigPath: path.resolve(__dirname, "../next.config.js"),
       },
     },
+    getAbsolutePath("@storybook/experimental-addon-test")
   ],
-  webpackFinal: (config) => {
-    if (config.resolve) {
-      // typescriptのエイリアスをstorybookでも使えるようにする
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        "@": path.resolve(__dirname, "../src"),
-      };
-    }
-    return config;
-  },
   framework: {
-    name: "@storybook/nextjs",
+    name: getAbsolutePath("@storybook/experimental-nextjs-vite"),
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+  docs: {},
   staticDirs: ["../public"],
 };
 export default config;
+
+function getAbsolutePath(value: string) {
+  return dirname(require.resolve(join(value, "package.json")));
+}
