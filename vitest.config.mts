@@ -19,11 +19,11 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    // environment: "happy-dom",
+    environment: "happy-dom",
     name: "storybook",
-    // coverage: {
-    //   provider: "v8",
-    // },
+    coverage: {
+      provider: "v8",
+    },
     browser: {
       enabled: true,
       headless: true,
@@ -34,7 +34,8 @@ export default defineConfig({
     include: ["**/*.stories.?(m)[jt]s?(x)"],
     setupFiles: ["./.storybook/vitest.setup.ts"],
     typecheck: {
-      tsconfig: "./tsconfig.test.json",
+      enabled: true,
+      tsconfig: "tsconfig.test.json",
     },
   },
 });
