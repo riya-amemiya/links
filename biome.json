@@ -41,7 +41,8 @@
 			"tests",
 			".dependency-cruiser.js",
 			"components/ui/**/*.tsx",
-			"components/ui/**/*.ts"
+			"components/ui/**/*.ts",
+			"eslint.config.mjs"
 		],
 		"rules": {
 			"a11y": {
