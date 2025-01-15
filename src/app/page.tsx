@@ -1,4 +1,4 @@
-import htmr from "htmr";
+import parse from "html-react-parser";
 import { QRCodeSVG } from "qrcode.react";
 
 import { HomeLinks } from "@/components/home/links";
@@ -55,7 +55,7 @@ const Index = async () => {
               {data.name}
             </h1>
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">
-              {htmr(data.biography)}
+              {parse(data.biography)}
             </div>
             <HomeLinks links={data.links} />
           </div>
