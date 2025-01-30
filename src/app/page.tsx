@@ -27,7 +27,7 @@ const Index = async () => {
             <DrawerTrigger asChild={true}>
               <div className="md:flex-shrink-0">
                 <Icon
-                  alt="User avatar"
+                  alt=""
                   className="h-full w-full md:w-64"
                   priority={true}
                   src={data.icon.url}
