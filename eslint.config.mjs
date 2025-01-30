@@ -22,6 +22,7 @@ export default [
       "**/tailwind.config.js",
       "**/postcss.config.js",
       "eslint.config.mjs",
+      ".storybook/*.ts",
     ],
   },
   ...compat.extends(
