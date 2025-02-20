@@ -1,4 +1,4 @@
-import htmr from "htmr";
+import parse from "html-react-parser";
 import { QRCodeSVG } from "qrcode.react";
 import { toBase64 } from "umt/module/String/toBase64";
 
@@ -100,7 +100,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                 <CardContent>
                   <div className="flex flex-col items-center w-full">
                     <div className="text-gray-500 text-center text-lg">
-                      {htmr(description)}
+                      {parse(description)}
                     </div>
                   </div>
                 </CardContent>
