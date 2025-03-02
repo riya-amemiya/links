@@ -30,6 +30,11 @@ export default defineConfig({
       enabled: true,
       headless: true,
       provider: "playwright",
+      instances: [
+        {
+          browser: "chromium",
+        },
+      ],
     },
     // Make sure to adjust this pattern to match your stories files.
     include: ["**/*.stories.?(m)[jt]s?(x)"],
