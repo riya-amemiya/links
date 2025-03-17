@@ -1,15 +1,11 @@
 import testingLibrary from "eslint-plugin-testing-library";
 import jestDom from "eslint-plugin-jest-dom";
 import unicorn from "eslint-plugin-unicorn";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  baseDirectory: import.meta.dirname,
   recommendedConfig: js.configs.recommended,
   allConfig: js.configs.all,
 });
@@ -25,22 +21,17 @@ export default [
       ".storybook/*.ts",
     ],
   },
-  ...compat.extends(
-    "next/core-web-vitals",
-    "plugin:unicorn/recommended",
-    "plugin:storybook/recommended",
-  ),
+  unicorn.configs.recommended,
+  ...compat.config({
+    extends: ["plugin:storybook/recommended", "next"],
+  }),
   {
     plugins: {
       "testing-library": testingLibrary,
       "jest-dom": jestDom,
-      unicorn,
     },
-
     languageOptions: {
-      ecmaVersion: 5,
       sourceType: "module",
-
       parserOptions: {
         project: "./tsconfig.json",
       },

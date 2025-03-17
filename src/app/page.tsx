@@ -25,7 +25,7 @@ const Index = async () => {
         <div className="flex-1 w-full flex flex-col items-center">
           <Drawer>
             <DrawerTrigger asChild={true}>
-              <div className="md:flex-shrink-0">
+              <div className="md:shrink-0">
                 <Icon
                   alt=""
                   className="h-full w-full md:w-64"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Avatar } from "@/components/ui/avatar";
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 export const Icon = ({
   alt = "",
