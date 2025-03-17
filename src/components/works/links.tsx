@@ -38,7 +38,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                   <div className="md:flex items-center">
                     <Drawer>
                       <DrawerTrigger asChild={true}>
-                        <div className="md:flex-shrink-0">
+                        <div className="md:shrink-0">
                           <IconUI
                             alt="User avatar"
                             className="h-full w-2/3 md:w-48 mx-auto"

@@ -1,6 +1,6 @@
-import "@/styles/globals.css";
-import "animate.css";
 import "the-new-css-reset/css/reset.css";
+import "animate.css";
+import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -46,12 +46,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="bg-primary text-foreground">
-        <main className="min-h-screen flex flex-col items-center justify-center">
-          {children}
-        </main>
-        <SpeedInsights />
-        <Analytics />
+      <body>
+        <div className="bg-primary text-foreground h-full w-full">
+          <main className="min-h-screen flex flex-col items-center justify-center">
+            {children}
+          </main>
+          <SpeedInsights />
+          <Analytics />
+        </div>
       </body>
     </html>
   );
