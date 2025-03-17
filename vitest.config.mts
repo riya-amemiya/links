@@ -21,7 +21,6 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    environment: "happy-dom",
     name: "storybook",
     coverage: {
       provider: "v8",
