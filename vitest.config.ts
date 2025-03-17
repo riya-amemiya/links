@@ -16,6 +16,14 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "src"),
     },
   },
+  optimizeDeps: {
+    include: [
+      "@storybook/experimental-addon-test/internal/test-utils",
+      "@radix-ui/react-avatar",
+      "@radix-ui/react-slot",
+    ],
+    exclude: ["@storybook/react-dom-shim"],
+  },
   test: {
     workspace: [
       {
