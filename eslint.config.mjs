@@ -71,7 +71,13 @@ export default [
             pascalCase: true,
             kebabCase: true,
           },
-          ignore: ["not-found.tsx", "error.tsx", "loading.tsx", "layout.tsx", "page.tsx"]
+          ignore: [
+            "not-found.tsx",
+            "error.tsx",
+            "loading.tsx",
+            "layout.tsx",
+            "page.tsx",
+          ],
         },
       ],
 
