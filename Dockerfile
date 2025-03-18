@@ -13,6 +13,9 @@ RUN bun install --frozen-lockfile
 # ソースコードをコピー
 COPY . .
 
+# ビルド時の環境変数を設定
+ENV NEXT_PUBLIC_URL=https://riya-amemiya-links.oshaburikitchin.com
+
 # アプリケーションをビルド
 RUN bun run build
 
@@ -20,10 +23,6 @@ RUN bun run build
 FROM oven/bun:1-slim AS runner
 
 WORKDIR /app
-
-# 本番環境変数を設定
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
 
 # Next.js standalone出力をコピー
 COPY --from=builder /app/.next/standalone ./
@@ -35,15 +34,12 @@ RUN addgroup --system --gid 1001 nodejs \
     && adduser --system --uid 1001 nextjs \
     && chown -R nextjs:nodejs /app
 
-# セキュリティのため非root userとして実行
 USER nextjs
 
-# ポートを公開
-EXPOSE 3000
-
-# 環境変数でホストを設定
+# 環境変数を設定
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
+ENV NODE_ENV=production
 
-# アプリケーションを起動（Bunを使用）
+# アプリケーションを起動
 CMD ["bun", "server.js"]
