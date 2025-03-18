@@ -69,7 +69,9 @@ export default [
           cases: {
             camelCase: true,
             pascalCase: true,
+            kebabCase: true,
           },
+          ignore: ["not-found.tsx", "error.tsx", "loading.tsx", "layout.tsx", "page.tsx"]
         },
       ],
 
