@@ -13,11 +13,6 @@ RUN bun install --frozen-lockfile
 # ソースコードをコピー
 COPY . .
 
-# 環境変数をデバッグ表示
-RUN echo "Debug: Environment variables" && \
-    echo "MICROCMS_SERVICEDOMAIN: $MICROCMS_SERVICEDOMAIN" && \
-    echo "MICROCMS_API_KEY: $MICROCMS_API_KEY"
-
 # ビルド時の環境変数を設定
 ENV NEXT_PUBLIC_URL=https://riya-amemiya-links.oshaburikitchin.com
 
