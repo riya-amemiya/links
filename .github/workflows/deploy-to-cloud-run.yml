@@ -44,7 +44,7 @@ jobs:
 
     - name: Deploy to Cloud Run
       run: |
-        gcloud run deploy links \
+        gcloud run deploy riya-amemiya-links \
           --source . \
           --platform managed \
           --region asia-northeast1 \
