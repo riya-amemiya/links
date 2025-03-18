@@ -1,0 +1,53 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+
+    - name: Install dependencies
+      run: bun install --frozen-lockfile
+
+    - name: Create environment file
+      run: |
+        echo "MICROCMS_SERVICEDOMAIN=${{ secrets.MICROCMS_SERVICEDOMAIN }}" > .env
+        echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env
+        echo "BASELIME_KEY=${{ secrets.BASELIME_KEY }}" >> .env
+        echo "BASELIME_SERVICE_NAME=${{ secrets.BASELIME_SERVICE_NAME }}" >> .env
+        echo "FLAGS_SECRET=${{ secrets.FLAGS_SECRET }}" >> .env
+        echo "NEXT_PUBLIC_URL=https://riya-amemiya-links.oshaburikitchin.com" >> .env
+
+    - name: Build application
+      run: bun run build
+
+    - name: Authentication to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+      with:
+        version: '>= 363.0.0'
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy links \
+          --source . \
+          --platform managed \
+          --region asia-northeast1 \
+          --allow-unauthenticated \
+          --project amemiya-riya-lab \
+          --set-env-vars="MICROCMS_SERVICEDOMAIN=${{ secrets.MICROCMS_SERVICEDOMAIN }},MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }},BASELIME_KEY=${{ secrets.BASELIME_KEY }},BASELIME_SERVICE_NAME=${{ secrets.BASELIME_SERVICE_NAME }},FLAGS_SECRET=${{ secrets.FLAGS_SECRET }},NEXT_PUBLIC_URL=https://riya-amemiya-links.oshaburikitchin.com"

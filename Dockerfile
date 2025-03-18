@@ -1,48 +1,15 @@
-# ベースイメージとしてBunを使用
-FROM oven/bun:1 AS builder
-
-# 作業ディレクトリを設定
-WORKDIR /app
-
-# パッケージマネージャーファイルをコピー
-COPY package.json bun.lock ./
-
-# 依存関係をインストール
-RUN bun install --frozen-lockfile
-
-# ソースコードをコピー
-COPY . .
-
-# 環境変数をデバッグ表示
-RUN echo "Debug: Environment variables" && \
-    echo "MICROCMS_SERVICEDOMAIN: $MICROCMS_SERVICEDOMAIN" && \
-    echo "MICROCMS_API_KEY: $MICROCMS_API_KEY"
-
-# ビルド時の環境変数を設定
-ENV NEXT_PUBLIC_URL=https://riya-amemiya-links.oshaburikitchin.com
-
-# アプリケーションをビルド
-RUN bun run build
-
-# 本番環境用イメージ
-FROM oven/bun:1-slim AS runner
+# 本番環境用イメージのみ
+FROM oven/bun:1-slim
 
 WORKDIR /app
 
-# Next.js standalone出力をコピー
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/static ./.next/static
-
-# アプリケーションユーザーを作成
-RUN addgroup --system --gid 1001 nodejs \
-    && adduser --system --uid 1001 nextjs \
-    && chown -R nextjs:nodejs /app
-
-USER nextjs
+# ビルド済みの成果物をコピー
+COPY .next/standalone ./
+COPY public ./public
+COPY .next/static ./.next/static
 
 # 環境変数を設定
-ENV PORT=3000
+ENV PORT=8080
 ENV HOSTNAME="0.0.0.0"
 ENV NODE_ENV=production
 
