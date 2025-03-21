@@ -10,7 +10,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-onboarding"),
     getAbsolutePath("@storybook/addon-viewport"),
     getAbsolutePath("@storybook/experimental-addon-test"),
-    "@chromatic-com/storybook",
+    getAbsolutePath("@chromatic-com/storybook"),
   ],
 
   framework: {
@@ -18,9 +18,7 @@ const config: StorybookConfig = {
     options: {},
   },
 
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
 
   staticDirs: ["../public"],
 
