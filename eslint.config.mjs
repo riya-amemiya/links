@@ -3,6 +3,7 @@ import jestDom from "eslint-plugin-jest-dom";
 import unicorn from "eslint-plugin-unicorn";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig } from "eslint/config";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -10,7 +11,11 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+export default defineConfig([
+  unicorn.configs.recommended,
+  ...compat.config({
+    extends: ["plugin:storybook/recommended", "next"],
+  }),
   {
     ignores: [
       "src/components/ui/",
@@ -21,10 +26,6 @@ export default [
       ".storybook/*.ts",
     ],
   },
-  unicorn.configs.recommended,
-  ...compat.config({
-    extends: ["plugin:storybook/recommended", "next"],
-  }),
   {
     plugins: {
       "testing-library": testingLibrary,
@@ -84,4 +85,4 @@ export default [
       "unicorn/no-null": "off",
     },
   },
-];
+]);
