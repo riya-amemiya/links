@@ -1,4 +1,3 @@
-"use client";
 import type { Meta, StoryObj } from "@storybook/react";
 import Image from "next/image";
 
