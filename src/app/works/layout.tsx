@@ -31,7 +31,7 @@ export default function WorksRootLayout({
           width: "60rem",
         }}
       />
-      {children}
+      <div className="pb-10">{children}</div>
     </>
   );
 }

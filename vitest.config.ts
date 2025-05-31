@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { defineConfig } from "vitest/config";
 
 const dirname =
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: [
-      "@storybook/experimental-addon-test/internal/test-utils",
+      "@storybook/addon-vitest/internal/test-utils",
       "@radix-ui/react-avatar",
       "@radix-ui/react-slot",
     ],

@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Preview } from "@storybook/nextjs";
+import { fn } from "storybook/test";
 import "../src/styles/globals.css";
 import "animate.css";
 import "the-new-css-reset/css/reset.css";
