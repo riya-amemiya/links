@@ -9,8 +9,7 @@ import { getMicrocms } from "@/lib/getMicrocms";
 const Works = async () => {
   const data = await getMicrocms("works");
   return (
-    // 真ん中に表示する
-    <Card className=" mx-auto bg-slate-50 rounded-xl shadow-md max-w-2/3 max-lg:max-w-3xl w-full md:p-10 p-1 max-md:mt-10 max-sm:mt-20">
+    <Card className="mx-auto bg-slate-50 rounded-xl shadow-md max-w-2/3 max-lg:max-w-3xl w-full md:p-10 p-1 max-md:mt-10 max-sm:mt-20">
       <CardContent>
         <div className="flex-1 w-full flex flex-col items-center">
           <div className="flex-1 w-full flex flex-col items-center">

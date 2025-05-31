@@ -25,12 +25,7 @@ export default function WorksRootLayout({
 }) {
   return (
     <>
-      <div
-        className="max-lg:hidden"
-        style={{
-          width: "60rem",
-        }}
-      />
+      <div className="max-lg:hidden w-[60rem]" />
       <div className="max-lg:pb-10 w-full h-full">{children}</div>
     </>
   );

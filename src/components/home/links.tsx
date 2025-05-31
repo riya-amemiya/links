@@ -18,17 +18,11 @@ export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
             >
               <Button asChild={true} className="w-full">
                 <a href={url} rel="noopener noreferrer" target="_blank">
-                  <div className="relative w-full">
-                    <div className="w-full flex items-center justify-center">
-                      <div className="w-4/12">
-                        <div className="w-full flex justify-center items-center">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <span className="text-sm text-white w-8/12 text-center">
-                        {name}
-                      </span>
-                    </div>
+                  <div className="w-full flex items-center justify-center gap-2">
+                    <Icon className="w-5 h-5" />
+                    <span className="text-sm text-white text-center">
+                      {name}
+                    </span>
                   </div>
                 </a>
               </Button>

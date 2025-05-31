@@ -10,6 +10,7 @@ import {
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Icon } from "@/components/ui/icon";
@@ -19,7 +20,6 @@ import { getMicrocms } from "@/lib/getMicrocms";
 const Index = async () => {
   const data = await getMicrocms("profile");
   return (
-    // 真ん中に表示する
     <Card className="max-w-md mx-auto bg-slate-50 rounded-xl shadow-md md:max-w-2xl w-full md:p-10 pb-10">
       <CardContent>
         <div className="flex-1 w-full flex flex-col items-center">
@@ -27,8 +27,8 @@ const Index = async () => {
             <DrawerTrigger asChild={true}>
               <div className="md:shrink-0">
                 <Icon
-                  alt=""
-                  className="h-full w-full md:w-64"
+                  alt={`${data.name}のアイコン`}
+                  className="h-full w-full md:w-64 cursor-pointer"
                   priority={true}
                   src={data.icon.url}
                 />
@@ -37,9 +37,11 @@ const Index = async () => {
             <DrawerContent>
               <div className="mx-auto w-full max-w-sm">
                 <DrawerHeader>
-                  <h1 className="text-3xl font-bold text-center">URL</h1>
+                  <DrawerTitle className="text-3xl font-bold text-center">
+                    URL
+                  </DrawerTitle>
                 </DrawerHeader>
-                <div className="flex justify-center items-center w-full">
+                <div className="flex justify-center items-center w-full p-4">
                   <QRCodeSVG level="H" value={defaultUrl} />
                 </div>
                 <DrawerFooter>
@@ -51,7 +53,7 @@ const Index = async () => {
             </DrawerContent>
           </Drawer>
           <div className="flex-1 w-full flex flex-col items-center">
-            <h1 className="block mt-1 text-2xl leading-tight font-medium text-black">
+            <h1 className="mt-4 text-2xl leading-tight font-medium text-black">
               {data.name}
             </h1>
             <div className="mt-2 text-gray-500 text-center text-base md:text-lg">

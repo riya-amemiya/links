@@ -28,20 +28,15 @@ export const WorksLinks = ({ data }: { data: Work }) => {
           >
             <Card>
               <section>
-                <div
-                  className="max-md:hidden"
-                  style={{
-                    width: "25rem",
-                  }}
-                />
+                <div className="max-md:hidden w-[25rem]" />
                 <div className="flex items-center justify-center">
                   <div className="md:flex items-center">
                     <Drawer>
                       <DrawerTrigger asChild={true}>
                         <div className="md:shrink-0">
                           <IconUI
-                            alt="User avatar"
-                            className="h-full w-2/3 md:w-48 mx-auto"
+                            alt={`${link.name}'s icon`}
+                            className="h-full w-2/3 md:w-48 mx-auto cursor-pointer"
                             height={250}
                             src={img.url}
                             width={250}
@@ -77,22 +72,19 @@ export const WorksLinks = ({ data }: { data: Work }) => {
                         rel="noopener noreferrer"
                         target="_blank"
                       >
-                        {/* 先頭だけ大文字 */}
-                        <div>
+                        <span>
                           {link.name.charAt(0).toUpperCase() +
                             link.name.slice(1)}
-                        </div>
-                        <div>
-                          <Button
-                            asChild={true}
-                            className="w-full rounded-full"
-                            variant="link"
-                          >
-                            <div className="flex justify-center items-center">
-                              <Icon className="w-6 h-6" />
-                            </div>
-                          </Button>
-                        </div>
+                        </span>
+                        <Button
+                          asChild={true}
+                          className="rounded-full"
+                          variant="link"
+                        >
+                          <div className="flex justify-center items-center">
+                            <Icon className="w-6 h-6" />
+                          </div>
+                        </Button>
                       </a>
                     </div>
                   </CardTitle>
