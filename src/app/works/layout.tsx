@@ -31,7 +31,7 @@ export default function WorksRootLayout({
           width: "60rem",
         }}
       />
-      <div className="pb-10">{children}</div>
+      <div className="max-lg:pb-10 w-full h-full">{children}</div>
     </>
   );
 }
