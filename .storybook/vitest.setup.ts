@@ -1,6 +1,6 @@
 import { beforeAll } from "vitest";
 import { setProjectAnnotations } from "@storybook/nextjs-vite";
-// biome-ignore lint/style/noNamespaceImport: <explanation>
+// biome-ignore lint/performance/noNamespaceImport: ignore
 import * as projectAnnotations from "./preview";
 
 // This is an important step to apply the right configuration when testing your stories.
