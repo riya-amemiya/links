@@ -3,6 +3,7 @@ import { fn } from "storybook/test";
 import "../src/styles/globals.css";
 import "animate.css";
 import "the-new-css-reset/css/reset.css";
+
 const preview: Preview = {
   parameters: {
     actions: { onClick: fn() },
