@@ -25,7 +25,7 @@ export default defineConfig({
     exclude: ["@storybook/react-dom-shim"],
   },
   test: {
-    workspace: [
+    projects: [
       {
         extends: true,
         plugins: [
