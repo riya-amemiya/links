@@ -1,5 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "off"
+      }
+    }
+  },
   "files": {
     "includes": [
       "**",
@@ -52,41 +59,54 @@
       },
       "complexity": {
         "noExcessiveCognitiveComplexity": "off",
+        "noUselessEscapeInRegex": "error",
         "noUselessStringConcat": "error",
         "noUselessUndefinedInitialization": "error",
         "noVoid": "error",
         "useDateNow": "error",
-        "useSimplifiedLogicExpression": "error",
-        "noUselessEscapeInRegex": "error"
+        "useSimplifiedLogicExpression": "error"
       },
       "correctness": {
         "noConstantMathMinMaxClamp": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "noSwitchDeclarations": "error",
         "noUndeclaredVariables": "warn",
         "noUnusedFunctionParameters": "error",
         "noUnusedImports": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "warn",
         "useExhaustiveDependencies": "warn",
-        "useHookAtTopLevel": "error",
-        "noInvalidBuiltinInstantiation": "error",
-        "noSwitchDeclarations": "error"
+        "useHookAtTopLevel": "error"
       },
       "nursery": {},
+      "performance": {
+        "noDynamicNamespaceImportAccess": "error",
+        "noNamespaceImport": "error"
+      },
       "recommended": true,
       "style": {
         "noDoneCallback": "error",
+        "noEnum": "error",
+        "noExportedImports": "error",
         "noImplicitBoolean": "warn",
+        "noInferrableTypes": "error",
         "noNamespace": "error",
         "noNegationElse": "error",
         "noParameterAssign": "warn",
         "noParameterProperties": "off",
         "noShoutyConstants": "warn",
+        "noSubstr": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
         "noYodaExpression": "error",
+        "useAsConstAssertion": "error",
         "useBlockStatements": "error",
         "useCollapsedElseIf": "error",
         "useConsistentArrayType": "error",
         "useConsistentBuiltinInstantiation": "error",
+        "useDefaultParameterLast": "error",
         "useDefaultSwitchClause": "error",
+        "useEnumInitializers": "error",
         "useExplicitLengthCheck": "error",
         "useForOf": "error",
         "useFragmentSyntax": "error",
@@ -95,52 +115,35 @@
           "options": {
             "conventions": [
               {
-                "selector": { "kind": "enumMember" },
-                "formats": ["CONSTANT_CASE"]
+                "formats": ["CONSTANT_CASE"],
+                "selector": {
+                  "kind": "enumMember"
+                }
               }
             ],
             "strictCase": true
           }
         },
         "useNodeAssertStrict": "error",
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
         "useShorthandAssign": "error",
+        "useSingleVarDeclarator": "error",
         "useThrowNewError": "error",
         "useThrowOnlyError": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error",
-        "noEnum": "error",
-        "noExportedImports": "error",
-        "noSubstr": "error",
         "useTrimStartEnd": "error"
       },
       "suspicious": {
+        "noDuplicateElseIf": "error",
         "noEmptyBlockStatements": "error",
         "noEvolvingTypes": "error",
+        "noIrregularWhitespace": "error",
         "noMisplacedAssertion": "error",
         "noSkippedTests": "error",
+        "noUnknownAtRules": "off",
+        "useAdjacentOverloadSignatures": "error",
         "useErrorMessage": "error",
-        "useNumberToFixedDigitsArgument": "error",
-        "noDuplicateElseIf": "error",
-        "noIrregularWhitespace": "error",
-        "useAdjacentOverloadSignatures": "error"
-      },
-      "performance": {
-        "noDynamicNamespaceImportAccess": "error",
-        "noNamespaceImport": "error"
-      }
-    }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "off"
+        "useNumberToFixedDigitsArgument": "error"
       }
     }
   }
