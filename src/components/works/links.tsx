@@ -19,7 +19,7 @@ import type { Work } from "@/types/worksType";
 export const WorksLinks = ({ data }: { data: Work }) => {
   return (
     <ul className="grid grid-cols-1 md:grid-cols-2 gap-7 mt-4 justify-items-center w-full">
-      {data.contents.reverse().map(({ link, img, description }) => {
+      {data.contents.toReversed().map(({ link, img, description }) => {
         const Icon = iconData[link.icon[0]];
         return (
           <li
