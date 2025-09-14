@@ -24,6 +24,12 @@ export default defineConfig([
       "**/postcss.config.js",
       "eslint.config.mjs",
       ".storybook/*.ts",
+      ".next",
+      "node_modules",
+      ".vercel",
+      ".turbo",
+      ".dependency-cruiser.js",
+      "next-env.d.ts",
     ],
   },
   {
