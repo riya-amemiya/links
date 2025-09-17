@@ -24,17 +24,27 @@ jobs:
 
             grep "uses:" "$file" | awk '{print $3}' | while read -r action; do
               if [[ "$action" == *"@"* && "$action" != *"./"* ]]; then
-                repo=$(echo "$action" | cut -d@ -f1)
+                action_name=$(echo "$action" | cut -d@ -f1)
+                repo_for_gh=$(echo "$action_name" | cut -d/ -f1,2)
                 current_ref=$(echo "$action" | cut -d@ -f2)
 
-                echo "Checking $repo (current: $current_ref)"
+                echo "Checking $action_name (repo: $repo_for_gh, current: $current_ref)"
 
-                latest_tag=$(gh release view --repo "$repo" --json tagName -q .tagName 2>/dev/null || continue)
-                latest_hash=$(gh api "repos/$repo/git/ref/tags/$latest_tag" -q .object.sha 2>/dev/null || continue)
+                latest_tag=$(gh release view --repo "$repo_for_gh" --json tagName --template '{{.tagName}}' 2>/dev/null)
+                if [ -z "$latest_tag" ]; then
+                  echo "  -> Could not find latest release for $repo_for_gh. Skipping."
+                  continue
+                fi
+
+                latest_hash=$(gh api "repos/$repo_for_gh/git/ref/tags/$latest_tag" --template '{{.object.sha}}' 2>/dev/null)
+                if [ -z "$latest_hash" ]; then
+                  echo "  -> Could not find commit hash for tag '$latest_tag' in $repo_for_gh. Skipping."
+                  continue
+                fi
 
                 if [ "$current_ref" != "$latest_hash" ]; then
-                  echo "Updating $repo: $current_ref -> $latest_hash ($latest_tag)"
-                  sed -i "s|$action.*|$repo@$latest_hash # $latest_tag|g" "$file"
+                  echo "Updating $action_name: $current_ref -> $latest_hash ($latest_tag)"
+                  sed -i "s|$action.*|$action_name@$latest_hash # $latest_tag|g" "$file"
                   updated=true
                 fi
               fi
