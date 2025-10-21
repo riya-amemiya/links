@@ -43,7 +43,7 @@
         "@eslint/compat": "1.3.2",
         "@eslint/eslintrc": "^3",
         "@storybook/addon-docs": "9.1.5",
-        "@storybook/addon-links": "9.1.5",
+        "@storybook/addon-links": "9.1.13",
         "@storybook/addon-onboarding": "9.1.5",
         "@storybook/addon-vitest": "9.1.5",
         "@storybook/nextjs": "9.1.5",
@@ -707,7 +707,7 @@
 
     "@storybook/addon-docs": ["@storybook/addon-docs@9.1.5", "", { "dependencies": { "@mdx-js/react": "^3.0.0", "@storybook/csf-plugin": "9.1.5", "@storybook/icons": "^1.4.0", "@storybook/react-dom-shim": "9.1.5", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "ts-dedent": "^2.0.0" }, "peerDependencies": { "storybook": "^9.1.5" } }, "sha512-q1j5RRElxFSnHOh60eS3dS2TAyAHzcQeH/2B9UXo6MUHu7HmhNpw3qt2YibIw0zEogHCvZhLNx6TNzSy+7wRUw=="],
 
-    "@storybook/addon-links": ["@storybook/addon-links@9.1.5", "", { "dependencies": { "@storybook/global": "^5.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^9.1.5" }, "optionalPeers": ["react"] }, "sha512-jJmUgORT9/CF7t8EgN6P8PhTpmKB9PzIKGpSAFm+pzLgvVvm956656BMRwK4MpfNz+AeduhPPdSGmZBOwiyMDA=="],
+    "@storybook/addon-links": ["@storybook/addon-links@9.1.13", "", { "dependencies": { "@storybook/global": "^5.0.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta", "storybook": "^9.1.13" }, "optionalPeers": ["react"] }, "sha512-wx33RA5PPRSepVAjR0hMFp2IXoPgjwNAHIP92aoi2QQFS3+NHlf1I4vXEPpHU6lc0WBwM43qvLSI0qTAyZd8Nw=="],
 
     "@storybook/addon-onboarding": ["@storybook/addon-onboarding@9.1.5", "", { "peerDependencies": { "storybook": "^9.1.5" } }, "sha512-UJpkWLbugcSGzSUzivTTNdO0Y8gpAn//qJzn2TobwkPJgSwQEoHcjUfWjgZ3mSpQrSQO2e1O1yC3SJTBQt/fqQ=="],
 
