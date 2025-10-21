@@ -61,7 +61,7 @@
         "eslint-config-next": "15.5.3",
         "eslint-plugin-import": "2.32.0",
         "eslint-plugin-security": "3.0.1",
-        "eslint-plugin-storybook": "9.1.5",
+        "eslint-plugin-storybook": "9.1.13",
         "eslint-plugin-unicorn": "61.0.2",
         "happy-dom": "20.0.2",
         "playwright": "1.55.0",
@@ -1465,7 +1465,7 @@
 
     "eslint-plugin-security": ["eslint-plugin-security@3.0.1", "", { "dependencies": { "safe-regex": "^2.1.1" } }, "sha512-XjVGBhtDZJfyuhIxnQ/WMm385RbX3DBu7H1J7HNNhmB2tnGxMeqVSnYv79oAj992ayvIBZghsymwkYFS6cGH4Q=="],
 
-    "eslint-plugin-storybook": ["eslint-plugin-storybook@9.1.5", "", { "dependencies": { "@typescript-eslint/utils": "^8.8.1" }, "peerDependencies": { "eslint": ">=8", "storybook": "^9.1.5" } }, "sha512-vCfaZ2Wk1N1vvK4vmNZoA6y2CYxJwbgIs6BE8/toPf4Z6hCAipoobP6a/30Rs0g/B2TSxTSj41TfrJKJrowpjQ=="],
+    "eslint-plugin-storybook": ["eslint-plugin-storybook@9.1.13", "", { "dependencies": { "@typescript-eslint/utils": "^8.8.1" }, "peerDependencies": { "eslint": ">=8", "storybook": "^9.1.13" } }, "sha512-kPuhbtGDiJLB5OLZuwFZAxgzWakNDw64sJtXUPN8g0+VAeXfHyZEmsE28qIIETHxtal71lPKVm8QNnERaJHPJQ=="],
 
     "eslint-plugin-testing-library": ["eslint-plugin-testing-library@7.7.0", "", { "dependencies": { "@typescript-eslint/scope-manager": "^8.15.0", "@typescript-eslint/utils": "^8.15.0" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0" } }, "sha512-gxQU77Q9wuedmwnCEjXHd67Wr1HquWWK/6fb95vG8ImiDMB9fA4vorz9+wzHOj+aXexfz5EUYF9VU7J5zrgF8g=="],
 
