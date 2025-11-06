@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 import { QRCodeSVG } from "qrcode.react";
-import { toBase64 } from "umt/module/String/toBase64";
+import { toBase64 } from "umt";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
