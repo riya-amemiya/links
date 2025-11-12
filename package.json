@@ -32,7 +32,7 @@
     "html-react-parser": "5.2.7",
     "lucide-react": "0.546.0",
     "microcms-js-sdk": "3.2.0",
-    "next": "15.5.6",
+    "next": "16.0.1",
     "postcss": "8.5.6",
     "qrcode.react": "4.2.0",
     "react": "19.2.0",
@@ -58,15 +58,15 @@
     "@storybook/nextjs-vite": "10.0.7",
     "@tailwindcss/postcss": "4.1.15",
     "@types/node": "24.9.1",
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.2.3",
+    "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "5.0.4",
     "@vitest/browser-playwright": "4.0.1",
     "@vitest/coverage-v8": "4.0.1",
     "dependency-cruiser": "17.1.0",
     "encoding": "0.1.13",
     "eslint": "9.38.0",
-    "eslint-config-next": "15.5.6",
+    "eslint-config-next": "16.0.1",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-security": "3.0.1",
     "eslint-plugin-storybook": "10.0.7",
@@ -81,7 +81,7 @@
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
   "overrides": {
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4"
+    "@types/react": "19.2.3",
+    "@types/react-dom": "19.2.2"
   }
 }
