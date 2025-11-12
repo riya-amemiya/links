@@ -28,7 +28,7 @@ export const WorksLinks = ({ data }: { data: Work }) => {
           >
             <Card>
               <section>
-                <div className="max-md:hidden w-[25rem]" />
+                <div className="max-md:hidden w-100" />
                 <div className="flex items-center justify-center">
                   <div className="md:flex items-center">
                     <Drawer>
