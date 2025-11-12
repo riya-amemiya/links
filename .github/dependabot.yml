@@ -1,7 +1,13 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
 version: 2
 
 multi-ecosystem-groups:
   bun-dependencies:
+    schedule:
+      interval: "weekly"
+  github-actions-dependencies:
     schedule:
       interval: "weekly"
 
@@ -10,3 +16,7 @@ updates:
     directory: "/"
     patterns: ["*"]
     multi-ecosystem-group: "bun-dependencies"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    patterns: ["*"]
+    multi-ecosystem-group: "github-actions-dependencies"
