@@ -71,7 +71,7 @@
     "eslint-plugin-unicorn": "62.0.0",
     "happy-dom": "20.0.11",
     "playwright": "1.57.0",
-    "storybook": "10.1.4",
+    "storybook": "10.1.10",
     "turbo": "2.6.3",
     "vite": "7.2.7",
     "vitest": "4.0.15",
