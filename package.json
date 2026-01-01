@@ -10,7 +10,8 @@
     "lint:fix": "eslint --fix . && bun run biome check . --write",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest"
+    "test": "vitest",
+    "update:node-version": "nix develop --command sh -c 'node -v | sed s/v// > .node-version'"
   },
   "dependencies": {
     "@baselime/node-opentelemetry": "0.5.8",
