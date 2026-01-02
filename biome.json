@@ -15,7 +15,8 @@
       "!**/*.json",
       "!**/doc/*",
       "!**/.next/*",
-      "!**/.vercel/*"
+      "!**/.vercel/*",
+      "!**/.open-next/*"
     ]
   },
   "formatter": {
