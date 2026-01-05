@@ -23,10 +23,10 @@ jobs:
                 os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-            - name: Use Bun ${{ matrix.bun-version }}
-              uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+            - name: Setup devbox
+              uses: jetify-com/devbox-install-action@a0d2d53632934ae004f878c840055956d9f741b0 # v0.14.0
               with:
-                  bun-version: ${{ matrix.bun-version }}
+                enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
               uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -35,7 +35,7 @@ jobs:
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
             - name: Install dependencies
               if: steps.cache-restore-dev-depends.outputs.cache-hit != 'true'
-              run: bun i
+              run: devbox run bun:install
             - name: Cache Save devDependencies
               if: steps.cache-restore-dev-depends.outputs.cache-hit != 'true'
               id: cache-save-dev-depends
@@ -53,10 +53,10 @@ jobs:
                 os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-            - name: Use Bun ${{ matrix.bun-version }}
-              uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+            - name: Setup devbox
+              uses: jetify-com/devbox-install-action@a0d2d53632934ae004f878c840055956d9f741b0 # v0.14.0
               with:
-                  bun-version: ${{ matrix.bun-version }}
+                enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
               uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -64,7 +64,7 @@ jobs:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
             - name: Lint
-              run: bun run lint
+              run: devbox run bun:lint
     test:
         name: JavaScript Test on Ubuntu
         needs: setup
@@ -75,10 +75,10 @@ jobs:
                 os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-            - name: Use Bun ${{ matrix.bun-version }}
-              uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+            - name: Setup devbox
+              uses: jetify-com/devbox-install-action@a0d2d53632934ae004f878c840055956d9f741b0 # v0.14.0
               with:
-                  bun-version: ${{ matrix.bun-version }}
+                enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
               uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -88,7 +88,7 @@ jobs:
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
             - name: Test
-              run: bun run test
+              run: devbox run bun:test
     build:
           name: JavaScript Build on Ubuntu
           needs: setup
@@ -103,10 +103,10 @@ jobs:
               NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
           steps:
             - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-            - name: Use Bun ${{ matrix.bun-version }}
-              uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+            - name: Setup devbox
+              uses: jetify-com/devbox-install-action@a0d2d53632934ae004f878c840055956d9f741b0 # v0.14.0
               with:
-                  bun-version: ${{ matrix.bun-version }}
+                enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
               uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
@@ -121,7 +121,7 @@ jobs:
                   key: ${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
             - name: Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
-              run: bun run build
+              run: devbox run bun:build
             - name: Cache Save Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
               uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
