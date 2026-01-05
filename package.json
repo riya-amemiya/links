@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
-    "update:node-version": "nix develop --command sh -c 'node -v | sed s/v// > .node-version'"
+    "update:node-version": "nix develop --command sh -c 'node -v | sed s/v// > .node-version'",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
