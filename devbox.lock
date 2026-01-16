@@ -49,6 +49,10 @@
         }
       }
     },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-01-14T12:51:35Z",
+      "resolved": "github:NixOS/nixpkgs/13868c071cc73a5e9f610c47d7bb08e5da64fdd5?lastModified=1768395095&narHash=sha256-ZhuYJbwbZT32QA95tSkXd9zXHcdZj90EzHpEXBMabaw%3D"
+    },
     "nodejs@24.12.0": {
       "last_modified": "2025-12-27T12:56:01Z",
       "plugin_version": "0.0.2",
