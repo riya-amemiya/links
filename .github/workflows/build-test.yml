@@ -29,7 +29,7 @@ jobs:
                 enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
-              uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
@@ -39,7 +39,7 @@ jobs:
             - name: Cache Save devDependencies
               if: steps.cache-restore-dev-depends.outputs.cache-hit != 'true'
               id: cache-save-dev-depends
-              uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
@@ -59,7 +59,7 @@ jobs:
                 enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
-              uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
@@ -81,7 +81,7 @@ jobs:
                 enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
-              uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
@@ -109,11 +109,11 @@ jobs:
                 enable-cache: 'true'
             - name: Cache Restore devDependencies
               id: cache-restore-dev-depends
-              uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
-            - uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+            - uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               id: cache-restore-prod
               with:
                   enableCrossOsArchive: true
@@ -124,7 +124,7 @@ jobs:
               run: devbox run bun:build
             - name: Cache Save Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
-              uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+              uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # v5.0.2
               with:
                   enableCrossOsArchive: true
                   path: '**/.next'
