@@ -79,7 +79,7 @@
     "turbo": "2.7.2",
     "vite": "7.3.0",
     "vitest": "4.0.16",
-    "wrangler": "4.54.0"
+    "wrangler": "4.59.1"
   },
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
   "overrides": {
