@@ -8,7 +8,7 @@ import type { Profile } from "@/types/profileType";
 export const HomeLinks = ({ links }: { links: Profile["links"] }) => {
   return (
     <ul className="mt-4 flex flex-wrap justify-between items-center gap-3 max-sm:justify-center">
-      {[...links].toReversed().map(({ url, name, icon }) => {
+      {links.toReversed().map(({ url, name, icon }) => {
         const Icon = iconData[icon[0]];
         return (
           <li
