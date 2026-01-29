@@ -46,7 +46,7 @@
     "tailwindcss-animate": "1.0.7",
     "the-new-css-reset": "1.11.3",
     "typescript": "5.9.3",
-    "umt": "2.11.0",
+    "umt": "2.12.1",
     "vaul": "1.1.2"
   },
   "devDependencies": {
@@ -80,10 +80,5 @@
     "vite": "7.3.1",
     "vitest": "4.0.18",
     "wrangler": "4.60.0"
-  },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
-  "overrides": {
-    "@types/react": "19.2.9",
-    "@types/react-dom": "19.2.3"
   }
 }
