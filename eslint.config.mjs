@@ -6,6 +6,8 @@ import { FlatCompat } from "@eslint/eslintrc";
 import { defineConfig } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import react from "eslint-plugin-react";
+import importPlugin from "eslint-plugin-import";
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -14,9 +16,9 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-  unicorn.configs.recommended,
-  ...nextVitals,
   ...nextTs,
+  ...nextVitals,
+  unicorn.configs.recommended,
   ...compat.config({
     extends: ["plugin:storybook/recommended"],
   }),
@@ -34,12 +36,17 @@ export default defineConfig([
       ".turbo",
       ".dependency-cruiser.js",
       "next-env.d.ts",
+      ".wrangler",
+      ".devbox",
+      ".open-next",
     ],
   },
   {
     plugins: {
       "testing-library": testingLibrary,
       "jest-dom": jestDom,
+      import: importPlugin,
+      react,
     },
 
     rules: {
