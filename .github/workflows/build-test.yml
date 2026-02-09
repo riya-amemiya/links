@@ -20,7 +20,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-latest]
+                os: [ubuntu-24.04-arm]
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
             - name: Setup devbox
@@ -50,7 +50,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-latest]
+                os: [ubuntu-24.04-arm]
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
             - name: Setup devbox
@@ -72,7 +72,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-latest]
+                os: [ubuntu-24.04-arm]
         steps:
             - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
             - name: Setup devbox
@@ -96,7 +96,7 @@ jobs:
           strategy:
               matrix:
                   bun-version: [latest]
-                  os: [ubuntu-latest]
+                  os: [ubuntu-24.04-arm]
           env:
               MICROCMS_SERVICEDOMAIN: ${{ secrets.MICROCMS_SERVICEDOMAIN }}
               MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
