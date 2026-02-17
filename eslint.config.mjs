@@ -1,27 +1,43 @@
 import testingLibrary from "eslint-plugin-testing-library";
 import jestDom from "eslint-plugin-jest-dom";
 import unicorn from "eslint-plugin-unicorn";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import { defineConfig } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
-
-const compat = new FlatCompat({
-  baseDirectory: import.meta.dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
+import storybook from "eslint-plugin-storybook";
 
 export default defineConfig([
-  ...nextTs,
-  ...nextVitals,
+  // eslint-config-next configs with fixup for deprecated context methods
+  ...fixupConfigRules(nextTs).map((config) => ({
+    ...config,
+    // Override the babel parser from eslint-config-next with typescript-eslint
+    // to satisfy ESLint v10's scopeManager.addGlobals requirement
+    ...(config.languageOptions?.parser
+      ? {
+          languageOptions: {
+            ...config.languageOptions,
+            parser: tseslint.parser,
+          },
+        }
+      : {}),
+  })),
+  ...fixupConfigRules(nextVitals).map((config) => ({
+    ...config,
+    ...(config.languageOptions?.parser
+      ? {
+          languageOptions: {
+            ...config.languageOptions,
+            parser: tseslint.parser,
+          },
+        }
+      : {}),
+  })),
   unicorn.configs.recommended,
-  ...compat.config({
-    extends: ["plugin:storybook/recommended"],
-  }),
+  ...storybook.configs["flat/recommended"],
   {
     ignores: [
       "src/components/ui/",
@@ -45,8 +61,8 @@ export default defineConfig([
     plugins: {
       "testing-library": testingLibrary,
       "jest-dom": jestDom,
-      import: importPlugin,
-      react,
+      import: fixupPluginRules(importPlugin),
+      react: fixupPluginRules(react),
     },
 
     rules: {
