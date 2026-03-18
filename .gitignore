@@ -40,3 +40,7 @@ next-env.d.ts
 # opennext
 .open-next
 .dev.vars
+
+# google cloud sdk
+/google-cloud-sdk/
+google-cloud-cli-linux-x86_64.tar.gz
