@@ -75,7 +75,7 @@
     "eslint-plugin-storybook": "10.3.3",
     "eslint-plugin-unicorn": "63.0.0",
     "globals": "^17.4.0",
-    "happy-dom": "20.8.4",
+    "happy-dom": "20.8.8",
     "playwright": "1.58.2",
     "storybook": "10.3.3",
     "turbo": "2.8.20",
