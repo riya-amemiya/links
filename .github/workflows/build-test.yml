@@ -92,6 +92,7 @@ jobs:
     build:
           name: JavaScript Build on Ubuntu
           needs: setup
+          if: github.actor != 'dependabot[bot]'
           runs-on: ${{ matrix.os }}
           strategy:
               matrix:
