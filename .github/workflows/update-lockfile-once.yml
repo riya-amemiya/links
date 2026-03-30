@@ -10,8 +10,6 @@ on:
 jobs:
   update-lockfile:
     runs-on: ubuntu-24.04-arm
-    env:
-      CI: ""
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup devbox
@@ -19,7 +17,9 @@ jobs:
         with:
           enable-cache: 'true'
       - name: Update lockfile
-        run: bun install
+        run: devbox run -- bun install
+        env:
+          CI: ""
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
@@ -35,6 +35,7 @@ jobs:
           fi
       - name: Remove this workflow
         run: |
+          git pull --rebase
           git rm .github/workflows/update-lockfile-once.yml
           git commit -m "chore: remove one-time lockfile update workflow
 
