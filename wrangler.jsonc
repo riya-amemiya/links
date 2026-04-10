@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "riya-amemiya-links",
-  "compatibility_date": "2025-11-17",
+  "compatibility_date": "2026-04-07",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "routes": [
     {
