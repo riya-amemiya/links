@@ -91,6 +91,7 @@ jobs:
               run: devbox run bun:test
     build:
           name: JavaScript Build on Ubuntu
+          if: github.actor != 'dependabot[bot]'
           needs: setup
           runs-on: ${{ matrix.os }}
           strategy:
@@ -129,4 +130,3 @@ jobs:
                   enableCrossOsArchive: true
                   path: '**/.next'
                   key: ${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
-
