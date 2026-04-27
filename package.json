@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@baselime/node-opentelemetry": "0.5.8",
-    "@biomejs/biome": "2.4.12",
+    "@biomejs/biome": "2.4.13",
     "@opennextjs/cloudflare": "1.19.2",
     "@radix-ui/react-avatar": "1.1.11",
     "@radix-ui/react-dialog": "1.1.15",
@@ -46,7 +46,7 @@
     "tailwindcss-animate": "1.0.7",
     "the-new-css-reset": "1.11.3",
     "typescript": "6.0.3",
-    "umt": "2.15.0",
+    "umt": "2.16.0",
     "vaul": "1.1.2"
   },
   "devDependencies": {
