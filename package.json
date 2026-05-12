@@ -35,7 +35,7 @@
     "html-react-parser": "6.0.1",
     "lucide-react": "1.14.0",
     "microcms-js-sdk": "3.4.0",
-    "next": "16.2.4",
+    "next": "16.2.6",
     "postcss": "8.5.14",
     "qrcode.react": "4.2.0",
     "react": "19.2.5",
