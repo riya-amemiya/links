@@ -1,6 +1,6 @@
 import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
 
-import { ArcButton } from "@/components/arcade/arc-button";
+import { ArcLink } from "@/components/arcade/arc-link";
 import { Brackets } from "@/components/arcade/brackets";
 import { Glitch } from "@/components/arcade/glitch";
 import { Hud } from "@/components/arcade/hud";
@@ -9,25 +9,26 @@ import type { Content } from "@/types/worksType";
 
 export const StageBriefing = ({
   index,
-  onBack,
-  onNav,
-  works,
+  nextSlug,
+  previousSlug,
+  total,
+  work,
 }: {
   index: number;
-  onBack: () => void;
-  onNav: (index: number) => void;
-  works: Content[];
+  nextSlug: string;
+  previousSlug: string;
+  total: number;
+  work: Content;
 }) => {
-  const work = works[index];
-  if (!work) {
-    return null;
-  }
   const StageIcon = iconData[work.link.icon[0]];
   const stageNumber = String(index + 1).padStart(2, "0");
-  const total = String(works.length).padStart(2, "0");
+  const totalLabel = String(total).padStart(2, "0");
   return (
     <div>
-      <Hud label="Stage Briefing" right={`STAGE ${stageNumber}/${total}`} />
+      <Hud
+        label="Stage Briefing"
+        right={`STAGE ${stageNumber}/${totalLabel}`}
+      />
       <div className="mb-4 flex flex-wrap items-center gap-3.5">
         <span className="font-mono text-[13px] font-bold text-arc-accent tracking-[0.1em]">
           STAGE {stageNumber}
@@ -35,9 +36,9 @@ export const StageBriefing = ({
         <h2 className="font-sans text-[34px] text-arc-bright font-extrabold tracking-[-0.02em] max-md:text-[26px]">
           <Glitch text={work.link.name}>{work.link.name}</Glitch>
         </h2>
-        <ArcButton className="ml-auto" onClick={onBack}>
+        <ArcLink className="ml-auto" href="/works">
           <CaretLeftIcon className="size-4" /> Stages
-        </ArcButton>
+        </ArcLink>
       </div>
       <div className="grid grid-cols-[minmax(230px,0.92fr)_1.08fr] gap-[22px] max-md:grid-cols-1 max-md:gap-4">
         <div className="relative flex flex-col border-2 border-arc-accent bg-[radial-gradient(120%_100%_at_50%_0%,#20120f_0%,#0d0c0e_70%)] p-4 motion-safe:animate-arc-rise">
@@ -89,17 +90,15 @@ export const StageBriefing = ({
         </div>
       </div>
       <div className="mt-[22px] flex items-center justify-between gap-3.5">
-        <ArcButton
-          onClick={() => onNav((index - 1 + works.length) % works.length)}
-        >
+        <ArcLink href={`/works/${previousSlug}`}>
           <CaretLeftIcon className="size-4" /> Prev
-        </ArcButton>
+        </ArcLink>
         <span className="font-mono text-[11px] text-arc-fg/40 tracking-[0.1em]">
-          {stageNumber} / {total}
+          {stageNumber} / {totalLabel}
         </span>
-        <ArcButton onClick={() => onNav((index + 1) % works.length)}>
+        <ArcLink href={`/works/${nextSlug}`}>
           Next <CaretRightIcon className="size-4" />
-        </ArcButton>
+        </ArcLink>
       </div>
     </div>
   );

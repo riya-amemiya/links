@@ -1,6 +1,7 @@
 import { CaretRightIcon } from "@radix-ui/react-icons";
 import parse from "html-react-parser";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Brackets } from "@/components/arcade/brackets";
 import { Glitch } from "@/components/arcade/glitch";
@@ -12,13 +13,7 @@ import { iconData } from "@/config/iconData";
 import { cn } from "@/lib/utilities";
 import type { Profile } from "@/types/profileType";
 
-export const CharacterSelect = ({
-  onWorks,
-  profile,
-}: {
-  onWorks: () => void;
-  profile: Profile;
-}) => (
+export const CharacterSelect = ({ profile }: { profile: Profile }) => (
   <div>
     <Hud label="Character Select" right="CREDIT 01" />
     <div className="grid grid-cols-[minmax(230px,0.92fr)_1.08fr] gap-[22px] max-md:grid-cols-1 max-md:gap-4">
@@ -135,13 +130,12 @@ export const CharacterSelect = ({
         })}
       </div>
     </div>
-    <button
+    <Link
       className="mt-[18px] flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-[15px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.14em] transition-shadow duration-[160ms] [animation-delay:240ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
-      onClick={onWorks}
-      type="button"
+      href="/works"
     >
       <span className="motion-safe:animate-arc-blink">▶</span> Press Start ·
       Stage Select <CaretRightIcon className="size-[18px]" />
-    </button>
+    </Link>
   </div>
 );
