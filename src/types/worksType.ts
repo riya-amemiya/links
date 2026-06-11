@@ -5,7 +5,7 @@ export interface Work {
   contents: Content[];
 }
 
-interface Content {
+export interface Content {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -14,4 +14,9 @@ interface Content {
   link: Link;
   description: string;
   img: Img;
+  blurb: string;
+  meta: string;
+  stack: string[];
+  type: string;
+  year: string;
 }

@@ -27,9 +27,9 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
     start_url: ".",
-    background_color: "#ffffff",
+    background_color: "#0a0a0c",
     display: "standalone",
     scope: "/",
-    theme_color: "#000000",
+    theme_color: "#0a0a0c",
   };
 }
