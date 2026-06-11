@@ -4,6 +4,8 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
+import { ArcadeRoot } from "@/components/arcade/arcade-root";
+import { RouteFlash } from "@/components/arcade/route-flash";
 import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
 import { defaultUrl } from "@/config/defaultUrl";
 
@@ -45,7 +47,12 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${GeistMono.variable} ${GeistSans.variable}`} lang="en">
-      <body className="bg-arc-bg">{children}</body>
+      <body className="bg-arc-bg">
+        <ArcadeRoot>
+          <RouteFlash />
+          {children}
+        </ArcadeRoot>
+      </body>
     </html>
   );
 }

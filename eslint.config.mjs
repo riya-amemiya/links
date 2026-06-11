@@ -111,6 +111,15 @@ export default defineConfig([
       ],
 
       "unicorn/no-null": "off",
+
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          allowList: {
+            generateStaticParams: true,
+          },
+        },
+      ],
     },
   },
 ]);

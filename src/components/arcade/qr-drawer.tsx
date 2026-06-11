@@ -1,3 +1,5 @@
+"use client";
+
 import { QRCodeSVG } from "qrcode.react";
 import type { ReactNode } from "react";
 
