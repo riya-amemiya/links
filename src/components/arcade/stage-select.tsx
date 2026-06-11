@@ -19,7 +19,7 @@ export const StageSelect = ({ works }: { works: Content[] }) => (
       <span className="font-mono text-[11px] text-arc-fg/40 tracking-[0.1em]">
         SELECT A STAGE ▶
       </span>
-      <ArcLink className="ml-auto" href="/">
+      <ArcLink className="ml-auto" href="/home">
         <CaretLeftIcon className="size-4" /> Back
       </ArcLink>
     </div>
