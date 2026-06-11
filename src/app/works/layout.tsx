@@ -1,6 +1,3 @@
-import "@/styles/globals.css";
-import "animate.css";
-import "the-new-css-reset/css/reset.css";
 import type { Metadata } from "next";
 
 import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
@@ -23,10 +20,5 @@ export default function WorksRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <div className="max-lg:hidden w-[60rem]" />
-      <div className="max-lg:pb-10 w-full h-full">{children}</div>
-    </>
-  );
+  return children;
 }

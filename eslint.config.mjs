@@ -55,6 +55,7 @@ export default defineConfig([
       ".wrangler",
       ".devbox",
       ".open-next",
+      "mock/",
     ],
   },
   {

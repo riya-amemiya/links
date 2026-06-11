@@ -1,6 +1,7 @@
 import "the-new-css-reset/css/reset.css";
-import "animate.css";
 import "@/styles/globals.css";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
 import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
@@ -43,14 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body>
-        <div className="bg-primary text-foreground h-full w-full">
-          <main className="min-h-screen flex flex-col items-center justify-center">
-            {children}
-          </main>
-        </div>
-      </body>
+    <html className={`${GeistMono.variable} ${GeistSans.variable}`} lang="en">
+      <body className="bg-arc-bg">{children}</body>
     </html>
   );
 }

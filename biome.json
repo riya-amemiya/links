@@ -16,7 +16,8 @@
       "!**/doc/*",
       "!**/.next/*",
       "!**/.vercel/*",
-      "!**/.open-next/*"
+      "!**/.open-next/*",
+      "!**/mock"
     ]
   },
   "formatter": {
