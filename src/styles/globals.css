@@ -111,7 +111,6 @@
   --animate-arc-rise: arc-rise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-arc-rise-fast: arc-rise 460ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-arc-seg-rise: arc-seg-rise 320ms ease both;
-  --animate-arc-flash: arc-flash 220ms ease forwards;
   --animate-arc-boot-out: arc-boot-out 480ms ease forwards;
   --animate-arc-glitch: arc-glitch 420ms steps(2) 1;
   --animate-arc-glitch-reverse: arc-glitch 420ms steps(2) reverse 1;
@@ -150,17 +149,6 @@
     }
     to {
       transform: scaleY(1);
-    }
-  }
-  @keyframes arc-flash {
-    0% {
-      opacity: 0;
-    }
-    18% {
-      opacity: 0.9;
-    }
-    100% {
-      opacity: 0;
     }
   }
   @keyframes arc-boot-out {

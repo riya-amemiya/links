@@ -1,15 +1,13 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 import { Scanline } from "@/components/arcade/scanline";
 import { cn } from "@/lib/utilities";
 
-export const Boot = ({
-  name,
-  onStart,
-}: {
-  name: string;
-  onStart: () => void;
-}) => {
+export const Boot = ({ name }: { name: string }) => {
+  const router = useRouter();
   const [credit, setCredit] = useState(0);
   const [leaving, setLeaving] = useState(false);
 
@@ -19,8 +17,8 @@ export const Boot = ({
     }
     setCredit(1);
     globalThis.setTimeout(() => setLeaving(true), 280);
-    globalThis.setTimeout(onStart, 760);
-  }, [leaving, onStart]);
+    globalThis.setTimeout(() => router.push("/home"), 760);
+  }, [leaving, router]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
