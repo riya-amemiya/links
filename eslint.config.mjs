@@ -112,6 +112,16 @@ export default defineConfig([
 
       "unicorn/no-null": "off",
 
+      "unicorn/no-unnecessary-global-this": "off",
+
+      "unicorn/no-return-array-push": "off",
+
+      "unicorn/no-unreadable-new-expression": "off",
+
+      "unicorn/no-top-level-side-effects": "off",
+
+      "unicorn/prefer-short-arrow-method": "off",
+
       "unicorn/prevent-abbreviations": [
         "error",
         {
