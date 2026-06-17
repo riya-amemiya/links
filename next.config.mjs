@@ -19,8 +19,8 @@ const nextConfig = {
     // 本番環境ではconsole.logを削除する
     removeConsole: process.env.NODE_ENV === "production",
   },
-  headers() {
-    return process.env.NODE_ENV === "production"
+  headers: () =>
+    process.env.NODE_ENV === "production"
       ? [
           {
             // 全てのパスに Security Headers を適用する
@@ -37,10 +37,11 @@ const nextConfig = {
             ],
           },
         ]
-      : [];
-  },
+      : [],
 };
 export default nextConfig;
 
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-initOpenNextCloudflareForDev();
+if (process.env.NODE_ENV !== "production") {
+  initOpenNextCloudflareForDev();
+}

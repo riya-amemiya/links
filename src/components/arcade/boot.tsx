@@ -16,8 +16,10 @@ export const Boot = ({ name }: { name: string }) => {
       return;
     }
     setCredit(1);
-    globalThis.setTimeout(() => setLeaving(true), 280);
-    globalThis.setTimeout(() => router.push("/home"), 760);
+    setTimeout(() => setLeaving(true), 280);
+    setTimeout(() => {
+      router.push("/home");
+    }, 760);
   }, [leaving, router]);
 
   useEffect(() => {
@@ -25,9 +27,12 @@ export const Boot = ({ name }: { name: string }) => {
       event.preventDefault();
       go();
     };
-    globalThis.addEventListener("keydown", onKey);
-    return () => globalThis.removeEventListener("keydown", onKey);
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
   }, [go]);
+
+  const now = new Date();
+  const currentYear = now.getFullYear();
 
   return (
     <button
@@ -66,7 +71,7 @@ export const Boot = ({ name }: { name: string }) => {
               {String(credit).padStart(2, "0")}
             </span>
           </span>
-          <span>© {new Date().getFullYear()} TOKIDUX</span>
+          <span>© {currentYear} TOKIDUX</span>
           <span>1P</span>
         </div>
       </div>
