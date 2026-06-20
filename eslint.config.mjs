@@ -112,7 +112,7 @@ export default defineConfig([
 
       "unicorn/no-null": "off",
 
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {
