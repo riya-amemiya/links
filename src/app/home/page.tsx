@@ -17,8 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const Home = async () => {
+export default async function Home() {
   const profile = await getMicrocms("profile");
   return <CharacterSelect profile={profile} />;
-};
-export default Home;
+}
