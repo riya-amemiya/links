@@ -1,5 +1,5 @@
 import { CaretRightIcon } from "@radix-ui/react-icons";
-import parse from "html-react-parser";
+import { chtr } from "chtr";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
         <QrDrawer url={defaultUrl}>
           <button
             aria-label="Show QR code"
-            className="group relative mx-auto my-2 aspect-square w-full max-w-[230px] flex-1 cursor-pointer [filter:drop-shadow(0_0_26px_rgba(226,59,47,0.28))] active:scale-[0.985] max-md:max-w-[200px]"
+            className="group relative mx-auto my-2 aspect-square w-full max-w-[230px] flex-1 cursor-pointer filter-[drop-shadow(0_0_26px_rgba(226,59,47,0.28))] active:scale-[0.985] max-md:max-w-[200px]"
             type="button"
           >
             <Image
@@ -37,12 +37,12 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
               src={profile.icon.url}
               width={profile.icon.width}
             />
-            <span className="absolute right-[8%] bottom-[6%] flex size-8 items-center justify-center rounded-lg bg-arc-accent text-arc-bg transition-transform duration-[170ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.14] group-hover:rotate-[-4deg]">
+            <span className="absolute right-[8%] bottom-[6%] flex size-8 items-center justify-center rounded-lg bg-arc-accent text-arc-bg transition-transform duration-170 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.14] group-hover:rotate-[-4deg]">
               <QrGlyph size={15} />
             </span>
           </button>
         </QrDrawer>
-        <div className="flex justify-between whitespace-nowrap text-[10px] text-arc-fg/45 uppercase tracking-[0.1em]">
+        <div className="flex justify-between whitespace-nowrap text-[10px] text-arc-fg/45 uppercase tracking-widest">
           <span>NO.001</span>
           <span>TYPE · {profile.role}</span>
         </div>
@@ -97,7 +97,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
           })}
         </div>
         <div className="mt-4 text-[12.5px] text-arc-fg/65 leading-[1.7]">
-          {parse(profile.biography)}
+          {chtr(profile.biography)}
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
           const LinkIcon = iconData[icon[0]];
           return (
             <a
-              className="flex items-center gap-2.5 border border-arc-fg/[0.18] bg-arc-fg/[0.03] px-[13px] py-[11px] text-arc-fg transition-[background-color,border-color,transform] duration-[140ms] hover:translate-x-0.5 hover:border-arc-accent hover:bg-arc-accent/[0.12] hover:shadow-[0_0_0_1px_#e23b2f,0_0_18px_rgba(226,59,47,0.3)] motion-safe:active:animate-arc-tap-glow"
+              className="flex items-center gap-2.5 border border-arc-fg/18 bg-arc-fg/3 px-[13px] py-[11px] text-arc-fg transition-[background-color,border-color,transform] duration-140 hover:translate-x-0.5 hover:border-arc-accent hover:bg-arc-accent/12 hover:shadow-[0_0_0_1px_#e23b2f,0_0_18px_rgba(226,59,47,0.3)] motion-safe:active:animate-arc-tap-glow"
               href={url}
               key={url}
               rel="noopener noreferrer"
@@ -131,7 +131,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
       </div>
     </div>
     <Link
-      className="mt-[18px] flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-[15px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.14em] transition-shadow duration-[160ms] [animation-delay:240ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
+      className="mt-[18px] flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-[15px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.14em] transition-shadow duration-160 [animation-delay:240ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
       href="/works"
     >
       <span className="motion-safe:animate-arc-blink">▶</span> Press Start ·
