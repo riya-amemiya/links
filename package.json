@@ -45,7 +45,7 @@
     "tailwindcss": "4.3.2",
     "tailwindcss-animate": "1.0.7",
     "the-new-css-reset": "1.11.3",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "umt": "4.0.0",
     "vaul": "1.1.2"
   },
