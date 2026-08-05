@@ -91,7 +91,7 @@
         "noDynamicNamespaceImportAccess": "error",
         "noNamespaceImport": "error"
       },
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "noDoneCallback": "error",
         "noEnum": "error",
