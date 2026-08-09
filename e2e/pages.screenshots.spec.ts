@@ -37,15 +37,6 @@ test.describe("page screenshots", () => {
     });
   });
 
-  test("talks", async ({ page }) => {
-    await page.goto("/talks");
-    await page.getByRole("heading", { name: "Score Attack" }).waitFor();
-    await page.screenshot({
-      path: path.join(outputDir, "talks.png"),
-      fullPage: true,
-    });
-  });
-
   test("lab", async ({ page }) => {
     await page.goto("/lab");
     await page.getByRole("heading", { name: "Bonus Stage" }).waitFor();
