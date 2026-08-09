@@ -6,18 +6,17 @@ export const works: Work = {
       id: "ti040c1d40n9",
       link: {
         id: "0mgsx8srav20",
-        name: "Slide",
+        name: "Slides",
         url: "https://github.com/riya-amemiya/amemiya_riya_slide_data",
         icon: ["GitHubLogoIcon"],
       },
-      description: "<p>Here is a list of my presentation materials</p>",
+      description: "<p>Conference slides and talk materials.</p>",
       img: {
         url: "/content/github.png",
         height: 1000,
         width: 1000,
       },
-      blurb:
-        "Here is a list of slides from my conference presentations. They were created using Slidev.",
+      blurb: "Slides from my conference talks, built with Slidev.",
       meta: "Slide",
       stack: ["TypeScript"],
       type: "Slide",
@@ -38,7 +37,7 @@ export const works: Work = {
         width: 1000,
       },
       blurb:
-        "A command-line tool that automates fiddly git rebase workflows — fewer manual steps, fewer mistakes.",
+        "A CLI that automates tedious git rebase workflows—fewer manual steps, fewer mistakes.",
       meta: "CLI",
       stack: ["TypeScript"],
       type: "CLI",
@@ -59,7 +58,7 @@ export const works: Work = {
         width: 1000,
       },
       blurb:
-        "This portfolio itself. Next.js + Tailwind, content in-repo as TypeScript modules, deployed to the edge on Cloudflare Workers.",
+        "This site. Next.js and Tailwind, content as in-repo TypeScript modules, deployed to Cloudflare Workers.",
       meta: "TypeScript",
       stack: ["TypeScript"],
       type: "TypeScript",
@@ -73,14 +72,14 @@ export const works: Work = {
         url: "https://github.com/riya-amemiya/amemiya_riya_zenn_data",
         icon: ["GitHubLogoIcon"],
       },
-      description: "<p>Source data for my Zenn articles.</p>",
+      description: "<p>Source for my Zenn articles.</p>",
       img: {
         url: "/content/zenn.png",
         height: 1000,
         width: 1000,
       },
       blurb:
-        "The source data behind my Zenn posts — write-ups and notes on TypeScript, React and day-to-day tooling.",
+        "Source for my Zenn posts—notes on TypeScript, React, and day-to-day tooling.",
       meta: "TypeScript",
       stack: ["TypeScript", "Zenn"],
       type: "TypeScript",
@@ -94,14 +93,14 @@ export const works: Work = {
         url: "https://github.com/riya-amemiya/UMT",
         icon: ["GitHubLogoIcon"],
       },
-      description: "<p>A handy utility function collection.</p>",
+      description: "<p>A collection of handy TypeScript utilities.</p>",
       img: {
         url: "/content/github.png",
         height: 1000,
         width: 1000,
       },
       blurb:
-        "A small, fully-typed TypeScript utility library — math, array, string and validation helpers I reach for on every project.",
+        "A small, fully typed TypeScript utility library—math, array, string, and validation helpers I use across projects.",
       meta: "TypeScript",
       stack: ["TypeScript"],
       type: "Library",

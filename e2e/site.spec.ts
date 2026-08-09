@@ -50,7 +50,7 @@ test.describe("works", () => {
     await expect(
       page.getByRole("heading", { name: "Stage Select" }),
     ).toBeVisible();
-    await expect(page.getByRole("link", { name: /Slide/ })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Slides/ })).toBeVisible();
     await expect(page.getByRole("link", { name: /agrb/ })).toBeVisible();
     await expect(page.getByRole("link", { name: /UMT/ })).toBeVisible();
     await expect(page.getByRole("link", { name: /links/ })).toBeVisible();
@@ -59,10 +59,10 @@ test.describe("works", () => {
 
   test("opens stage briefing and supports prev/next", async ({ page }) => {
     await page.goto("/works");
-    await page.getByRole("link", { name: /Slide/ }).click();
-    await expect(page).toHaveURL(/\/works\/slide$/);
+    await page.getByRole("link", { name: /Slides/ }).click();
+    await expect(page).toHaveURL(/\/works\/slides$/);
     await expect(page.getByText("Stage Briefing")).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Slide" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Slides" })).toBeVisible();
     await expect(page.getByText("Loadout")).toBeVisible();
     await expect(page.getByRole("link", { name: /Enter Stage/ })).toBeVisible();
 
@@ -75,7 +75,7 @@ test.describe("works", () => {
   });
 
   test("returns to stage list from briefing", async ({ page }) => {
-    await page.goto("/works/slide");
+    await page.goto("/works/slides");
     await page.getByRole("link", { name: /Stages/ }).click();
     await expect(page).toHaveURL(/\/works$/);
     await expect(
