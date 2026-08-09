@@ -25,7 +25,10 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: {
+        ...devices["Desktop Chrome"],
+        channel: "chrome",
+      },
       testMatch: "**/*.spec.ts",
       testIgnore: "**/*.screenshots.spec.ts",
     },
@@ -33,6 +36,7 @@ export default defineConfig({
       name: "screenshots",
       use: {
         ...devices["Desktop Chrome"],
+        channel: "chrome",
         viewport: { width: 1280, height: 800 },
       },
       testMatch: "**/*.screenshots.spec.ts",

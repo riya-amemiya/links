@@ -115,6 +115,6 @@ public/
 
 - **GitHub Actions** (`.github/workflows/build-test.yml`): lint → test → e2e → build on PRs and pushes to main
 - **PR screenshots** (`.github/workflows/pr-screenshots.yml`): on pull_request, capture boot/home/works and comment images on the PR
-- Runs on Ubuntu 24.04 ARM with Bun, managed via devbox
+- Runs on `ubuntu-latest` with Bun (via devbox). Playwright e2e uses the runner's preinstalled Chrome (`channel: "chrome"`), not a Playwright browser download
 - **Dependabot**: weekly updates for Bun dependencies and GitHub Actions
 - **OSV Scanner**: vulnerability scanning workflow

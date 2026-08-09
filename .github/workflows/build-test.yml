@@ -20,7 +20,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-24.04-arm]
+                os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
             - name: Setup devbox
@@ -50,7 +50,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-24.04-arm]
+                os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
             - name: Setup devbox
@@ -72,7 +72,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-24.04-arm]
+                os: [ubuntu-latest]
         steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
             - name: Setup devbox
@@ -85,8 +85,6 @@ jobs:
               with:
                   path: '**/node_modules'
                   key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
-            - name: Install Playwright Browsers
-              run: npx playwright install --with-deps
             - name: Test
               run: devbox run bun:test
     e2e:
@@ -96,7 +94,7 @@ jobs:
         strategy:
             matrix:
                 bun-version: [latest]
-                os: [ubuntu-24.04-arm]
+                os: [ubuntu-latest]
         env:
             NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
             CI: "true"
@@ -115,8 +113,6 @@ jobs:
             - name: Install dependencies
               if: steps.cache-restore-dev-depends.outputs.cache-hit != 'true'
               run: devbox run bun:install
-            - name: Install Playwright Chromium
-              run: devbox run -- bunx playwright install chromium --with-deps
             - name: Build
               run: devbox run bun:build
             - name: E2E
@@ -137,7 +133,7 @@ jobs:
           strategy:
               matrix:
                   bun-version: [latest]
-                  os: [ubuntu-24.04-arm]
+                  os: [ubuntu-latest]
           env:
               NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
           steps:
