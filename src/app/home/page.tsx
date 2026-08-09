@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CharacterSelect } from "@/components/arcade/character-select";
 import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
 import { defaultUrl } from "@/config/defaultUrl";
-import { getMicrocms } from "@/lib/getMicrocms";
+import { getContent } from "@/lib/getContent";
 
 export const metadata: Metadata = {
   title: `Home | ${defaultTitle}`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const profile = await getMicrocms("profile");
+export default function Home() {
+  const profile = getContent("profile");
   return <CharacterSelect profile={profile} />;
 }

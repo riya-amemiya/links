@@ -1,7 +1,7 @@
 import { Boot } from "@/components/arcade/boot";
-import { getMicrocms } from "@/lib/getMicrocms";
+import { getContent } from "@/lib/getContent";
 
-export default async function Index() {
-  const profile = await getMicrocms("profile");
+export default function Index() {
+  const profile = getContent("profile");
   return <Boot name={profile.name} />;
 }

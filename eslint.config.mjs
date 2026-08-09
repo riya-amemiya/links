@@ -56,6 +56,9 @@ export default defineConfig([
       ".devbox",
       ".open-next",
       "mock/",
+      "e2e/",
+      "playwright.config.ts",
+      "playwright-report/",
     ],
   },
   {

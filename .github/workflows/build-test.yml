@@ -89,6 +89,47 @@ jobs:
               run: npx playwright install --with-deps
             - name: Test
               run: devbox run bun:test
+    e2e:
+        name: Playwright E2E on Ubuntu
+        needs: setup
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                bun-version: [latest]
+                os: [ubuntu-24.04-arm]
+        env:
+            NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
+            CI: "true"
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+            - name: Setup devbox
+              uses: jetify-com/devbox-install-action@8c6a66ed6273138b1915457069de78cb52fe3bd7 # v0.15.0
+              with:
+                enable-cache: 'true'
+            - name: Cache Restore devDependencies
+              id: cache-restore-dev-depends
+              uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+              with:
+                  path: '**/node_modules'
+                  key: dev-depends-${{ matrix.os }}-bun${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
+            - name: Install dependencies
+              if: steps.cache-restore-dev-depends.outputs.cache-hit != 'true'
+              run: devbox run bun:install
+            - name: Install Playwright Chromium
+              run: devbox run -- bunx playwright install chromium --with-deps
+            - name: Build
+              run: devbox run bun:build
+            - name: E2E
+              run: devbox run -- bun run test:e2e
+            - name: Upload Playwright report
+              if: failure()
+              uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+              with:
+                  name: playwright-report
+                  path: |
+                    playwright-report/
+                    e2e/test-results/
+                  retention-days: 7
     build:
           name: JavaScript Build on Ubuntu
           needs: setup
@@ -98,8 +139,6 @@ jobs:
                   bun-version: [latest]
                   os: [ubuntu-24.04-arm]
           env:
-              MICROCMS_SERVICEDOMAIN: ${{ secrets.MICROCMS_SERVICEDOMAIN }}
-              MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
               NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
           steps:
             - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
