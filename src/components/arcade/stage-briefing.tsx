@@ -1,4 +1,5 @@
 import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 import { ArcLink } from "@/components/arcade/arc-link";
 import { Brackets } from "@/components/arcade/brackets";
@@ -87,6 +88,15 @@ export const StageBriefing = ({
           <div className="mt-2.5 font-mono text-[11px] text-arc-fg/40">
             {work.link.url.replace(/^https?:\/\//, "")}
           </div>
+          <Link
+            className="mt-3 inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap border border-arc-fg/22 bg-arc-fg/[0.03] px-5 py-[11px] font-mono text-[12px] text-arc-fg font-bold uppercase tracking-[0.12em] transition-[border-color,background-color,box-shadow] duration-160 hover:border-arc-accent hover:bg-arc-accent/12 hover:shadow-[0_0_18px_rgba(226,59,47,0.28)] motion-safe:active:animate-arc-tap-glow"
+            href="/lab"
+          >
+            <span className="text-arc-accent motion-safe:animate-arc-blink">
+              ▶
+            </span>{" "}
+            Bonus Stage · Lab <CaretRightIcon className="size-4" />
+          </Link>
         </div>
       </div>
       <div className="mt-[22px] flex items-center justify-between gap-3.5">
