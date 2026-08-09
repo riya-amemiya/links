@@ -1,4 +1,4 @@
-import { CaretLeftIcon } from "@radix-ui/react-icons";
+import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
 import { chtr } from "chtr";
 import Link from "next/link";
 
@@ -54,5 +54,12 @@ export const StageSelect = ({ works }: { works: Content[] }) => (
         );
       })}
     </div>
+    <Link
+      className="mt-[18px] flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-[15px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.14em] transition-shadow duration-160 [animation-delay:240ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
+      href="/talks"
+    >
+      <span className="motion-safe:animate-arc-blink">▶</span> Score Attack ·
+      Talks <CaretRightIcon className="size-[18px]" />
+    </Link>
   </div>
 );
