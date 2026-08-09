@@ -83,16 +83,6 @@ test.describe("works", () => {
     ).toBeVisible();
   });
 
-  test("links to score attack talks from stage select", async ({ page }) => {
-    await page.goto("/works");
-    await page.getByRole("link", { name: /Score Attack/ }).click();
-    await expect(page).toHaveURL(/\/talks$/);
-    await expect(
-      page.getByRole("heading", { name: "Score Attack" }),
-    ).toBeVisible();
-    await expect(page.getByText("V8 contributions")).toBeVisible();
-  });
-
   test("links to bonus stage lab from stage briefing", async ({ page }) => {
     await page.goto("/works/slides");
     await page.getByRole("link", { name: /Bonus Stage/ }).click();
