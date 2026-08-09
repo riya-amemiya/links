@@ -12,6 +12,7 @@
       "bun:install": "bun install",
       "bun:lint": "bun run lint",
       "bun:test": "bun run test",
+      "bun:test:e2e": "bun run test:e2e",
       "bun:build": "bun run build"
     }
   }

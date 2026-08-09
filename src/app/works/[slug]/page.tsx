@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 
 import { StageBriefing } from "@/components/arcade/stage-briefing";
 import { defaultDescription, defaultTitle } from "@/config/defaultMetadata";
-import { getMicrocms } from "@/lib/getMicrocms";
+import { getContent } from "@/lib/getContent";
 import { getWorkSlug } from "@/lib/getWorkSlug";
 
-export const generateStaticParams = async () => {
-  const works = await getMicrocms("works");
+export const generateStaticParams = () => {
+  const works = getContent("works");
   return works.contents.map((content) => ({ slug: getWorkSlug(content) }));
 };
 
@@ -17,7 +17,7 @@ export const generateMetadata = async ({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> => {
   const { slug } = await params;
-  const works = await getMicrocms("works");
+  const works = getContent("works");
   const work = works.contents.find((content) => getWorkSlug(content) === slug);
   if (!work) {
     return { title: `Works | ${defaultTitle}` };
@@ -34,7 +34,7 @@ const WorkDetail = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-  const works = await getMicrocms("works");
+  const works = getContent("works");
   const contents = works.contents.toReversed();
   const index = contents.findIndex((content) => getWorkSlug(content) === slug);
   const work = contents[index];

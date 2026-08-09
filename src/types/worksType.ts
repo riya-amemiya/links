@@ -7,10 +7,6 @@ export interface Work {
 
 export interface Content {
   id: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  revisedAt: string;
   link: Link;
   description: string;
   img: Img;
