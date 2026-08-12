@@ -1,0 +1,18 @@
+{
+  "name": "links (Next.js + Bun)",
+  "user": "ubuntu",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "dev",
+      "command": "export PATH=\"$HOME/.bun/bin:$PATH\"; bun run dev",
+      "description": "Next.js dev server on http://localhost:3000 (bun run dev)"
+    }
+  ],
+  "ports": [
+    {
+      "name": "next-dev",
+      "port": 3000
+    }
+  ]
+}
