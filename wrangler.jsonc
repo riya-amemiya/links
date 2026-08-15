@@ -15,6 +15,16 @@
     "binding": "ASSETS",
     "directory": ".open-next/assets"
   },
+  "ratelimits": [
+    {
+      "name": "RATE_LIMITER",
+      "namespace_id": "814201",
+      "simple": {
+        "limit": 600,
+        "period": 60
+      }
+    }
+  ],
   "observability": {
     "enabled": true
   },

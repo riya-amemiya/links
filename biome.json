@@ -18,6 +18,7 @@
       "!**/.next/*",
       "!**/.vercel/*",
       "!**/.open-next/*",
+      "!**/cloudflare-env.d.ts",
       "!**/mock"
     ]
   },
