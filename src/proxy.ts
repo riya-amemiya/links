@@ -11,7 +11,7 @@ const getRateLimiter = () => {
   }
 };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const rateLimiter = getRateLimiter();
   if (!rateLimiter) {
     return NextResponse.next();
@@ -33,6 +33,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    String.raw`/((?!_next/static|_next/image|favicon.ico|.*\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)`,
+    // eslint-disable-next-line unicorn/prefer-string-raw
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)$).*)",
   ],
 };
