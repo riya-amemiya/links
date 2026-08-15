@@ -50,7 +50,7 @@
   "include": [
     "types/**/*.ts",
     "next-env.d.ts",
-    "environment.d.ts",
+    "cloudflare-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",

@@ -55,6 +55,7 @@ export default defineConfig([
       ".wrangler",
       ".devbox",
       ".open-next",
+      "cloudflare-env.d.ts",
       "mock/",
       "e2e/",
       "playwright.config.ts",
@@ -119,7 +120,6 @@ export default defineConfig([
         "error",
         {
           allowList: {
-            CloudflareEnv: true,
             generateStaticParams: true,
           },
         },
