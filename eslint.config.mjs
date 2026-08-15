@@ -119,6 +119,7 @@ export default defineConfig([
         "error",
         {
           allowList: {
+            CloudflareEnv: true,
             generateStaticParams: true,
           },
         },
