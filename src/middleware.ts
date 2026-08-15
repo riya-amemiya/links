@@ -11,7 +11,7 @@ const getRateLimiter = () => {
   }
 };
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const rateLimiter = getRateLimiter();
   if (!rateLimiter) {
     return NextResponse.next();
