@@ -31,7 +31,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
           >
             <Image
               alt={profile.name}
-              className="h-full w-full object-contain"
+              className="size-full object-contain"
               height={profile.icon.height}
               priority={true}
               src={profile.icon.url}

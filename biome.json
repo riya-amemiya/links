@@ -89,7 +89,9 @@
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error"
       },
-      "nursery": {},
+      "nursery": {
+        "useTailwindShorthandClasses": "error"
+      },
       "performance": {
         "noDynamicNamespaceImportAccess": "error",
         "noNamespaceImport": "error"
