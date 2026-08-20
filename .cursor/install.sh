@@ -3,7 +3,7 @@
 # Runs after the repository is checked out. Safe to run repeatedly.
 set -euo pipefail
 
-# Pin Bun to the version declared in devbox.json.
+# Pin Bun for the Cloud Agent environment.
 BUN_VERSION="1.3.6"
 export BUN_INSTALL="${HOME}/.bun"
 export PATH="${BUN_INSTALL}/bin:${PATH}"

@@ -53,7 +53,6 @@ export default defineConfig([
       ".dependency-cruiser.js",
       "next-env.d.ts",
       ".wrangler",
-      ".devbox",
       ".open-next",
       "cloudflare-env.d.ts",
       "mock/",
