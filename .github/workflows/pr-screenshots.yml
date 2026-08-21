@@ -21,24 +21,24 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup devbox
-        uses: jetify-com/devbox-install-action@8c6a66ed6273138b1915457069de78cb52fe3bd7 # v0.15.0
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
-          enable-cache: "true"
+          bun-version: latest
 
       - name: Install dependencies
-        run: devbox run bun:install
+        run: bun install
 
       - name: Build
         env:
           NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
-        run: devbox run bun:build
+        run: bun run build
 
       - name: Capture screenshots
         env:
           CI: "true"
           NEXT_PUBLIC_URL: ${{ vars.NEXT_PUBLIC_URL }}
-        run: devbox run -- bun run test:e2e:screenshots
+        run: bun run test:e2e:screenshots
 
       - name: Upload screenshot artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1

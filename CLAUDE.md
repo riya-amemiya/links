@@ -28,7 +28,7 @@ There is no headless CMS. Deployed to Cloudflare Workers via OpenNextJS.
 ### Key Architecture Points
 
 - **Framework**: Next.js with App Router, React 19, standalone output mode
-- **Runtime**: Bun package manager, Node 24 (configured via devbox.json)
+- **Runtime**: Bun package manager
 - **Deployment**: Cloudflare Workers via OpenNextJS (`riya-amemiya-links.tokidux.com`)
 - **Styling**: Tailwind CSS v4 with CSS variables (OkLCH color space), class-variance-authority for component variants
 - **UI Components**: Shadcn/UI (New York style) built on Radix UI primitives
@@ -115,6 +115,6 @@ public/
 
 - **GitHub Actions** (`.github/workflows/build-test.yml`): lint → test → e2e → build on PRs and pushes to main
 - **PR screenshots** (`.github/workflows/pr-screenshots.yml`): on pull_request, capture boot/home/works and comment images on the PR
-- Runs on `ubuntu-latest` with Bun (via devbox). Playwright e2e uses the runner's preinstalled Chrome (`channel: "chrome"`), not a Playwright browser download
+- Runs on `ubuntu-latest` with Bun via `oven-sh/setup-bun`. Playwright e2e uses the runner's preinstalled Chrome (`channel: "chrome"`), not a Playwright browser download
 - **Dependabot**: weekly updates for Bun dependencies and GitHub Actions
 - **OSV Scanner**: vulnerability scanning workflow

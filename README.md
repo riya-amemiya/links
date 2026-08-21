@@ -18,7 +18,7 @@ Amemiya Riya のリンク集・ポートフォリオサイトです。
 ## Getting started
 
 ```bash
-# Install (optional: via devbox)
+# Install
 bun install
 
 # Dev server → http://localhost:3000
