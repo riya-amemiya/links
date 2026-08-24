@@ -43,7 +43,7 @@
     "tailwindcss": "4.3.3",
     "tailwindcss-animate": "1.0.7",
     "the-new-css-reset": "1.11.3",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "vaul": "1.1.2"
   },
   "devDependencies": {
