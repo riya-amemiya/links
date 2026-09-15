@@ -2,6 +2,7 @@ import { CaretRightIcon } from "@radix-ui/react-icons";
 import { chtr } from "chtr";
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 import { Brackets } from "@/components/arcade/brackets";
 import { Glitch } from "@/components/arcade/glitch";
@@ -16,17 +17,17 @@ import type { Profile } from "@/types/profileType";
 export const CharacterSelect = ({ profile }: { profile: Profile }) => (
   <div>
     <Hud label="Character Select" right="CREDIT 01" />
-    <div className="grid grid-cols-[minmax(230px,0.92fr)_1.08fr] gap-[22px] max-md:grid-cols-1 max-md:gap-4">
-      <div className="relative flex flex-col border-2 border-arc-accent bg-[radial-gradient(120%_100%_at_50%_0%,#20120f_0%,#0d0c0e_70%)] p-4 motion-safe:animate-arc-rise">
+    <div className="grid grid-cols-arc-panel gap-5.5 max-md:grid-cols-1 max-md:gap-4">
+      <div className="relative flex flex-col border-2 border-arc-accent arc-bg-panel p-4 motion-safe:animate-arc-rise">
         <Brackets />
-        <div className="flex justify-between text-[10.5px] font-bold text-arc-accent tracking-[0.16em]">
+        <div className="flex justify-between arc-text-10-5 font-bold text-arc-accent tracking-arc-16">
           <span>P1</span>
           <span className="motion-safe:animate-arc-blink">READY</span>
         </div>
         <QrDrawer url={defaultUrl}>
           <button
             aria-label="Show QR code"
-            className="group relative mx-auto my-2 aspect-square w-full max-w-[230px] flex-1 cursor-pointer filter-[drop-shadow(0_0_26px_rgba(226,59,47,0.28))] active:scale-[0.985] max-md:max-w-[200px]"
+            className="group relative mx-auto my-2 aspect-square w-full max-w-57.5 flex-1 cursor-pointer arc-drop-shadow-glow active:scale-arc-press max-md:max-w-50"
             type="button"
           >
             <Image
@@ -37,21 +38,21 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
               src={profile.icon.url}
               width={profile.icon.width}
             />
-            <span className="absolute right-[8%] bottom-[6%] flex size-8 items-center justify-center rounded-lg bg-arc-accent text-arc-bg transition-transform duration-170 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.14] group-hover:rotate-[-4deg]">
+            <span className="absolute right-2/25 bottom-3/50 flex size-8 items-center justify-center rounded-lg bg-arc-accent text-arc-bg transition-transform duration-170 ease-arc group-hover:scale-114 group-hover:-rotate-4">
               <QrGlyph size={15} />
             </span>
           </button>
         </QrDrawer>
-        <div className="flex justify-between whitespace-nowrap text-[10px] text-arc-fg/45 uppercase tracking-widest">
+        <div className="flex justify-between whitespace-nowrap arc-text-10 text-arc-fg/45 uppercase tracking-widest">
           <span>NO.001</span>
           <span>TYPE · {profile.role}</span>
         </div>
       </div>
-      <div className="flex flex-col [animation-delay:90ms] motion-safe:animate-arc-rise">
-        <div className="text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+      <div className="flex flex-col arc-delay-90 motion-safe:animate-arc-rise">
+        <div className="arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
           Fighter
         </div>
-        <h1 className="mt-0.5 font-sans text-[clamp(34px,5.4vw,52px)] text-arc-bright font-extrabold leading-[0.95] tracking-[-0.03em]">
+        <h1 className="mt-0.5 font-sans arc-text-fighter text-arc-bright font-extrabold leading-arc-95 -tracking-arc-3">
           <Glitch text={profile.name}>
             {profile.name.split(" ").map((part) => (
               <span className="block" key={part}>
@@ -60,34 +61,36 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
             ))}
           </Glitch>
         </h1>
-        <div className="mt-2.5 flex items-center gap-2 whitespace-nowrap text-[11px] uppercase tracking-[0.13em]">
-          <span className="bg-arc-accent px-2 py-[3px] font-bold text-arc-bg">
+        <div className="mt-2.5 flex items-center gap-2 whitespace-nowrap arc-text-11 uppercase tracking-arc-13">
+          <span className="bg-arc-accent px-2 py-0.75 font-bold text-arc-bg">
             LV.{profile.level}
           </span>
           <span className="text-arc-fg/70">Class · {profile.role}</span>
         </div>
-        <div className="mt-4 flex flex-col gap-[9px]">
+        <div className="mt-4 flex flex-col gap-2.25">
           {profile.skills.map(({ name, value }, skillIndex) => {
             const fill = Math.round((value / 100) * 20);
             return (
               <div className="flex items-center gap-3" key={name}>
-                <span className="w-[88px] flex-none text-[11.5px] text-arc-fg/80 tracking-[0.04em]">
+                <span className="w-22 flex-none arc-text-11-5 text-arc-fg/80 tracking-arc-4">
                   {name}
                 </span>
-                <span className="flex flex-1 gap-[3px]">
+                <span className="flex flex-1 gap-0.75">
                   {Array.from({ length: 20 }, (_, segment) => segment).map(
                     (segment) => (
                       <span
                         className={cn(
-                          "h-3 flex-1 origin-bottom",
+                          "h-3 flex-1 origin-bottom arc-delay-var",
                           segment < fill
-                            ? "bg-arc-accent shadow-[0_0_6px_rgba(226,59,47,0.55)] motion-safe:animate-arc-seg-rise"
+                            ? "bg-arc-accent arc-shadow-seg motion-safe:animate-arc-seg-rise"
                             : "bg-arc-fg/10",
                         )}
                         key={segment}
-                        style={{
-                          animationDelay: `${skillIndex * 90 + segment * 22}ms`,
-                        }}
+                        style={
+                          {
+                            "--arc-delay": `${skillIndex * 90 + segment * 22}ms`,
+                          } as CSSProperties
+                        }
                       />
                     ),
                   )}
@@ -96,33 +99,33 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
             );
           })}
         </div>
-        <div className="mt-4 text-[12.5px] text-arc-fg/65 leading-[1.7]">
+        <div className="mt-4 arc-text-12-5 text-arc-fg/65 leading-arc-170">
           {chtr(profile.biography)}
         </div>
       </div>
     </div>
-    <div className="mt-5 [animation-delay:180ms] motion-safe:animate-arc-rise">
-      <div className="mb-2 text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+    <div className="mt-5 arc-delay-180 motion-safe:animate-arc-rise">
+      <div className="mb-2 arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
         — Links / Commands
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2 max-md:grid-cols-2">
+      <div className="grid grid-cols-arc-links gap-2 max-md:grid-cols-2">
         {profile.links.toReversed().map(({ icon, name, url }, linkIndex) => {
           const LinkIcon = iconData[icon[0]];
           return (
             <a
-              className="flex items-center gap-2.5 border border-arc-fg/18 bg-arc-fg/3 px-[13px] py-[11px] text-arc-fg transition-[background-color,border-color,transform] duration-140 hover:translate-x-0.5 hover:border-arc-accent hover:bg-arc-accent/12 hover:shadow-[0_0_0_1px_#e23b2f,0_0_18px_rgba(226,59,47,0.3)] motion-safe:active:animate-arc-tap-glow"
+              className="flex items-center gap-2.5 border border-arc-fg/18 bg-arc-fg/3 px-3.25 py-2.75 text-arc-fg transition-arc-link duration-140 hover:translate-x-0.5 hover:border-arc-accent hover:bg-arc-accent/12 hover:arc-shadow-outline motion-safe:active:animate-arc-tap-glow"
               href={url}
               key={url}
               rel="noopener noreferrer"
               target="_blank"
             >
               <span className="inline-flex text-arc-accent">
-                <LinkIcon className="size-[18px]" />
+                <LinkIcon className="size-4.5" />
               </span>
-              <span className="font-sans text-[13.5px] font-semibold">
+              <span className="font-sans arc-text-13-5 font-semibold">
                 {name}
               </span>
-              <span className="ml-auto text-[10px] text-arc-fg/40">
+              <span className="ml-auto arc-text-10 text-arc-fg/40">
                 {String(linkIndex + 1).padStart(2, "0")}
               </span>
             </a>
@@ -131,11 +134,11 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
       </div>
     </div>
     <Link
-      className="mt-[18px] flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-[15px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.14em] transition-shadow duration-160 [animation-delay:240ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
+      className="mt-4.5 flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-3.75 font-mono arc-text-13 text-arc-bg font-bold uppercase tracking-arc-14 transition-shadow duration-160 arc-delay-240 hover:arc-shadow-glow motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
       href="/works"
     >
       <span className="motion-safe:animate-arc-blink">▶</span> Press Start ·
-      Stage Select <CaretRightIcon className="size-[18px]" />
+      Stage Select <CaretRightIcon className="size-4.5" />
     </Link>
   </div>
 );

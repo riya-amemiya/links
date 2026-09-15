@@ -1,3 +1,4 @@
+import { plugin as shadcn } from "@shadcn/lint";
 import testingLibrary from "eslint-plugin-testing-library";
 import jestDom from "eslint-plugin-jest-dom";
 import unicorn from "eslint-plugin-unicorn";
@@ -67,6 +68,7 @@ export default defineConfig([
       "jest-dom": jestDom,
       import: fixupPluginRules(importPlugin),
       react: fixupPluginRules(react),
+      shadcn,
     },
 
     rules: {
@@ -94,6 +96,13 @@ export default defineConfig([
       ],
 
       "security/detect-object-injection": "off",
+
+      "shadcn/no-restyle": ["error", { allow: ["layout"] }],
+      "shadcn/no-raw-colors": "error",
+      "shadcn/no-arbitrary-values": "error",
+      "shadcn/no-inline-styles": "error",
+      "shadcn/no-unknown-classes": "error",
+      "shadcn/require-static-classes": "error",
 
       "unicorn/filename-case": [
         "error",

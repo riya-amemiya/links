@@ -104,6 +104,56 @@
   --color-arc-fg: #eceae6;
   --color-arc-bright: #fbfbf9;
   --color-arc-accent: #e23b2f;
+  --color-arc-bg-deep: #08080a;
+  --color-arc-fg-soft: #e7e5e0;
+  --color-arc-ink: #0b1220;
+  --color-arc-cyan: #57c7ff;
+
+  --text-arc-10: 10px;
+  --text-arc-10-5: 10.5px;
+  --text-arc-11: 11px;
+  --text-arc-11-5: 11.5px;
+  --text-arc-12: 12px;
+  --text-arc-12-5: 12.5px;
+  --text-arc-13: 13px;
+  --text-arc-13-5: 13.5px;
+  --text-arc-15: 15px;
+  --text-arc-26: 26px;
+  --text-arc-34: 34px;
+  --text-arc-boot-name: clamp(11px, 2.4vw, 14px);
+  --text-arc-boot-system: clamp(10px, 2vw, 12px);
+  --text-arc-boot-title: clamp(40px, 11vw, 104px);
+  --text-arc-boot-prompt: clamp(12px, 2.6vw, 16px);
+  --text-arc-boot-credit: clamp(10px, 2.2vw, 12px);
+  --text-arc-fighter: clamp(34px, 5.4vw, 52px);
+  --text-arc-combo: clamp(42px, 10vw, 72px);
+  --text-arc-gameover: clamp(48px, 12vw, 104px);
+
+  --tracking-arc-1: 0.01em;
+  --tracking-arc-2: 0.02em;
+  --tracking-arc-3: 0.03em;
+  --tracking-arc-4: 0.04em;
+  --tracking-arc-8: 0.08em;
+  --tracking-arc-12: 0.12em;
+  --tracking-arc-13: 0.13em;
+  --tracking-arc-14: 0.14em;
+  --tracking-arc-16: 0.16em;
+  --tracking-arc-18: 0.18em;
+  --tracking-arc-20: 0.2em;
+  --tracking-arc-30: 0.3em;
+  --tracking-arc-34: 0.34em;
+
+  --leading-arc-90: 0.9;
+  --leading-arc-95: 0.95;
+  --leading-arc-170: 1.7;
+
+  --spacing-arc-80vh: 80vh;
+  --spacing-arc-stage-icon: clamp(72px, 12vw, 104px);
+  --spacing-arc-boot-title: clamp(28px, 7vw, 54px);
+  --spacing-arc-boot-prompt: clamp(22px, 5vw, 40px);
+  --spacing-arc-boot-credit: clamp(26px, 6vw, 48px);
+
+  --ease-arc: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   --animate-arc-blink: arc-blink 1.1s steps(1) infinite;
   --animate-arc-coin-blink: arc-blink 1s steps(1) infinite;
@@ -210,6 +260,170 @@
       box-shadow: 0 0 0 14px transparent;
     }
   }
+}
+
+@utility arc-text-* {
+  font-size: --value(--text-arc-*);
+}
+
+@utility arc-shadow-seg {
+  box-shadow: 0 0 6px rgba(226, 59, 47, 0.55);
+}
+
+@utility arc-shadow-bar {
+  box-shadow: 0 0 10px rgba(226, 59, 47, 0.55);
+}
+
+@utility arc-shadow-glow {
+  box-shadow: 0 0 26px rgba(226, 59, 47, 0.5);
+}
+
+@utility arc-shadow-glow-soft {
+  box-shadow: 0 0 26px rgba(226, 59, 47, 0.35);
+}
+
+@utility arc-shadow-glow-faint {
+  box-shadow: 0 0 18px rgba(226, 59, 47, 0.28);
+}
+
+@utility arc-shadow-outline {
+  box-shadow:
+    0 0 0 1px #e23b2f,
+    0 0 18px rgba(226, 59, 47, 0.3);
+}
+
+@utility arc-drop-shadow-glow {
+  filter: drop-shadow(0 0 26px rgba(226, 59, 47, 0.28));
+}
+
+@utility arc-drop-shadow-glow-icon {
+  filter: drop-shadow(0 0 26px rgba(226, 59, 47, 0.3));
+}
+
+@utility arc-bg-panel {
+  background-image: radial-gradient(
+    120% 100% at 50% 0%,
+    #20120f 0%,
+    #0d0c0e 70%
+  );
+}
+
+@utility arc-bg-vignette {
+  background-image: radial-gradient(
+    120% 90% at 50% 50%,
+    transparent 58%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+@utility arc-bg-card {
+  background-image: linear-gradient(
+    160deg,
+    rgba(226, 59, 47, 0.06),
+    rgba(236, 234, 230, 0.02)
+  );
+}
+
+@utility arc-bg-card-hover {
+  background-image: linear-gradient(
+    160deg,
+    rgba(226, 59, 47, 0.15),
+    rgba(236, 234, 230, 0.03)
+  );
+}
+
+@utility arc-bg-scanline {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.16) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+@utility arc-bg-grid {
+  background-image:
+    linear-gradient(rgba(226, 59, 47, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 59, 47, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(120% 90% at 50% 38%, #000 38%, transparent 100%);
+}
+
+@utility arc-bg-grid-boot {
+  background-image:
+    linear-gradient(rgba(226, 59, 47, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 59, 47, 0.09) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(120% 90% at 50% 50%, #000 30%, transparent 100%);
+}
+
+@utility grid-cols-arc-panel {
+  grid-template-columns: minmax(230px, 0.92fr) 1.08fr;
+}
+
+@utility grid-cols-arc-links {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+@utility grid-cols-arc-stages {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@utility transition-arc-press {
+  transition-property: transform, box-shadow, background-color;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+@utility transition-arc-link {
+  transition-property: background-color, border-color, transform;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+@utility transition-arc-lab {
+  transition-property: border-color, background-color, box-shadow;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+@utility transition-arc-card {
+  transition-property: background, border-color, transform;
+  transition-timing-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+
+@utility scale-arc-press {
+  scale: 0.985;
+}
+
+@utility arc-delay-* {
+  animation-delay: calc(--value(integer) * 1ms);
+}
+
+@utility arc-delay-var {
+  animation-delay: var(--arc-delay);
+}
+
+@utility content-empty {
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+@utility content-data-text {
+  --tw-content: attr(data-text);
+  content: var(--tw-content);
 }
 
 @theme inline {

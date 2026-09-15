@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { tv, type VariantProps } from "tailwind-variants";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/lib/utilities";
@@ -34,18 +35,29 @@ const DrawerOverlay = React.forwardRef<
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
+const drawerContentVariants = tv({
+  base: "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
+  variants: {
+    variant: {
+      default: "",
+      arcade: "border-0 bg-white",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> &
+    VariantProps<typeof drawerContentVariants>
+>(({ className, children, variant, ...props }, ref) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
       ref={ref}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
-        className,
-      )}
+      className={cn(drawerContentVariants({ variant }), className)}
       {...props}
     >
       <div className="mx-auto mt-4 h-2 w-25 rounded-full bg-muted" />
@@ -77,16 +89,28 @@ const DrawerFooter = ({
 );
 DrawerFooter.displayName = "DrawerFooter";
 
+const drawerTitleVariants = tv({
+  base: "text-lg font-semibold leading-none tracking-tight",
+  variants: {
+    variant: {
+      default: "",
+      arcade:
+        "font-mono text-[11.5px] text-muted-foreground uppercase tracking-[0.24em]",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title> &
+    VariantProps<typeof drawerTitleVariants>
+>(({ className, variant, ...props }, ref) => (
   <DrawerPrimitive.Title
     ref={ref}
-    className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
-      className,
-    )}
+    className={cn(drawerTitleVariants({ variant }), className)}
     {...props}
   />
 ));

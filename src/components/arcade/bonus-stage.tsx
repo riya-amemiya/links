@@ -1,7 +1,13 @@
 "use client";
 
 import { CaretLeftIcon } from "@radix-ui/react-icons";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { ArcLink } from "@/components/arcade/arc-link";
 import { Brackets } from "@/components/arcade/brackets";
@@ -62,89 +68,85 @@ export const BonusStage = () => {
     <div>
       <Hud label="Bonus Stage" right="LAB MODE" />
       <div className="mb-4 flex flex-wrap items-center gap-3.5">
-        <h2 className="font-sans text-[34px] text-arc-bright font-extrabold tracking-[-0.02em] max-md:text-[26px]">
+        <h2 className="font-sans arc-text-34 text-arc-bright font-extrabold -tracking-arc-2 max-md:arc-text-26">
           <Glitch text="Bonus Stage">Bonus Stage</Glitch>
         </h2>
-        <span className="font-mono text-[11px] text-arc-fg/40 tracking-widest">
+        <span className="font-mono arc-text-11 text-arc-fg/40 tracking-widest">
           COMBO RUSH ▶
         </span>
         <ArcLink className="ml-auto" href="/works">
           <CaretLeftIcon className="size-4" /> Stages
         </ArcLink>
       </div>
-      <div className="grid grid-cols-[minmax(230px,0.92fr)_1.08fr] gap-[22px] max-md:grid-cols-1 max-md:gap-4">
-        <div className="relative flex flex-col border-2 border-arc-accent bg-[radial-gradient(120%_100%_at_50%_0%,#20120f_0%,#0d0c0e_70%)] p-4 motion-safe:animate-arc-rise">
+      <div className="grid grid-cols-arc-panel gap-5.5 max-md:grid-cols-1 max-md:gap-4">
+        <div className="relative flex flex-col border-2 border-arc-accent arc-bg-panel p-4 motion-safe:animate-arc-rise">
           <Brackets />
-          <div className="flex justify-between text-[10.5px] font-bold text-arc-accent uppercase tracking-[0.16em]">
+          <div className="flex justify-between arc-text-10-5 font-bold text-arc-accent uppercase tracking-arc-16">
             <span>BONUS</span>
             <span>LAB-01</span>
           </div>
           <button
             aria-label="Hit for combo"
             className={cn(
-              "my-4 flex min-h-[180px] flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-arc-fg/18 bg-arc-fg/[0.03] text-arc-accent transition-[transform,box-shadow,background-color] duration-120 hover:border-arc-accent hover:bg-arc-accent/10 hover:shadow-[0_0_26px_rgba(226,59,47,0.35)]",
-              pulse && "scale-[0.98] bg-arc-accent/20",
+              "my-4 flex min-h-45 flex-1 cursor-pointer flex-col items-center justify-center gap-3 border border-arc-fg/18 bg-arc-fg/[0.03] text-arc-accent transition-arc-press duration-120 hover:border-arc-accent hover:bg-arc-accent/10 hover:arc-shadow-glow-soft",
+              pulse && "scale-98 bg-arc-accent/20",
             )}
             onClick={hit}
             type="button"
           >
-            <span className="font-mono text-[12px] tracking-[0.2em] motion-safe:animate-arc-blink">
+            <span className="font-mono arc-text-12 tracking-arc-20 motion-safe:animate-arc-blink">
               ▶ TAP / CLICK
             </span>
-            <span className="font-sans text-[clamp(42px,10vw,72px)] text-arc-bright font-extrabold leading-none tabular-nums">
+            <span className="font-sans arc-text-combo text-arc-bright font-extrabold leading-none tabular-nums">
               {combo}
             </span>
-            <span className="font-mono text-[11px] text-arc-fg/50 tracking-[0.14em]">
+            <span className="font-mono arc-text-11 text-arc-fg/50 tracking-arc-14">
               COMBO
             </span>
           </button>
           <div className="h-2 overflow-hidden bg-arc-fg/10">
             <div
-              className="h-full bg-arc-accent shadow-[0_0_10px_rgba(226,59,47,0.55)]"
-              style={{ width: `${fill}%` }}
+              className="h-full w-(--arc-fill) bg-arc-accent arc-shadow-bar"
+              style={{ "--arc-fill": `${fill}%` } as CSSProperties}
             />
           </div>
         </div>
-        <div className="flex flex-col [animation-delay:90ms] motion-safe:animate-arc-rise">
-          <div className="text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+        <div className="flex flex-col arc-delay-90 motion-safe:animate-arc-rise">
+          <div className="arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
             Mission
           </div>
-          <p className="mt-2 max-w-[460px] text-[15px] text-[#e7e5e0] leading-[1.7]">
+          <p className="mt-2 max-w-115 arc-text-15 text-arc-fg-soft leading-arc-170">
             Keep tapping before the charge bar empties. Chain hits to push your
             best combo. No save file—just muscle memory.
           </p>
-          <Label className="mt-[18px] font-mono text-[11px] text-arc-fg/50 font-normal uppercase tracking-[0.2em]">
+          <Label className="mt-4.5" variant="arcade">
             Stats
           </Label>
           <div className="mt-2 grid grid-cols-2 gap-2">
-            <Card className="rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none">
-              <CardHeader className="space-y-0 p-3.5 pb-0">
-                <CardTitle className="font-mono text-[10px] text-arc-fg/45 font-normal tracking-[0.12em]">
-                  BEST
-                </CardTitle>
+            <Card variant="arcade">
+              <CardHeader variant="arcade">
+                <CardTitle variant="arcade">BEST</CardTitle>
               </CardHeader>
-              <CardContent className="p-3.5 pt-1 font-mono text-[28px] text-arc-accent font-bold tabular-nums">
+              <CardContent tone="accent" variant="arcade">
                 {best}
               </CardContent>
             </Card>
-            <Card className="rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none">
-              <CardHeader className="space-y-0 p-3.5 pb-0">
-                <CardTitle className="font-mono text-[10px] text-arc-fg/45 font-normal tracking-[0.12em]">
-                  LIVE
-                </CardTitle>
+            <Card variant="arcade">
+              <CardHeader variant="arcade">
+                <CardTitle variant="arcade">LIVE</CardTitle>
               </CardHeader>
-              <CardContent className="p-3.5 pt-1 font-mono text-[28px] text-arc-bright font-bold tabular-nums">
+              <CardContent tone="bright" variant="arcade">
                 {combo}
               </CardContent>
             </Card>
           </div>
-          <div className="mt-[18px] text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+          <div className="mt-4.5 arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
             Loadout
           </div>
-          <div className="mt-2 flex flex-wrap gap-[7px]">
+          <div className="mt-2 flex flex-wrap gap-1.75">
             {["React", "Client", "No CMS"].map((item) => (
               <span
-                className="border border-arc-fg/[0.22] bg-arc-fg/[0.03] px-[11px] py-1.5 font-mono text-[11px] text-arc-fg tracking-[0.04em]"
+                className="border border-arc-fg/[0.22] bg-arc-fg/[0.03] px-2.75 py-1.5 font-mono arc-text-11 text-arc-fg tracking-arc-4"
                 key={item}
               >
                 {item}
