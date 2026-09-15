@@ -1,3 +1,4 @@
+import { plugin as shadcn } from "@shadcn/lint";
 import testingLibrary from "eslint-plugin-testing-library";
 import jestDom from "eslint-plugin-jest-dom";
 import unicorn from "eslint-plugin-unicorn";
@@ -67,6 +68,7 @@ export default defineConfig([
       "jest-dom": jestDom,
       import: fixupPluginRules(importPlugin),
       react: fixupPluginRules(react),
+      shadcn,
     },
 
     rules: {
