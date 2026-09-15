@@ -22,10 +22,10 @@ export const QrDrawer = ({
 }) => (
   <Drawer>
     <DrawerTrigger asChild={true}>{children}</DrawerTrigger>
-    <DrawerContent className="border-0 bg-white">
+    <DrawerContent variant="arcade">
       <div className="mx-auto w-full max-w-sm px-6 pb-8">
         <DrawerHeader>
-          <DrawerTitle className="text-center font-mono text-[11.5px] text-muted-foreground uppercase tracking-[0.24em]">
+          <DrawerTitle className="text-center" variant="arcade">
             Scan · URL
           </DrawerTitle>
         </DrawerHeader>

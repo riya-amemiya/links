@@ -113,27 +113,23 @@ export const BonusStage = () => {
             Keep tapping before the charge bar empties. Chain hits to push your
             best combo. No save file—just muscle memory.
           </p>
-          <Label className="mt-[18px] font-mono text-[11px] text-arc-fg/50 font-normal uppercase tracking-[0.2em]">
+          <Label className="mt-[18px]" variant="arcade">
             Stats
           </Label>
           <div className="mt-2 grid grid-cols-2 gap-2">
-            <Card className="rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none">
-              <CardHeader className="space-y-0 p-3.5 pb-0">
-                <CardTitle className="font-mono text-[10px] text-arc-fg/45 font-normal tracking-[0.12em]">
-                  BEST
-                </CardTitle>
+            <Card variant="arcade">
+              <CardHeader variant="arcade">
+                <CardTitle variant="arcade">BEST</CardTitle>
               </CardHeader>
-              <CardContent className="p-3.5 pt-1 font-mono text-[28px] text-arc-accent font-bold tabular-nums">
+              <CardContent tone="accent" variant="arcade">
                 {best}
               </CardContent>
             </Card>
-            <Card className="rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none">
-              <CardHeader className="space-y-0 p-3.5 pb-0">
-                <CardTitle className="font-mono text-[10px] text-arc-fg/45 font-normal tracking-[0.12em]">
-                  LIVE
-                </CardTitle>
+            <Card variant="arcade">
+              <CardHeader variant="arcade">
+                <CardTitle variant="arcade">LIVE</CardTitle>
               </CardHeader>
-              <CardContent className="p-3.5 pt-1 font-mono text-[28px] text-arc-bright font-bold tabular-nums">
+              <CardContent tone="bright" variant="arcade">
                 {combo}
               </CardContent>
             </Card>

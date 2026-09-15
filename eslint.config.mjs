@@ -97,6 +97,11 @@ export default defineConfig([
 
       "security/detect-object-injection": "off",
 
+      "shadcn/no-restyle": ["error", { allow: ["layout"] }],
+      "shadcn/no-raw-colors": "error",
+      "shadcn/no-unknown-classes": "error",
+      "shadcn/require-static-classes": "error",
+
       "unicorn/filename-case": [
         "error",
         {
