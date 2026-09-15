@@ -9,6 +9,7 @@ import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
 import storybook from "eslint-plugin-storybook";
+import { plugin as shadcn } from "@shadcn/lint";
 
 export default defineConfig([
   // eslint-config-next configs with fixup for deprecated context methods
@@ -67,6 +68,7 @@ export default defineConfig([
       "jest-dom": jestDom,
       import: fixupPluginRules(importPlugin),
       react: fixupPluginRules(react),
+      shadcn,
     },
 
     rules: {
