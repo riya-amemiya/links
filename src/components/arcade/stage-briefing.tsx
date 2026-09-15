@@ -31,45 +31,45 @@ export const StageBriefing = ({
         right={`STAGE ${stageNumber}/${totalLabel}`}
       />
       <div className="mb-4 flex flex-wrap items-center gap-3.5">
-        <span className="font-mono text-[13px] font-bold text-arc-accent tracking-[0.1em]">
+        <span className="font-mono arc-text-13 font-bold text-arc-accent tracking-widest">
           STAGE {stageNumber}
         </span>
-        <h2 className="font-sans text-[34px] text-arc-bright font-extrabold tracking-[-0.02em] max-md:text-[26px]">
+        <h2 className="font-sans arc-text-34 text-arc-bright font-extrabold -tracking-arc-2 max-md:arc-text-26">
           <Glitch text={work.link.name}>{work.link.name}</Glitch>
         </h2>
         <ArcLink className="ml-auto" href="/works">
           <CaretLeftIcon className="size-4" /> Stages
         </ArcLink>
       </div>
-      <div className="grid grid-cols-[minmax(230px,0.92fr)_1.08fr] gap-[22px] max-md:grid-cols-1 max-md:gap-4">
-        <div className="relative flex flex-col border-2 border-arc-accent bg-[radial-gradient(120%_100%_at_50%_0%,#20120f_0%,#0d0c0e_70%)] p-4 motion-safe:animate-arc-rise">
+      <div className="grid grid-cols-arc-panel gap-5.5 max-md:grid-cols-1 max-md:gap-4">
+        <div className="relative flex flex-col border-2 border-arc-accent arc-bg-panel p-4 motion-safe:animate-arc-rise">
           <Brackets />
-          <div className="flex justify-between text-[10.5px] font-bold text-arc-accent uppercase tracking-[0.16em]">
+          <div className="flex justify-between arc-text-10-5 font-bold text-arc-accent uppercase tracking-arc-16">
             <span>STAGE {stageNumber}</span>
             <span>{work.type}</span>
           </div>
-          <div className="my-3 flex min-h-[150px] flex-1 items-center justify-center text-arc-accent [filter:drop-shadow(0_0_26px_rgba(226,59,47,0.3))]">
-            <StageIcon className="size-[clamp(72px,12vw,104px)]" />
+          <div className="my-3 flex min-h-37.5 flex-1 items-center justify-center text-arc-accent arc-drop-shadow-glow-icon">
+            <StageIcon className="size-arc-stage-icon" />
           </div>
-          <div className="flex justify-between whitespace-nowrap text-[10px] text-arc-fg/45 uppercase tracking-[0.1em]">
+          <div className="flex justify-between whitespace-nowrap arc-text-10 text-arc-fg/45 uppercase tracking-widest">
             <span>EST. {work.year}</span>
             <span>{work.meta}</span>
           </div>
         </div>
-        <div className="flex flex-col [animation-delay:90ms] motion-safe:animate-arc-rise">
-          <div className="text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+        <div className="flex flex-col arc-delay-90 motion-safe:animate-arc-rise">
+          <div className="arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
             Mission
           </div>
-          <p className="mt-2 max-w-[460px] text-[15px] text-[#e7e5e0] leading-[1.7]">
+          <p className="mt-2 max-w-115 arc-text-15 text-arc-fg-soft leading-arc-170">
             {work.blurb}
           </p>
-          <div className="mt-[18px] text-[11px] text-arc-fg/50 uppercase tracking-[0.2em]">
+          <div className="mt-4.5 arc-text-11 text-arc-fg/50 uppercase tracking-arc-20">
             Loadout
           </div>
-          <div className="mt-2 flex flex-wrap gap-[7px]">
+          <div className="mt-2 flex flex-wrap gap-1.75">
             {work.stack.map((item) => (
               <span
-                className="border border-arc-fg/[0.22] bg-arc-fg/[0.03] px-[11px] py-1.5 font-mono text-[11px] text-arc-fg tracking-[0.04em]"
+                className="border border-arc-fg/[0.22] bg-arc-fg/[0.03] px-2.75 py-1.5 font-mono arc-text-11 text-arc-fg tracking-arc-4"
                 key={item}
               >
                 {item}
@@ -77,19 +77,19 @@ export const StageBriefing = ({
             ))}
           </div>
           <a
-            className="mt-[22px] inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap border-2 border-arc-accent bg-arc-accent px-6 py-[13px] font-mono text-[13px] text-arc-bg font-bold uppercase tracking-[0.12em] transition-shadow duration-[160ms] hover:shadow-[0_0_26px_rgba(226,59,47,0.5)] motion-safe:active:animate-arc-tap-glow"
+            className="mt-5.5 inline-flex cursor-pointer items-center gap-2.25 self-start whitespace-nowrap border-2 border-arc-accent bg-arc-accent px-6 py-3.25 font-mono arc-text-13 text-arc-bg font-bold uppercase tracking-arc-12 transition-shadow duration-160 hover:arc-shadow-glow motion-safe:active:animate-arc-tap-glow"
             href={work.link.url}
             rel="noopener noreferrer"
             target="_blank"
           >
             <span className="motion-safe:animate-arc-blink">▶</span> Enter Stage
-            · GitHub <CaretRightIcon className="size-[18px]" />
+            · GitHub <CaretRightIcon className="size-4.5" />
           </a>
-          <div className="mt-2.5 font-mono text-[11px] text-arc-fg/40">
+          <div className="mt-2.5 font-mono arc-text-11 text-arc-fg/40">
             {work.link.url.replace(/^https?:\/\//, "")}
           </div>
           <Link
-            className="mt-3 inline-flex cursor-pointer items-center gap-[9px] self-start whitespace-nowrap border border-arc-fg/22 bg-arc-fg/[0.03] px-5 py-[11px] font-mono text-[12px] text-arc-fg font-bold uppercase tracking-[0.12em] transition-[border-color,background-color,box-shadow] duration-160 hover:border-arc-accent hover:bg-arc-accent/12 hover:shadow-[0_0_18px_rgba(226,59,47,0.28)] motion-safe:active:animate-arc-tap-glow"
+            className="mt-3 inline-flex cursor-pointer items-center gap-2.25 self-start whitespace-nowrap border border-arc-fg/22 bg-arc-fg/[0.03] px-5 py-2.75 font-mono arc-text-12 text-arc-fg font-bold uppercase tracking-arc-12 transition-arc-lab duration-160 hover:border-arc-accent hover:bg-arc-accent/12 hover:arc-shadow-glow-faint motion-safe:active:animate-arc-tap-glow"
             href="/lab"
           >
             <span className="text-arc-accent motion-safe:animate-arc-blink">
@@ -99,11 +99,11 @@ export const StageBriefing = ({
           </Link>
         </div>
       </div>
-      <div className="mt-[22px] flex items-center justify-between gap-3.5">
+      <div className="mt-5.5 flex items-center justify-between gap-3.5">
         <ArcLink href={`/works/${previousSlug}`}>
           <CaretLeftIcon className="size-4" /> Prev
         </ArcLink>
-        <span className="font-mono text-[11px] text-arc-fg/40 tracking-[0.1em]">
+        <span className="font-mono arc-text-11 text-arc-fg/40 tracking-widest">
           {stageNumber} / {totalLabel}
         </span>
         <ArcLink href={`/works/${nextSlug}`}>

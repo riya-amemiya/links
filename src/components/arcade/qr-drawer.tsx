@@ -30,15 +30,15 @@ export const QrDrawer = ({
           </DrawerTitle>
         </DrawerHeader>
         <div className="my-3.5 flex justify-center">
-          <div className="rounded-[14px] border bg-white p-3.5 shadow-sm">
+          <div className="rounded-xl border bg-white p-3.5 shadow-sm">
             <QRCodeSVG level="H" size={184} value={url} />
           </div>
         </div>
-        <div className="break-all text-center font-mono text-[12.5px] text-[#0b1220]">
+        <div className="break-all text-center font-mono arc-text-12-5 text-arc-ink">
           {url.replace(/^https?:\/\//, "")}
         </div>
         <DrawerClose asChild={true}>
-          <Button className="mx-auto mt-5 flex h-11 w-[55%]">Close</Button>
+          <Button className="mx-auto mt-5 flex h-11 w-11/20">Close</Button>
         </DrawerClose>
       </div>
     </DrawerContent>

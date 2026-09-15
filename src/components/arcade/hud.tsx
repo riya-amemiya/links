@@ -1,7 +1,7 @@
 import { Glitch } from "@/components/arcade/glitch";
 
 export const Hud = ({ label, right }: { label: string; right: string }) => (
-  <div className="mb-[18px] flex flex-wrap items-center gap-2.5 text-[11px] text-arc-fg/60 uppercase tracking-[0.18em] max-md:text-[10px]">
+  <div className="mb-4.5 flex flex-wrap items-center gap-2.5 arc-text-11 text-arc-fg/60 uppercase tracking-arc-18 max-md:arc-text-10">
     <span className="text-arc-accent">◆</span>
     <Glitch className="font-bold text-arc-fg" text={label}>
       {label}
