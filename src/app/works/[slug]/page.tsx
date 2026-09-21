@@ -19,13 +19,12 @@ export const generateMetadata = async ({
   const { slug } = await params;
   const works = getContent("works");
   const work = works.contents.find((content) => getWorkSlug(content) === slug);
-  if (!work) {
-    return { title: `Works | ${defaultTitle}` };
-  }
-  return {
-    title: `${work.link.name} | ${defaultTitle}`,
-    description: `${work.link.name} | ${defaultDescription}`,
-  };
+  return work
+    ? {
+        title: `${work.link.name} | ${defaultTitle}`,
+        description: `${work.link.name} | ${defaultDescription}`,
+      }
+    : { title: `Works | ${defaultTitle}` };
 };
 
 const WorkDetail = async ({

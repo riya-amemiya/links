@@ -6,10 +6,7 @@ import type { Work } from "@/types/worksType";
 function getContent(endpoint: "profile"): Profile;
 function getContent(endpoint: "works"): Work;
 function getContent(endpoint: "profile" | "works"): Profile | Work {
-  if (endpoint === "profile") {
-    return profile;
-  }
-  return works;
+  return endpoint === "profile" ? profile : works;
 }
 
 export { getContent };
