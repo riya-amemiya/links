@@ -3,6 +3,48 @@ import type { Work } from "@/types/worksType";
 export const works: Work = {
   contents: [
     {
+      id: "k9m2p7qwx4n1",
+      link: {
+        id: "b3t8r1c6h0jv",
+        name: "vscode-torque-fork",
+        url: "https://github.com/riya-amemiya/vscode-torque-fork",
+        icon: ["GitHubLogoIcon"],
+      },
+      description: "<p>VS Code language support for V8 Torque.</p>",
+      img: {
+        url: "/content/github.png",
+        height: 1000,
+        width: 1000,
+      },
+      blurb:
+        "A fork of v8/vscode-torque with a Rust Torque compiler as WebAssembly—go to definition, completions, and diagnostics for .tq files without compiling V8.",
+      meta: "Extension",
+      stack: ["Rust", "TypeScript"],
+      type: "Extension",
+      year: "2026",
+    },
+    {
+      id: "f4n7s2w9x1qm",
+      link: {
+        id: "p6d0k3y8m2lt",
+        name: "happy-cracking",
+        url: "https://github.com/riya-amemiya/happy-cracking",
+        icon: ["GitHubLogoIcon"],
+      },
+      description: "<p>A Rust CTF toolkit with 70+ command-line utilities.</p>",
+      img: {
+        url: "/content/github.png",
+        height: 1000,
+        width: 1000,
+      },
+      blurb:
+        "A fast CTF toolkit in Rust—encoding, classic ciphers, hashing, password cracking, and forensics tools for security competitions.",
+      meta: "CLI",
+      stack: ["Rust"],
+      type: "CLI",
+      year: "2025",
+    },
+    {
       id: "ti040c1d40n9",
       link: {
         id: "0mgsx8srav20",
