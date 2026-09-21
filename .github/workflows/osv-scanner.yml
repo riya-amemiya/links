@@ -22,7 +22,6 @@ jobs:
     with:
       scan-args: |-
         -r
-        --skip-git
         ./
   scan-pr:
     if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
@@ -30,5 +29,4 @@ jobs:
     with:
       scan-args: |-
         -r
-        --skip-git
         ./
