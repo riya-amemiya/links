@@ -19,16 +19,14 @@ export async function middleware(request: NextRequest) {
 
   const key = resolveRateLimitKey(request.headers);
   const { success } = await rateLimiter.limit({ key });
-  if (!success) {
-    return new NextResponse("Too Many Requests", {
-      headers: {
-        "Retry-After": "60",
-      },
-      status: 429,
-    });
-  }
-
-  return NextResponse.next();
+  return success
+    ? NextResponse.next()
+    : new NextResponse("Too Many Requests", {
+        headers: {
+          "Retry-After": "60",
+        },
+        status: 429,
+      });
 }
 
 export const config = {
