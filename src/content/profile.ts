@@ -53,7 +53,7 @@ export const profile: Profile = {
     {
       id: "7-ovlgyb37c3",
       name: "Twitter",
-      url: "https://twitter.com/Riya31377928",
+      url: "https://twitter.com/riya_amemiya",
       icon: ["TwitterLogoIcon"],
     },
     {
