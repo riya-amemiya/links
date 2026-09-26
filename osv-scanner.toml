@@ -1,0 +1,3 @@
+[[IgnoredVulns]]
+id = "CVE-2025-14505"
+reason = "elliptic is only a Storybook webpack polyfill (@storybook/nextjs -> node-polyfill-webpack-plugin -> crypto-browserify). This site does not generate ECDSA signatures with it, and no patched release exists."
