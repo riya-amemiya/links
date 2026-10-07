@@ -11,7 +11,7 @@ const dirname =
     : import.meta.dirname;
 
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
-export default defineConfig({
+const config = defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(dirname, "src"),
@@ -64,3 +64,5 @@ export default defineConfig({
     ],
   },
 });
+
+export default config;
