@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": ["**/*.jsonc"],
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "**/*.json",
+    "**/*.md",
+    "**/*.svg",
+    "**/*.yaml",
+    "**/*.yml",
+    "**/doc/**",
+    "**/mock/**",
+    "**/module/**",
+    ".next/**",
+    ".open-next/**",
+    ".vercel/**",
+    "cloudflare-env.d.ts"
+  ]
+}

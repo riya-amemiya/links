@@ -21,9 +21,7 @@
     "globalDependencies": [
         "tsconfig.json",
         "jest.config.js",
-        ".eslintrc",
         ".env.*",
-        "biome.json",
         "yarn.lock"
     ]
 }
