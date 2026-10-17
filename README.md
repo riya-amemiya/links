@@ -91,7 +91,7 @@ Pages read content through `src/lib/getContent.ts` (thin typed accessors over th
 | `bun run dev` | Next.js dev server |
 | `bun run build` | Production build |
 | `bun run start` | Serve production build on port 8080 |
-| `bun run lint` | ESLint + Biome |
+| `bun run lint` | oxlint + oxfmt |
 | `bun run lint:fix` | Auto-fix lint |
 | `bun run test` | Vitest / Storybook component tests |
 | `bun run test:e2e` | Playwright e2e (boot / home / works). Requires `bun run build` first |

@@ -8,8 +8,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `bun run build` - Build for production (standalone output for Cloudflare)
 - `bun run build:turbo` - Build with Turbo caching
 - `bun run start` - Start production server on port 8080
-- `bun run lint` - Run ESLint and Biome checks
-- `bun run lint:fix` - Fix ESLint and Biome issues automatically
+- `bun run lint` - Run oxlint and oxfmt checks
+- `bun run lint:fix` - Fix oxlint and oxfmt issues automatically
 - `bun run test` - Run Vitest tests (requires Playwright browsers)
 - `bun run test:e2e` - Playwright e2e against production server (run `bun run build` first)
 - `bun run test:e2e:screenshots` - Capture boot/home/works PNGs into `e2e/output/`
@@ -96,10 +96,8 @@ public/
 
 ### Code Style & Linting
 
-- **Biome**: Formatter (80-char width, 2-space indent) and linter with recommended rules
-- **ESLint**: Flat config (v10+) with these enforced rules:
-  - `react/jsx-sort-props: error` — JSX props must be sorted alphabetically
-  - `import/order` — imports sorted alphabetically by group
+- **oxfmt**: Formatter (80-char width, 2-space indent), configured in `.oxfmtrc.json`
+- **oxlint**: Linter using built-in rules only, configured in `.oxlintrc.json`
   - `unicorn/filename-case` — kebab-case filenames (exceptions for Next.js special files)
 - **Generated UI components** (`src/components/ui/`) are excluded from linting
 - **TypeScript strict mode** with `noUnusedLocals`, `noUnusedParameters`, `noImplicitReturns`, `noUncheckedIndexedAccess`
