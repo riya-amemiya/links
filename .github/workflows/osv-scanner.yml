@@ -33,7 +33,7 @@ jobs:
           bun install --lockfile-only
       - name: Run scanner
         id: scan
-        uses: google/osv-scanner-action/osv-scanner-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        uses: google/osv-scanner-action/osv-scanner-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
         env:
           GOTOOLCHAIN: auto
         with:
@@ -51,7 +51,7 @@ jobs:
             exit 1
           fi
       - name: Run osv-scanner-reporter
-        uses: google/osv-scanner-action/osv-reporter-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        uses: google/osv-scanner-action/osv-reporter-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
         with:
           scan-args: |-
             --output=results.sarif
@@ -67,7 +67,7 @@ jobs:
           retention-days: 5
       - name: Upload to code-scanning
         if: ${{ !cancelled() }}
-        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+        uses: github/codeql-action/upload-sarif@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
         with:
           sarif_file: results.sarif
   scan-pr:
@@ -89,7 +89,7 @@ jobs:
           bun install --lockfile-only
       - name: Run scanner on existing code
         id: scan-old
-        uses: google/osv-scanner-action/osv-scanner-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        uses: google/osv-scanner-action/osv-scanner-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
         env:
           GOTOOLCHAIN: auto
         with:
@@ -107,7 +107,7 @@ jobs:
           bun install --lockfile-only
       - name: Run scanner on new code
         id: scan-new
-        uses: google/osv-scanner-action/osv-scanner-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        uses: google/osv-scanner-action/osv-scanner-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
         env:
           GOTOOLCHAIN: auto
         with:
@@ -134,7 +134,7 @@ jobs:
           fi
           exit "${status}"
       - name: Run osv-scanner-reporter
-        uses: google/osv-scanner-action/osv-reporter-action@a345acffa64b0eaede81a3d9aae6141214d9c8fc # v2.6.0
+        uses: google/osv-scanner-action/osv-reporter-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
         with:
           scan-args: |-
             --output=results.sarif
@@ -165,6 +165,6 @@ jobs:
           retention-days: 5
       - name: Upload to code-scanning
         if: ${{ !cancelled() }}
-        uses: github/codeql-action/upload-sarif@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+        uses: github/codeql-action/upload-sarif@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
         with:
           sarif_file: results.sarif
