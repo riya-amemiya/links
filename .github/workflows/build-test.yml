@@ -152,7 +152,7 @@ jobs:
               id: cache-restore-prod
               with:
                   enableCrossOsArchive: true
-                  path: '**/.next'
+                  path: '**/dist'
                   key: ${{ matrix.bun-version }}-${{ hashFiles('package.json') }}
             - name: Build
               if: steps.cache-restore-prod.outputs.cache-hit != 'true'
@@ -162,5 +162,5 @@ jobs:
               uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
               with:
                   enableCrossOsArchive: true
-                  path: '**/.next'
+                  path: '**/dist'
                   key: ${{ matrix.bun-version }}-${{ hashFiles('package.json') }}

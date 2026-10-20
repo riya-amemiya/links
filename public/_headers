@@ -1,2 +1,6 @@
-/_next/static/*
+/*
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Access-Control-Allow-Origin: same-origin
+
+/assets/*
   Cache-Control: public,max-age=31536000,immutable

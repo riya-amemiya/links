@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Avatar } from "@/components/ui/avatar";
 import type { ComponentProps } from "react";
 
@@ -10,16 +8,16 @@ export const Icon = ({
   loading = "eager",
   height = 250,
   width = 250,
-}: ComponentProps<typeof Image>) => {
+}: ComponentProps<"img">) => {
   return (
     <Avatar asChild={true} className={className}>
-      <Image
+      <img
         alt={alt}
+        fetchPriority="high"
         height={height}
         loading={loading}
         src={src}
         width={width}
-        priority={true}
       />
     </Avatar>
   );

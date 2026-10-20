@@ -1,5 +1,5 @@
 import { beforeAll } from "vitest";
-import { setProjectAnnotations } from "@storybook/nextjs-vite";
+import { setProjectAnnotations } from "@storybook/react-vite";
 // biome-ignore lint/performance/noNamespaceImport: ignore
 import * as projectAnnotations from "./preview";
 

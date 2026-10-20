@@ -1,5 +1,5 @@
 import { CaretLeftIcon, CaretRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 
 import { ArcLink } from "@/components/arcade/arc-link";
 import { Brackets } from "@/components/arcade/brackets";
@@ -37,7 +37,7 @@ export const StageBriefing = ({
         <h2 className="font-sans arc-text-34 text-arc-bright font-extrabold -tracking-arc-2 max-md:arc-text-26">
           <Glitch text={work.link.name}>{work.link.name}</Glitch>
         </h2>
-        <ArcLink className="ml-auto" href="/works">
+        <ArcLink className="ml-auto" to="/works">
           <CaretLeftIcon className="size-4" /> Stages
         </ArcLink>
       </div>
@@ -90,7 +90,7 @@ export const StageBriefing = ({
           </div>
           <Link
             className="mt-3 inline-flex cursor-pointer items-center gap-2.25 self-start whitespace-nowrap border border-arc-fg/22 bg-arc-fg/[0.03] px-5 py-2.75 font-mono arc-text-12 text-arc-fg font-bold uppercase tracking-arc-12 transition-arc-lab duration-160 hover:border-arc-accent hover:bg-arc-accent/12 hover:arc-shadow-glow-faint motion-safe:active:animate-arc-tap-glow"
-            href="/lab"
+            to="/lab"
           >
             <span className="text-arc-accent motion-safe:animate-arc-blink">
               ▶
@@ -100,13 +100,13 @@ export const StageBriefing = ({
         </div>
       </div>
       <div className="mt-5.5 flex items-center justify-between gap-3.5">
-        <ArcLink href={`/works/${previousSlug}`}>
+        <ArcLink params={{ slug: previousSlug }} to="/works/$slug">
           <CaretLeftIcon className="size-4" /> Prev
         </ArcLink>
         <span className="font-mono arc-text-11 text-arc-fg/40 tracking-widest">
           {stageNumber} / {totalLabel}
         </span>
-        <ArcLink href={`/works/${nextSlug}`}>
+        <ArcLink params={{ slug: nextSlug }} to="/works/$slug">
           Next <CaretRightIcon className="size-4" />
         </ArcLink>
       </div>

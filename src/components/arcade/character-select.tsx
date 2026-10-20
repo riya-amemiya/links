@@ -1,7 +1,6 @@
 import { CaretRightIcon } from "@radix-ui/react-icons";
+import { Link } from "@tanstack/react-router";
 import { chtr } from "chtr";
-import Image from "next/image";
-import Link from "next/link";
 import type { CSSProperties } from "react";
 
 import { Brackets } from "@/components/arcade/brackets";
@@ -30,11 +29,11 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
             className="group relative mx-auto my-2 aspect-square w-full max-w-57.5 flex-1 cursor-pointer arc-drop-shadow-glow active:scale-arc-press max-md:max-w-50"
             type="button"
           >
-            <Image
+            <img
               alt={profile.name}
               className="size-full object-contain"
+              fetchPriority="high"
               height={profile.icon.height}
-              priority={true}
               src={profile.icon.url}
               width={profile.icon.width}
             />
@@ -135,7 +134,7 @@ export const CharacterSelect = ({ profile }: { profile: Profile }) => (
     </div>
     <Link
       className="mt-4.5 flex w-full cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap border-2 border-arc-accent bg-arc-accent p-3.75 font-mono arc-text-13 text-arc-bg font-bold uppercase tracking-arc-14 transition-shadow duration-160 arc-delay-240 hover:arc-shadow-glow motion-safe:animate-arc-rise motion-safe:active:animate-arc-tap-glow"
-      href="/works"
+      to="/works"
     >
       <span className="motion-safe:animate-arc-blink">▶</span> Press Start ·
       Stage Select <CaretRightIcon className="size-4.5" />

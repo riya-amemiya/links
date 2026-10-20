@@ -1,6 +1,6 @@
 import { CaretLeftIcon } from "@radix-ui/react-icons";
+import { Link } from "@tanstack/react-router";
 import { chtr } from "chtr";
-import Link from "next/link";
 import type { CSSProperties } from "react";
 
 import { ArcLink } from "@/components/arcade/arc-link";
@@ -20,7 +20,7 @@ export const StageSelect = ({ works }: { works: Content[] }) => (
       <span className="font-mono arc-text-11 text-arc-fg/40 tracking-widest">
         SELECT A STAGE ▶
       </span>
-      <ArcLink className="ml-auto" href="/home">
+      <ArcLink className="ml-auto" to="/home">
         <CaretLeftIcon className="size-4" /> Back
       </ArcLink>
     </div>
@@ -30,9 +30,10 @@ export const StageSelect = ({ works }: { works: Content[] }) => (
         return (
           <Link
             className="relative block cursor-pointer border border-arc-fg/18 arc-bg-card p-4 text-left text-arc-fg transition-arc-card duration-160 hover:-translate-y-0.75 hover:border-arc-accent hover:arc-bg-card-hover hover:arc-shadow-outline arc-delay-var motion-safe:animate-arc-rise-fast motion-safe:active:animate-arc-tap-glow"
-            href={`/works/${getWorkSlug(work)}`}
             key={work.id}
+            params={{ slug: getWorkSlug(work) }}
             style={{ "--arc-delay": `${workIndex * 60}ms` } as CSSProperties}
+            to="/works/$slug"
           >
             <div className="flex items-center justify-between">
               <span className="inline-flex text-arc-accent">

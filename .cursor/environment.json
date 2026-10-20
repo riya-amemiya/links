@@ -1,17 +1,17 @@
 {
-  "name": "links (Next.js + Bun)",
+  "name": "links (TanStack Start + Bun)",
   "user": "ubuntu",
   "install": "bash .cursor/install.sh",
   "terminals": [
     {
       "name": "dev",
       "command": "export PATH=\"$HOME/.bun/bin:$PATH\"; bun run dev",
-      "description": "Next.js dev server on http://localhost:3000 (bun run dev)"
+      "description": "Vite dev server on http://localhost:3000 (bun run dev)"
     }
   ],
   "ports": [
     {
-      "name": "next-dev",
+      "name": "vite-dev",
       "port": 3000
     }
   ]

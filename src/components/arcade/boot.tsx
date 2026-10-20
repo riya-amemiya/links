@@ -1,13 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
 
 import { Scanline } from "@/components/arcade/scanline";
 import { cn } from "@/lib/utilities";
 
 export const Boot = ({ name }: { name: string }) => {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [credit, setCredit] = useState(0);
   const [leaving, setLeaving] = useState(false);
 
@@ -18,9 +18,9 @@ export const Boot = ({ name }: { name: string }) => {
     setCredit(1);
     setTimeout(() => setLeaving(true), 280);
     setTimeout(() => {
-      router.push("/home");
+      navigate({ to: "/home" });
     }, 760);
-  }, [leaving, router]);
+  }, [leaving, navigate]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {

@@ -3,7 +3,6 @@
   "plugins": [
     "import",
     "jsx-a11y",
-    "nextjs",
     "oxc",
     "react",
     "typescript",
@@ -30,17 +29,16 @@
     "test": "readonly"
   },
   "ignorePatterns": [
-    ".dependency-cruiser.js",
-    ".next/**",
-    ".open-next/**",
+    ".dependency-cruiser.cjs",
     ".wrangler/**",
     "cloudflare-env.d.ts",
+    "dist/**",
     "e2e/**",
     "mock/**",
-    "next-env.d.ts",
     "playwright-report/**",
     "playwright.config.ts",
-    "src/components/ui/**"
+    "src/components/ui/**",
+    "src/routeTree.gen.ts"
   ],
   "rules": {
     "eslint/curly": "error",
@@ -72,8 +70,6 @@
     "jsx-a11y/aria-unsupported-elements": "warn",
     "jsx-a11y/role-has-required-aria-props": "warn",
     "jsx-a11y/role-supports-aria-props": "warn",
-    "nextjs/no-html-link-for-pages": "error",
-    "nextjs/no-sync-scripts": "error",
     "oxc/bad-min-max-func": "error",
     "react/exhaustive-deps": "warn",
     "react/jsx-boolean-value": ["warn", "always"],
@@ -107,14 +103,7 @@
           "camelCase": true,
           "kebabCase": true,
           "pascalCase": true
-        },
-        "ignore": [
-          "not-found.tsx",
-          "error.tsx",
-          "loading.tsx",
-          "layout.tsx",
-          "page.tsx"
-        ]
+        }
       }
     ],
     "unicorn/import-style": "error",
@@ -245,7 +234,7 @@
       }
     },
     {
-      "files": ["tailwind.config.js"],
+      "files": ["tailwind.config.cjs"],
       "rules": {
         "unicorn/prefer-module": "off"
       }
