@@ -31,31 +31,20 @@
         "./src/stories/*"
       ],
       "%/*": [
-        "./src/app/*"
+        "./src/routes/*"
       ]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
     "types": [
-      "node"
+      "node",
+      "vite/client"
     ]
   },
   "include": [
     "types/**/*.ts",
-    "next-env.d.ts",
     "cloudflare-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "vitest.config.mts",
-    ".next/dev/types/**/*.ts"
+    "vitest.config.mts"
   ],
   "exclude": [
     "node_modules"

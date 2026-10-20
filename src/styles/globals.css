@@ -2,7 +2,7 @@
 @plugin "tailwindcss-animate";
 @custom-variant dark (&:is(.dark *));
 
-@config "../../tailwind.config.js";
+@config "../../tailwind.config.cjs";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -31,6 +31,8 @@
 }
 
 :root {
+  --font-geist-sans: "Geist";
+  --font-geist-mono: "Geist Mono";
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);

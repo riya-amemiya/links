@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-import Image from "next/image";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Avatar } from "@/components/ui/avatar";
 const meta: Meta<typeof Avatar> = {
@@ -13,7 +12,7 @@ export const Primary: Story = {
     asChild: true,
     className: "h-full w-full md:w-64",
     children: (
-      <Image
+      <img
         alt="User avatar"
         height={500}
         loading="eager"

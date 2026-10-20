@@ -18,9 +18,9 @@
     "**/doc/**",
     "**/mock/**",
     "**/module/**",
-    ".next/**",
-    ".open-next/**",
     ".vercel/**",
-    "cloudflare-env.d.ts"
+    "cloudflare-env.d.ts",
+    "dist/**",
+    "src/routeTree.gen.ts"
   ]
 }

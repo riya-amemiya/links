@@ -9,10 +9,10 @@ Amemiya Riya のリンク集・ポートフォリオサイトです。
 
 ## Stack
 
-- [Next.js](https://nextjs.org/) (App Router) + React 19
+- [TanStack Start](https://tanstack.com/start) + React 19 (all pages prerendered at build time)
 - [Bun](https://bun.sh/)
 - [Tailwind CSS](https://tailwindcss.com/) v4
-- [Cloudflare Workers](https://workers.cloudflare.com/) via [OpenNext](https://opennext.js.org/cloudflare)
+- [Cloudflare Workers](https://workers.cloudflare.com/) via [`@cloudflare/vite-plugin`](https://developers.cloudflare.com/workers/vite-plugin/)
 - [Storybook](https://storybook.js.org/) + [Vitest](https://vitest.dev/)
 
 ## Getting started
@@ -68,7 +68,7 @@ Copy `.env` locally if needed. MicroCMS variables are no longer used.
 
 ```text
 src/
-  app/           # App Router pages (boot → home → works)
+  routes/        # TanStack Router file routes (boot → home → works)
   components/
     arcade/      # Arcade-themed UI
     ui/          # Shared primitives (shadcn-style)
@@ -88,8 +88,8 @@ Pages read content through `src/lib/getContent.ts` (thin typed accessors over th
 
 | Script | Purpose |
 | --- | --- |
-| `bun run dev` | Next.js dev server |
-| `bun run build` | Production build |
+| `bun run dev` | Vite dev server |
+| `bun run build` | Production build with static prerendering |
 | `bun run start` | Serve production build on port 8080 |
 | `bun run lint` | oxlint + oxfmt |
 | `bun run lint:fix` | Auto-fix lint |
@@ -97,7 +97,7 @@ Pages read content through `src/lib/getContent.ts` (thin typed accessors over th
 | `bun run test:e2e` | Playwright e2e (boot / home / works). Requires `bun run build` first |
 | `bun run test:e2e:screenshots` | Capture full-page PNGs under `e2e/output/` for PR comments |
 | `bun run storybook` | Storybook on port 6006 |
-| `bun run preview` | OpenNext Cloudflare preview |
+| `bun run preview` | Build and preview on the Cloudflare Workers runtime |
 | `bun run deploy` | Deploy to Cloudflare Workers |
 | `bun run cf-typegen` | Generate Cloudflare binding types |
 
