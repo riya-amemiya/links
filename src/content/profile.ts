@@ -57,6 +57,12 @@ export const profile: Profile = {
       icon: ["TwitterLogoIcon"],
     },
     {
+      id: "linkedin",
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/yuta-nishi-499738262/",
+      icon: ["LinkedInLogoIcon"],
+    },
+    {
       id: "f25lrzudppy4",
       name: "Portfolio",
       url: "https://lapras.com/public/riyaamemiya",

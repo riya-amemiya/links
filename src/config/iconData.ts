@@ -1,6 +1,7 @@
 import {
   GitHubLogoIcon,
   Link2Icon,
+  LinkedInLogoIcon,
   PersonIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
@@ -11,4 +12,5 @@ export const iconData = {
   TwitterLogoIcon: TwitterLogoIcon,
   GitHubLogoIcon: GitHubLogoIcon,
   Link2Icon: Link2Icon,
+  LinkedInLogoIcon: LinkedInLogoIcon,
 };
