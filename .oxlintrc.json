@@ -9,6 +9,7 @@
     "unicorn",
     "vitest"
   ],
+  "jsPlugins": ["@shadcn/lint"],
   "categories": {
     "correctness": "error"
   },
