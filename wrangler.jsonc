@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": "@tanstack/react-start/server-entry",
   "name": "riya-amemiya-links",
-  "compatibility_date": "2026-10-01",
+  "compatibility_date": "2026-11-09",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "routes": [
     {
