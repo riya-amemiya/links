@@ -48,6 +48,7 @@
     "@chromatic-com/storybook": "5.6.0",
     "@cloudflare/vite-plugin": "1.67.0",
     "@playwright/test": "1.65.0",
+    "@shadcn/lint": "0.2.5",
     "@storybook/addon-docs": "10.6.6",
     "@storybook/addon-links": "10.6.6",
     "@storybook/addon-onboarding": "10.6.6",

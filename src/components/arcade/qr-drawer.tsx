@@ -25,9 +25,9 @@ export const QrDrawer = ({
     <DrawerContent variant="arcade">
       <div className="mx-auto w-full max-w-sm px-6 pb-8">
         <DrawerHeader>
-          <DrawerTitle className="text-center" variant="arcade">
-            Scan · URL
-          </DrawerTitle>
+          <div className="text-center">
+            <DrawerTitle variant="arcade">Scan · URL</DrawerTitle>
+          </div>
         </DrawerHeader>
         <div className="my-3.5 flex justify-center">
           <div className="rounded-xl border bg-white p-3.5 shadow-sm">
@@ -37,9 +37,11 @@ export const QrDrawer = ({
         <div className="break-all text-center font-mono arc-text-12-5 text-arc-ink">
           {url.replace(/^https?:\/\//, "")}
         </div>
-        <DrawerClose asChild={true}>
-          <Button className="mx-auto mt-5 flex h-11 w-11/20">Close</Button>
-        </DrawerClose>
+        <div className="mt-5 flex justify-center">
+          <DrawerClose asChild={true}>
+            <Button size="arcade">Close</Button>
+          </DrawerClose>
+        </div>
       </div>
     </DrawerContent>
   </Drawer>

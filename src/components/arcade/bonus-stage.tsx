@@ -119,9 +119,9 @@ export const BonusStage = () => {
             Keep tapping before the charge bar empties. Chain hits to push your
             best combo. No save file—just muscle memory.
           </p>
-          <Label className="mt-4.5" variant="arcade">
-            Stats
-          </Label>
+          <div className="mt-4.5 flex flex-col">
+            <Label variant="arcade">Stats</Label>
+          </div>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <Card variant="arcade">
               <CardHeader variant="arcade">
