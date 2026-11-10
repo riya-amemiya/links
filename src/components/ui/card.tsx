@@ -1,21 +1,23 @@
 import * as React from "react";
-import { tv, type VariantProps } from "tailwind-variants";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utilities";
 
-const cardVariants = tv({
-  base: "rounded-xl border bg-card text-card-foreground shadow",
-  variants: {
-    variant: {
-      default: "",
-      arcade:
-        "rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none",
+const cardVariants = cva(
+  "rounded-xl border bg-card text-card-foreground shadow",
+  {
+    variants: {
+      variant: {
+        default: "",
+        arcade:
+          "rounded-none border-arc-fg/18 bg-arc-fg/[0.03] text-arc-fg shadow-none",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
     },
   },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+);
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -29,8 +31,7 @@ const Card = React.forwardRef<
 ));
 Card.displayName = "Card";
 
-const cardHeaderVariants = tv({
-  base: "flex flex-col space-y-1.5 p-6",
+const cardHeaderVariants = cva("flex flex-col space-y-1.5 p-6", {
   variants: {
     variant: {
       default: "",
@@ -54,8 +55,7 @@ const CardHeader = React.forwardRef<
 ));
 CardHeader.displayName = "CardHeader";
 
-const cardTitleVariants = tv({
-  base: "font-semibold leading-none tracking-tight",
+const cardTitleVariants = cva("font-semibold leading-none tracking-tight", {
   variants: {
     variant: {
       default: "",
@@ -92,8 +92,7 @@ const CardDescription = React.forwardRef<
 ));
 CardDescription.displayName = "CardDescription";
 
-const cardContentVariants = tv({
-  base: "p-6 pt-0",
+const cardContentVariants = cva("p-6 pt-0", {
   variants: {
     variant: {
       default: "",

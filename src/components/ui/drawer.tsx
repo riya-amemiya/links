@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { tv, type VariantProps } from "tailwind-variants";
+import { cva, type VariantProps } from "class-variance-authority";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/lib/utilities";
@@ -35,18 +35,20 @@ const DrawerOverlay = React.forwardRef<
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-const drawerContentVariants = tv({
-  base: "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
-  variants: {
-    variant: {
-      default: "",
-      arcade: "border-0 bg-white",
+const drawerContentVariants = cva(
+  "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background",
+  {
+    variants: {
+      variant: {
+        default: "",
+        arcade: "border-0 bg-white",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
     },
   },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+);
 
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
@@ -89,19 +91,21 @@ const DrawerFooter = ({
 );
 DrawerFooter.displayName = "DrawerFooter";
 
-const drawerTitleVariants = tv({
-  base: "text-lg font-semibold leading-none tracking-tight",
-  variants: {
-    variant: {
-      default: "",
-      arcade:
-        "font-mono text-[11.5px] text-muted-foreground uppercase tracking-[0.24em]",
+const drawerTitleVariants = cva(
+  "text-lg font-semibold leading-none tracking-tight",
+  {
+    variants: {
+      variant: {
+        default: "",
+        arcade:
+          "font-mono text-[11.5px] text-muted-foreground uppercase tracking-[0.24em]",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
     },
   },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+);
 
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
