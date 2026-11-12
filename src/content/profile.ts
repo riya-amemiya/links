@@ -29,7 +29,7 @@ export const profile: Profile = {
     {
       id: "i98anp2p70do",
       name: "Slides",
-      url: "https://speakerdeck.com/riyaamemiya",
+      url: "https://riya-amemiya.github.io/amemiya_riya_slide_data",
       icon: ["Link2Icon"],
     },
     {
