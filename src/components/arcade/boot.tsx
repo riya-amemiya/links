@@ -17,8 +17,8 @@ export const Boot = ({ name }: { name: string }) => {
     }
     setCredit(1);
     setTimeout(() => setLeaving(true), 280);
-    setTimeout(() => {
-      navigate({ to: "/home" });
+    setTimeout(async () => {
+      await navigate({ to: "/home" });
     }, 760);
   }, [leaving, navigate]);
 

@@ -102,8 +102,8 @@ public/
 
 ### Code Style & Linting
 
-- **oxfmt**: Formatter (80-char width, 2-space indent), configured in `.oxfmtrc.json`
-- **oxlint**: Linter using built-in rules only, configured in `.oxlintrc.json`
+- **oxfmt**: Formatter (80-char width, 2-space indent), run by `vp fmt` and configured in the `fmt` block of `vite.config.ts`
+- **oxlint**: Linter, run by `vp lint` and configured in the `lint` block of `vite.config.ts`
   - `unicorn/filename-case` — kebab-case filenames
 - **Generated UI components** (`src/components/ui/`) and `src/routeTree.gen.ts` are excluded from linting
 - **TypeScript strict mode** with `noUnusedLocals`, `noUnusedParameters`, `noImplicitReturns`, `noUncheckedIndexedAccess`

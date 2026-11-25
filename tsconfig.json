@@ -36,11 +36,12 @@
     },
     "types": [
       "node",
-      "vite/client"
+      "vite-plus/client"
     ]
   },
   "include": [
     "types/**/*.ts",
+    ".storybook/**/*.ts",
     "cloudflare-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
