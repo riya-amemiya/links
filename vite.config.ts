@@ -1,7 +1,7 @@
 import { cloudflare } from "@cloudflare/vite-plugin";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
-import { defineConfig, lazyPlugins } from "vite-plus";
+import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   fmt: {
@@ -296,7 +296,7 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
-  plugins: lazyPlugins(() => [
+  plugins: [
     cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart({
       pages: [{ path: "/robots.txt" }, { path: "/sitemap.xml" }],
@@ -305,5 +305,5 @@ export default defineConfig({
       },
     }),
     viteReact(),
-  ]),
+  ],
 });
